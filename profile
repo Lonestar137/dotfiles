@@ -27,8 +27,6 @@ if [ -d "$HOME/.local/bin" ] ; then
 fi
 
 
-#PAT:
-#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
 
 #Legacy changes for Cisco devices
 #/etc/ssh/ssh_config
