@@ -16,14 +16,22 @@ nnoremap <silent> <leader>n :nohlsearch<CR>
 call plug#begin('~/plugged')
 
 Plug 'morhetz/gruvbox'
-Plug 'jremmen/vim-ripgrep'
+Plug 'BurntSushi/ripgrep'
 Plug 'tpope/vim-fugitive'
 Plug 'leafgarland/typescript-vim'
 Plug 'vim-utils/vim-man'
 Plug 'townk/vim-autoclose'
 Plug 'preservim/nerdtree'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+Plug 'sharkdp/fd'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 call plug#end()
+
+"First time setup, run:
+":TSInstall python
+":TSInstall bash
 
 
 colorscheme gruvbox
@@ -90,6 +98,13 @@ noremap <leader>n :NERDTreeToggle<CR>
 
 "Tabs
 noremap <leader>t :tab split<CR>
+
+"Telescope
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+
 
 
 
