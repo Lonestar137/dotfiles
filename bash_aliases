@@ -16,3 +16,5 @@ alias key-help="echo 'ctrl shft v p'; echo 'right red = ctrl; left red = alt'"
 alias gdev="cd /usr/local/"
 
 alias vim="nvim"
+
+alias gitree="git log --graph --decorate --oneline"
