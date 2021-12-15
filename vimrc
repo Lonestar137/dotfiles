@@ -31,6 +31,9 @@ call plug#end()
 ":TSInstall python
 ":TSInstall bash
 
+"org.vim config, to install: https://github.com/axvr/org.vim
+syntax enable
+filetype plugin indent on
 
 colorscheme gruvbox
 set background=dark

@@ -117,6 +117,7 @@ fi
 
 . ~/.bash_profile
 . .bash_aliases
+. /usr/local/bin/z/z.sh
 export EDITOR='vim'
 export VISUAL='vim'
 #curl wttr.in
