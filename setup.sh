@@ -5,7 +5,7 @@ echo "Updating files for $(whoami).  Continue?(y/n)"
 read answer
 
 #If answer y or Y then continue else stop
-[ "${answer}" == 'y' ] || [ "${answer}" == 'Y' ] && echo "Replacing files in home dir for user $(whoami) . . ." || echo "Quiting . . ." ; exit
+[ "${answer}" == 'y' ] || [ "${answer}" == 'Y' ] && echo "Replacing files in home dir for user $(whoami) . . ." || exit
 
 rm ~/.bash_aliases
 rm ~/.bashrc
