@@ -19,3 +19,5 @@ alias vim="nvim"
 
 alias gitree="git log --graph --decorate --oneline"
 alias poll-snmp="snmpwalk -v 2c -c aldotrosnmp $1 $2"
+
+alias ssm="python3 /usr/local/bin/ssm/main.py"

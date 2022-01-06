@@ -1,4 +1,4 @@
-echo "Make sure you're running this as the correct user you want to install the files on.  Note: If you run this with sudo, it will replace root User files."
+echo "Make sure you're running this as the correct user you want to install the files on.  Note: If you run this with sudo, it will replace root user files."
 echo "To update current user files just run: ./setup.sh"
 
 echo "Updating files for $(whoami).  Continue?(y/n)"
@@ -17,5 +17,14 @@ ln -rs bashrc ~/.bashrc
 ln -rs profile ~/.profile
 ln -rs vimrc ~/.vimrc
 
+#Installing z fuzzy finder command by Rupa
+sudo git clone https://github.com/rupa/z.git /usr/local/bin/z && echo "z fuzzy finder installed at /usr/local/bin/z" || echo "z already installed."
+sudo git clone https://github.com/lonestar137/ssm.git /usr/local/bin/ssm && echo "ssm installed at /usr/local/bin/ssm" || echo "ssm already installed."
 
+sudo mv /usr/local/bin/ssm/env /usr/local/bin/ssm/.env
+touch ~/.ssh/hosts.csv
+
+
+
+echo "NOTE: To use ssm, you need to configure /usr/local/bin/ssm/.env and ~/.ssh/hosts.csv according to the ssm README (/usr/local/bin/ssm/README.md)."
 echo 'Finished.'
