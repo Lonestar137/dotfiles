@@ -21,9 +21,9 @@ Plug 'vim-utils/vim-man'
 Plug 'townk/vim-autoclose'
 Plug 'preservim/nerdtree'
 Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-telescope/telescope.nvim'
 Plug 'sharkdp/fd'
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+"Plug 'nvim-telescope/telescope.nvim'
+"Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 call plug#end()
 

@@ -46,10 +46,18 @@ done
 sudo git clone https://github.com/rupa/z.git /usr/local/bin/z && echo "z fuzzy finder installed at /usr/local/bin/z" || echo "z already installed."
 sudo git clone https://github.com/lonestar137/ssm.git /usr/local/bin/ssm && echo "ssm installed at /usr/local/bin/ssm" || echo "ssm already installed."
 
+# ssm setup
 sudo mv /usr/local/bin/ssm/env /usr/local/bin/ssm/.env
 mkdir -p ~/.ssh/
 touch ~/.ssh/hosts.csv
 
+# Link up nvim with .vimrc
+mkdir -p ~/.config/nvim/
+echo '
+set runtimepath^=~/.vim runtimepath+=~/.vim/after
+let &packpath=&runtimepath
+source ~/.vimrc
+' > ~/.config/nvim/init.vim
 
 
 echo "NOTE: To use ssm, you need to configure /usr/local/bin/ssm/.env and ~/.ssh/hosts.csv according to the ssm README (/usr/local/bin/ssm/README.md)."
