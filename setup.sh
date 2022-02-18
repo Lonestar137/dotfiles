@@ -17,11 +17,37 @@ ln -rs bashrc ~/.bashrc
 ln -rs profile ~/.profile
 ln -rs vimrc ~/.vimrc
 
+#Install neovim.
+declare -A osInfo;
+
+osInfo[/etc/redhat-release]=yum
+osInfo[/etc/arch-release]=pacman
+osInfo[/etc/gentoo-release]=emerge
+osInfo[/etc/SuSE-release]=zypp
+osInfo[/etc/debian_version]=apt
+
+for f in ${!osInfo[@]}
+do
+	if [[ -f $f ]]; then
+		echo package manager: ${osInfo[$f]}
+		if [ ${osInfo[$f]} == 'apt' ]; then
+			sudo apt install nvim
+		elif [ ${osInfo[$f]} == 'yum' ]; then
+			sudo yum install nvim
+		else 
+			echo 'Note: You will need to install neovim with your systems package manager.  Otherwise, disable nvim plugins in .vimrc.'
+		fi 
+	fi
+done
+
+
+
 #Installing z fuzzy finder command by Rupa
 sudo git clone https://github.com/rupa/z.git /usr/local/bin/z && echo "z fuzzy finder installed at /usr/local/bin/z" || echo "z already installed."
 sudo git clone https://github.com/lonestar137/ssm.git /usr/local/bin/ssm && echo "ssm installed at /usr/local/bin/ssm" || echo "ssm already installed."
 
 sudo mv /usr/local/bin/ssm/env /usr/local/bin/ssm/.env
+mkdir -p ~/.ssh/
 touch ~/.ssh/hosts.csv
 
 
