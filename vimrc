@@ -110,8 +110,5 @@ nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 noremap J <c-u>
 noremap K <c-d>
 
-" Mark remappings
-noremap ` m 
-noremap m ` 
 
 
