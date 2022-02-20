@@ -22,6 +22,7 @@ Plug 'townk/vim-autoclose'
 Plug 'preservim/nerdtree'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'sharkdp/fd'
+Plug 'Yggdroot/indentLine'
 "Plug 'nvim-telescope/telescope.nvim'
 "Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
