@@ -31,7 +31,7 @@ do
 	if [[ -f $f ]]; then
 		echo package manager: ${osInfo[$f]}
 		if [ ${osInfo[$f]} == 'apt' ]; then
-			sudo apt install nvim
+			sudo snap install --edge nvim --classic
 		elif [ ${osInfo[$f]} == 'yum' ]; then
 			sudo yum install nvim
 		else 
