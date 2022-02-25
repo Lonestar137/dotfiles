@@ -68,6 +68,9 @@ set nu
 set number relativenumber
 set nu rnu
 
+set cursorcolumn
+set cursorline
+
 "autocmd InsertEnter * set cul
 "autocmd InsertLeave * set nocul
 
