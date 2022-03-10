@@ -15,7 +15,7 @@ alias key-help="echo 'ctrl shft v p'; echo 'right red = ctrl; left red = alt'"
 
 alias gdev="cd /usr/local/"
 
-alias vim="nvim"
+alias vim="/usr/local/bin/nvim.appimage"
 
 alias gitree="git log --graph --decorate --oneline"
 alias poll-snmp="snmpwalk -v 2c -c aldotrosnmp $1 $2"
