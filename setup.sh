@@ -1,3 +1,5 @@
+#!/bin/bash
+
 echo "Make sure you're running this as the correct user you want to install the files on.  Note: If you run this with sudo, it will replace root user files."
 echo "To update current user files just run: ./setup.sh"
 
