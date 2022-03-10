@@ -23,8 +23,10 @@ Plug 'preservim/nerdtree'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'sharkdp/fd'
 Plug 'Yggdroot/indentLine'
-"Plug 'nvim-telescope/telescope.nvim'
-"Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'nvim-lua/plenary.nvim'
+Plug 'ThePrimeagen/harpoon'
 
 call plug#end()
 
@@ -114,5 +116,8 @@ nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 noremap J <c-d>
 noremap K <c-u>
 
+"Harpoon
+noremap T :lua require("harpoon.mark").add_file()<CR>
+noremap t :lua require("harpoon.ui").toggle_quick_menu()<CR>
 
 
