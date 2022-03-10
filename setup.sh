@@ -32,11 +32,13 @@ do
 		echo package manager: ${osInfo[$f]}
 		if [ ${osInfo[$f]} == 'apt' ]; then
             curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
-            sudo mv nvim.appimage /usr/local/bin/
+            sudo chmod u+x  ./nvim.appimage
+            sudo mv ./nvim.appimage /usr/local/bin/
 
 		elif [ ${osInfo[$f]} == 'yum' ]; then
             curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
-            sudo mv nvim.appimage /usr/local/bin/
+            sudo chmod u+x  ./nvim.appimage
+            sudo mv ./nvim.appimage /usr/local/bin/
 		else 
 			echo 'Note: You will need to install neovim with your systems package manager.  Otherwise, disable nvim plugins in .vimrc.'
 		fi 
