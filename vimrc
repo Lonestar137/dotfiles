@@ -27,6 +27,7 @@ Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-lua/plenary.nvim'
 Plug 'ThePrimeagen/harpoon'
+Plug 'github/copilot.vim'
 
 call plug#end()
 
