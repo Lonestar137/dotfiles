@@ -28,6 +28,8 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-lua/plenary.nvim'
 Plug 'ThePrimeagen/harpoon'
 Plug 'github/copilot.vim'
+Plug 'wellle/context.vim'
+"Plug 'romgrk/nvim-treesitter-context' "lighterweight alternative to context.vim using lua and treesitter
 
 call plug#end()
 
@@ -73,6 +75,10 @@ set nu rnu
 
 set cursorcolumn
 set cursorline
+
+let g:context_enabled = 1
+let g:context_presenter = 'preview'
+
 
 "autocmd InsertEnter * set cul
 "autocmd InsertLeave * set nocul

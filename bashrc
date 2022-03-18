@@ -115,7 +115,7 @@ fi
 
 #Personal config
 
-. ~/.profile
+#. ~/.profile
 . ~/.bash_aliases
 . /usr/local/bin/z/z.sh
 export EDITOR='vim'
