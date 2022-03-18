@@ -11,12 +11,12 @@ read answer
 
 rm ~/.bash_aliases
 rm ~/.bashrc
-rm ~/.profile
+#rm ~/.profile
 rm ~/.vimrc
 
 ln -rs bash_aliases ~/.bash_aliases
 ln -rs bashrc ~/.bashrc
-ln -rs profile ~/.profile
+#ln -rs profile ~/.profile
 ln -rs vimrc ~/.vimrc
 
 #Install neovim.
@@ -41,8 +41,12 @@ do
             curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
             sudo chmod u+x  ./nvim.appimage
             sudo mv ./nvim.appimage /usr/local/bin/
-		else 
-			echo 'Note: You will need to install neovim with your systems package manager.  Otherwise, disable nvim plugins in .vimrc.'
+        else
+            curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
+            sudo chmod u+x  ./nvim.appimage
+            sudo mv ./nvim.appimage /usr/local/bin/
+		#else 
+		#	echo 'Note: You will need to install neovim with your systems package manager.  Otherwise, disable nvim plugins in .vimrc.'
 		fi 
 	fi
 done
