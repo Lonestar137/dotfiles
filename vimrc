@@ -91,25 +91,6 @@ set shortmess-=F
 let g:context_enabled = 1
 let g:context_presenter = 'preview'
 
-" syntastic - code error checking
-"set statusline+=%#warningmsg#
-"set statusline+=%{SyntasticStatuslineFlag()}
-"set statusline+=%*
-"let g:syntastic_always_populate_loc_list = 1
-"let g:syntastic_auto_loc_list = 1
-"let g:syntastic_check_on_wq = 1
-"let g:syntatsic_check_on_open = 1
-"let g:syntastic_check_on_write = 1
-"
-""---Note you need to install your linters, ex: sudo apt install pylint
-"let g:syntastic_python_checkers = ['flake8', 'pylint']
-"let g:syntastic_scala_checkers = ['scalac']
-"let g:syntastic_go_checkers = ['golint']
-"let g:syntastic_rust_checkers = ['rustc']
-"let g:syntastic_java_checkers = ['checkstyle']
-"let g:syntastic_sql_checkers = ['sql']
-
-
 " call 'packer.nvim' language servers replaces syntastic
 lua require('plugins') 
 lua require'lspconfig'.pyright.setup{} 
@@ -133,24 +114,24 @@ let g:context_enabled = 1
 let g:context_presenter = 'preview'
 
 " syntastic - code error checking
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_wq = 1
-let g:syntatsic_check_on_open = 1
-let g:syntastic_check_on_write = 1
-
-"---Note you need to install your linters, ex: sudo apt install pylint
-let g:syntastic_python_checkers = ['flake8', 'pylint']
-let g:syntastic_scala_checkers = ['scalac']
-let g:syntastic_go_checkers = ['golint']
-let g:syntastic_rust_checkers = ['rustc']
-let g:syntastic_java_checkers = ['checkstyle']
-let g:syntastic_sql_checkers = ['sql']
-
-
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
+"let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_auto_loc_list = 1
+"let g:syntastic_check_on_wq = 1
+"let g:syntatsic_check_on_open = 1
+"let g:syntastic_check_on_write = 1
+"
+""---Note you need to install your linters, ex: sudo apt install pylint
+"let g:syntastic_python_checkers = ['flake8', 'pylint']
+"let g:syntastic_scala_checkers = ['scalac']
+"let g:syntastic_go_checkers = ['golint']
+"let g:syntastic_rust_checkers = ['rustc']
+"let g:syntastic_java_checkers = ['checkstyle']
+"let g:syntastic_sql_checkers = ['sql']
+"
+"
 
 
 "autocmd InsertEnter * set cul
