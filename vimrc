@@ -118,14 +118,14 @@ lua require'lspconfig'.bashls.setup{}
 lua require'lspconfig'.sqls.setup{}
 lua require'lspconfig'.metals.setup{}
 
-"Metals
+"Metals config
 augroup lsp
     au!
     au FileType java,scala,sbt lua require("metals").initialize_or_attach({})
 augroup end
-metals_config = require("metals").bare_config()
-metals_config.init_options.statusBarProvider = "on"
-vim.g['metals_status']
+"metals_config = require("metals").bare_config()
+"metals_config.init_options.statusBarProvider = "on"
+"vim.g['metals_status']
 
 "autocmd InsertEnter * set cul
 "autocmd InsertLeave * set nocul
