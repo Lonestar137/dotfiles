@@ -28,20 +28,34 @@ osInfo[/etc/gentoo-release]=emerge
 osInfo[/etc/SuSE-release]=zypp
 osInfo[/etc/debian_version]=apt
 
+curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
+sudo chmod u+x  ./nvim.appimage
+sudo mv ./nvim.appimage /usr/local/bin/
+
 for f in ${!osInfo[@]}
 do
 	if [[ -f $f ]]; then
 		echo package manager: ${osInfo[$f]}
 		if [ ${osInfo[$f]} == 'apt' ]; then
-            curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
-            sudo chmod u+x  ./nvim.appimage
-            sudo mv ./nvim.appimage /usr/local/bin/
+
+            # code linters for neovim, necessary for syntactic highlighting
+            #sudo apt install flake8 pylint
+            #sudo apt install golint
+            #sudo apt install checkstyle
+            sudo apt install npm
+            sudo apt install rust-src
+            sudo apt install golang-go &
+            python3 -m pip install pynvim &
+            sudo apt install python3-autopep8
+            echo "Setting up neovim . . ."
 
 		elif [ ${osInfo[$f]} == 'yum' ]; then
-            curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
-            sudo chmod u+x  ./nvim.appimage
-            sudo mv ./nvim.appimage /usr/local/bin/
+            echo "Custom code linters for neovim not installed.  You will need to yum install them manually."
+            echo "Examples:  flake8, pylint, golint, checkstyle"
+
 		else 
+            curl --proto'=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh 
+            pip install pynvim &
 			echo 'Note: You will need to install neovim with your systems package manager.  Otherwise, disable nvim plugins in .vimrc.'
 		fi 
 	fi
@@ -65,6 +79,37 @@ set runtimepath^=~/.vim runtimepath+=~/.vim/after
 let &packpath=&runtimepath
 source ~/.vimrc
 ' > ~/.config/nvim/init.vim
+
+
+# Install nvim.packer for lsp
+git clone --depth 1 https://github.com/wbthomason/packer.nvim\
+ ~/.local/share/nvim/site/pack/packer/start/packer.nvimc
+# Install nvim LSP
+    # pyright is a python language server 
+npm -i -g pyright
+mkdir -p ~/.config/nvim/lua/
+mkdir -p /usr/local/share/lua/5.1/
+sudo ln -s plugins.lua /usr/local/share/lua/5.1/plugins.lua
+ln -s plugins.lua ~/.config/nvim/lua/plugins.lua
+    
+    # rust analyzer is a rust language server , not you may need to install rust-src
+sudo curl -L https://github.com/rust-analyzer/rust-analyzer/releases/latest/download/rust-analyzer-x86_64-unknown-linux-gnu.gz | gunzip -c - > ./rust-analyzer
+chmod +x ./rust-analyzer
+sudo mv ./rust-analyzer /usr/local/bin/rust-analyzer
+
+    # bash-language-server is a bash language server
+sudo npm -g install bash-language-server &
+
+    # LSP for sql
+sudo go get github.com/lighttiger2505/sqls &
+
+    # Scala LSP
+    # coursier for metals 
+curl -fL https://github.com/coursier/launchers/raw/master/cs-x86_64-pc-linux.gz | gzip -d > cs
+chmod +x cs
+./cs setup
+sudo mv cs /usr/local/bin/cs
+cs istall metalsn
 
 
 echo "NOTE: To use ssm, you need to configure /usr/local/bin/ssm/.env and ~/.ssh/hosts.csv according to the ssm README (/usr/local/bin/ssm/README.md)."
