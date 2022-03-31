@@ -23,20 +23,38 @@ Plug 'leafgarland/typescript-vim'
 Plug 'vim-utils/vim-man'
 Plug 'townk/vim-autoclose'
 Plug 'preservim/nerdtree'
-Plug 'nvim-lua/plenary.nvim'
 Plug 'sharkdp/fd'
 Plug 'Yggdroot/indentLine'
 Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-lua/plenary.nvim'
 Plug 'ThePrimeagen/harpoon'
 Plug 'github/copilot.vim'
-Plug 'wellle/context.vim'
-"Plug 'romgrk/nvim-treesitter-context' "lighterweight alternative to context.vim using lua and treesitter
+"Plug 'wellle/context.vim'
+Plug 'romgrk/nvim-treesitter-context'
 "syntastic
 "Plug 'vim-syntastic/syntastic'
 
+"File searching
+Plug 'junegunn/fzf', {'do': {->fzf#install()}}
+Plug 'junegunn/fzf.vim'
+
+Plug 'sbdchd/neoformat'
+
+
+"Autocomplete
+Plug 'neovim/nvim-lspconfig'
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/cmp-path'
+Plug 'hrsh7th/cmp-cmdline'
+Plug 'hrsh7th/nvim-cmp'
+
 call plug#end()
+
+set completeopt=menu,menuone,noselect
+
 
 "First time setup, run:
 ":TSInstall python
@@ -88,8 +106,11 @@ set shortmess-=F
 "set cursorline
 
 " context.vim
-let g:context_enabled = 1
-let g:context_presenter = 'preview'
+"let g:context_enabled = 1
+"let g:context_presenter = 'preview'
+
+"Tree sitter context
+"TSContextEnable
 
 " call 'packer.nvim' language servers replaces syntastic
 lua require('plugins') 
@@ -109,9 +130,6 @@ augroup end
 "vim.g['metals_status']
 
 
-" context.vim
-let g:context_enabled = 1
-let g:context_presenter = 'preview'
 
 " syntastic - code error checking
 "set statusline+=%#warningmsg#
@@ -193,20 +211,31 @@ nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
 "Page up and down
-noremap J <c-d>zz
-noremap K <c-u>zz
+noremap J 20jzz
+noremap K 20kzz
 
 "Harpoon
 noremap T :lua require("harpoon.mark").add_file()<CR>
 noremap t :lua require("harpoon.ui").toggle_quick_menu()<CR>
 
 
+"Jumping around
+"TODO add LSP support for jumping to definition and references
+nnoremap <C-p> :GFiles<CR>
 
 
 " make a normale mode remap which create a set of curly braces for me and put
 " me in insert mode
 
+"Copilot disable
 
+" Moving in movement history, amazing for switching files.
+    " backwards
+nnoremap <leader>hh <c-o><CR> 
+    " forward
+nnoremap <leader>ll <c-i><CR> 
+    " swap between two files
+nnoremap <leader>j <c-^><CR> 
 
 
 

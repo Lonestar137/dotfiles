@@ -125,6 +125,8 @@ git_branch() {
 }
 export PS1="\[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\] \$(git_branch)\$ "
 export PATH="$PATH:/home/jonesgc/.local/share/coursier/bin"r
+export SPARK_HOME=/home/jonesgc/bin/spark
+export PATH="$PATH:$SPARK_HOME/bin"
 
 
 #alias doom-sync="~/.emacs.d/bin/doom sync"
