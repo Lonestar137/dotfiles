@@ -40,7 +40,10 @@ Plug 'romgrk/nvim-treesitter-context'
 Plug 'junegunn/fzf', {'do': {->fzf#install()}}
 Plug 'junegunn/fzf.vim'
 
+"Formatting
 Plug 'sbdchd/neoformat'
+Plug 'rust-lang/rustfmt'
+"Plug 'scalameta/vim-scalafmt'
 
 
 "Autocomplete
@@ -50,6 +53,12 @@ Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-cmdline'
 Plug 'hrsh7th/nvim-cmp'
+
+"Firenvim
+Plug 'glacambre/firenvim', {'do': { _ -> firenvim#install(0)}}
+
+Plug 'nvim-lualine/lualine.nvim'
+Plug 'kyazdani42/nvim-web-devicons'
 
 call plug#end()
 
@@ -66,6 +75,9 @@ filetype plugin indent on
 
 colorscheme gruvbox
 set background=dark
+"lua require'lualine'.get_config()
+
+
 
 highlight NORMAL ctermbg=NONE
 
@@ -158,6 +170,25 @@ augroup end
 "Remappings
 let mapleader = " "
 
+" Fix yank
+nnoremap Y y$
+
+"Undo breakpoints
+inoremap , ,<c-g>u
+inoremap . .<c-g>u
+inoremap ! !<c-g>u
+inoremap ? ?<c-g>u
+inoremap ( (<c-g>u
+
+" Jumplist mutations
+nnoremap <expr> k (v:count > 20 ? "m'" . v:count : "") . 'k'
+nnoremap <expr> j (v:count > 20 ? "m'" . v:count : "") . 'j'
+
+" Moving text
+vnoremap <c-j> :m '>+1<CR>gv=gv
+vnoremap <c-k> :m '<-2<CR>gv=gv
+
+
 " Common programming keybindings closer to home row
 inoremap <a-j> {}<Esc>i<CR><ESC>O
 nnoremap <a-j> i{}<Esc>F{a<CR><BS><ESC>O
@@ -223,10 +254,6 @@ noremap t :lua require("harpoon.ui").toggle_quick_menu()<CR>
 "TODO add LSP support for jumping to definition and references
 nnoremap <C-p> :GFiles<CR>
 
-
-" make a normale mode remap which create a set of curly braces for me and put
-" me in insert mode
-
 "Copilot disable
 
 " Moving in movement history, amazing for switching files.
@@ -237,5 +264,6 @@ nnoremap <leader>ll <c-i><CR>
     " swap between two files
 nnoremap <leader>j <c-^><CR> 
 
-
+" Copilot 
+inoremap <c-n> <Plug>(copilot-next)
 

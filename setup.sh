@@ -28,9 +28,10 @@ osInfo[/etc/gentoo-release]=emerge
 osInfo[/etc/SuSE-release]=zypp
 osInfo[/etc/debian_version]=apt
 
-curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
-sudo chmod u+x  ./nvim.appimage
-sudo mv ./nvim.appimage /usr/local/bin/
+#curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
+#sudo chmod u+x  ./nvim.appimage
+#sudo mv ./nvim.appimage /usr/local/bin/
+sudo snap install nvim --channel=latest/edge --classic
 
 for f in ${!osInfo[@]}
 do
@@ -87,11 +88,12 @@ git clone --depth 1 https://github.com/wbthomason/packer.nvim\
 mkdir -p ~/.config/nvim/lua/
 mkdir -p /usr/local/share/lua/5.1/
 sudo ln -s $(pwd)/plugins.lua /usr/local/share/lua/5.1/ 
-ln -s plugins.lua ~/.config/nvim/lua/plugins.lua
+sudo ln -s $(pwd)/plugins.lua ~/.config/nvim/lua/plugins.lua
 
 # Install nvim LSP for more:  https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#sqls
     # pyright is a python language server 
-npm -i -g pyright
+#npm -i -g pyright
+sudo snap install pyright --classic
     
     # rust analyzer is a rust language server , not you may need to install rust-src
 sudo curl -L https://github.com/rust-analyzer/rust-analyzer/releases/latest/download/rust-analyzer-x86_64-unknown-linux-gnu.gz | gunzip -c - > ./rust-analyzer
@@ -111,6 +113,17 @@ chmod +x cs
 ./cs setup
 sudo mv cs /usr/local/bin/cs
 #cs istall metals # metals plugin should handle this.
+
+
+echo "Setting up i3wm . . ." # if i3 doesn't install correctyl, do apt install i3-wm dunst i3lock i3status suckless-tools
+sudo apt install i3 
+sudo apt install compton hsetroot rxvt-unicode xsel rofi fonts-noto fonts-mplus xsettingsd lxappearance scrot viewnoir
+sudo apt install rofi
+# https://github.com/adi1090x/rofi.git -- source of rofi scripts
+
+
+
+
 
 
 echo "NOTE: To use ssm, you need to configure /usr/local/bin/ssm/.env and ~/.ssh/hosts.csv according to the ssm README (/usr/local/bin/ssm/README.md)."
