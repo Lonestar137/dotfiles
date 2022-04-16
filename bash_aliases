@@ -23,3 +23,11 @@ alias poll-snmp="snmpwalk -v 2c -c aldotrosnmp $1 $2"
 
 alias ssm="python3 /usr/local/bin/ssm/main.py"
 
+
+#Brightness control TODO: brightness scripts that check for brightness and set it, prevent from going too dark.
+alias blow="sudo brightnessctl set 5%"
+alias bmid="sudo brightnessctl set 20%"
+alias bhigh="sudo brightnessctl set 50%"
+alias bmax="sudo brightnessctl set 100%"
+alias bd="sudo brightnessctl set 10%-"
+alias bu="sudo brightnessctl set +10%"

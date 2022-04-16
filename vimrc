@@ -112,6 +112,7 @@ set number relativenumber
 set nu rnu
 set scrolloff=10
 set shortmess-=F
+set foldmethod=indent
 
 
 "set cursorcolumn
@@ -128,9 +129,9 @@ set shortmess-=F
 lua require('plugins') 
 lua require'lspconfig'.pyright.setup{} 
 lua require'lspconfig'.rust_analyzer.setup{}
+lua require'lspconfig'.metals.setup{}
 lua require'lspconfig'.bashls.setup{}
 lua require'lspconfig'.sqls.setup{}
-lua require'lspconfig'.metals.setup{}
 
 "Metals config
 augroup lsp
@@ -254,7 +255,6 @@ noremap t :lua require("harpoon.ui").toggle_quick_menu()<CR>
 "TODO add LSP support for jumping to definition and references
 nnoremap <C-p> :GFiles<CR>
 
-"Copilot disable
 
 " Moving in movement history, amazing for switching files.
     " backwards
@@ -266,4 +266,7 @@ nnoremap <leader>j <c-^><CR>
 
 " Copilot 
 inoremap <c-n> <Plug>(copilot-next)
+
+" Code folding
+nnoremap <leader>f za
 
