@@ -2,129 +2,149 @@
 
 echo "Make sure you're running this as the correct user you want to install the files on.  Note: If you run this with sudo, it will replace root user files."
 echo "To update current user files just run: ./setup.sh"
-
 echo "Updating files for $(whoami).  Continue?(y/n)"
 read answer
 
 #If answer y or Y then continue else stop
-[ "${answer}" == 'y' ] || [ "${answer}" == 'Y' ] && echo "Replacing files in home dir for user $(whoami) . . ." || exit
-
-rm ~/.bash_aliases
-rm ~/.bashrc
-#rm ~/.profile
-rm ~/.vimrc
-
-ln -rs bash_aliases ~/.bash_aliases
-ln -rs bashrc ~/.bashrc
-#ln -rs profile ~/.profile
-ln -rs vimrc ~/.vimrc
-
-#Install neovim.
-declare -A osInfo;
-
-osInfo[/etc/redhat-release]=yum
-osInfo[/etc/arch-release]=pacman
-osInfo[/etc/gentoo-release]=emerge
-osInfo[/etc/SuSE-release]=zypp
-osInfo[/etc/debian_version]=apt
-
-#curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
-#sudo chmod u+x  ./nvim.appimage
-#sudo mv ./nvim.appimage /usr/local/bin/
-sudo snap install nvim --channel=latest/edge --classic
-
-for f in ${!osInfo[@]}
-do
-	if [[ -f $f ]]; then
-		echo package manager: ${osInfo[$f]}
-		if [ ${osInfo[$f]} == 'apt' ]; then
-
-            # code linters for neovim, necessary for syntactic highlighting
-            #sudo apt install flake8 pylint
-            #sudo apt install golint
-            #sudo apt install checkstyle
-            sudo apt install npm
-            sudo apt install rust-src
-            sudo apt install golang-go &
-            python3 -m pip install pynvim &
-            sudo apt install python3-autopep8
-            echo "Setting up neovim . . ."
-
-		elif [ ${osInfo[$f]} == 'yum' ]; then
-            echo "Custom code linters for neovim not installed.  You will need to yum install them manually."
-            echo "Examples:  flake8, pylint, golint, checkstyle"
-
-		else 
-            curl --proto'=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh 
-            pip install pynvim &
-			echo 'Note: You will need to install neovim with your systems package manager.  Otherwise, disable nvim plugins in .vimrc.'
-		fi 
-	fi
-done
+[ "${answer}" == 'y' ] || [ "${answer}" == 'Y' ] && echo "Beginning with install. . ." || exit
 
 
+declare -Ag OSINFO;
 
-#Installing z fuzzy finder command by Rupa
-sudo git clone https://github.com/rupa/z.git /usr/local/bin/z && echo "z fuzzy finder installed at /usr/local/bin/z" || echo "z already installed."
-sudo git clone https://github.com/lonestar137/ssm.git /usr/local/bin/ssm && echo "ssm installed at /usr/local/bin/ssm" || echo "ssm already installed."
+OSINFO[/etc/redhat-release]=yum
+OSINFO[/etc/arch-release]=pacman
+OSINFO[/etc/gentoo-release]=emerge
+OSINFO[/etc/SuSE-release]=zypp
+OSINFO[/etc/debian_version]=apt
 
-# ssm setup
-sudo mv /usr/local/bin/ssm/env /usr/local/bin/ssm/.env
-mkdir -p ~/.ssh/
-touch ~/.ssh/hosts.csv
+linkDotFiles(){
+    echo "Replacing files in home dir for user $(whoami) . . ."
+    rm ~/.bash_aliases
+    rm ~/.bashrc
+    #rm ~/.profile
+    rm ~/.vimrc
 
-# Link up nvim with .vimrc
-mkdir -p ~/.config/nvim/
-echo '
-set runtimepath^=~/.vim runtimepath+=~/.vim/after
-let &packpath=&runtimepath
-source ~/.vimrc
-' > ~/.config/nvim/init.vim
+    ln -rs bash_aliases ~/.bash_aliases
+    ln -rs bashrc ~/.bashrc
+    #ln -rs profile ~/.profile
+    ln -rs vim/vimrc ~/.vimrc
+}
 
-
-# Install nvim.packer for lsp
-git clone --depth 1 https://github.com/wbthomason/packer.nvim\
- ~/.local/share/nvim/site/pack/packer/start/packer.nvimc
-mkdir -p ~/.config/nvim/lua/
-mkdir -p /usr/local/share/lua/5.1/
-sudo ln -s $(pwd)/plugins.lua /usr/local/share/lua/5.1/ 
-sudo ln -s $(pwd)/plugins.lua ~/.config/nvim/lua/plugins.lua
-
-# Install nvim LSP for more:  https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#sqls
-    # pyright is a python language server 
-#npm -i -g pyright
-sudo snap install pyright --classic
+installNeovim(){
+    echo "Setting up Neovim . . ."
+    curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
+    sudo chmod u+x  ./nvim.appimage
+    sudo mv ./nvim.appimage /usr/local/bin/
     
-    # rust analyzer is a rust language server , not you may need to install rust-src
-sudo curl -L https://github.com/rust-analyzer/rust-analyzer/releases/latest/download/rust-analyzer-x86_64-unknown-linux-gnu.gz | gunzip -c - > ./rust-analyzer
-chmod +x ./rust-analyzer
-sudo mv ./rust-analyzer /usr/local/bin/rust-analyzer
+    # Link up nvim with .vimrc
+    mkdir -p ~/.config/nvim/
+    echo '
+    set runtimepath^=~/.vim runtimepath+=~/.vim/after
+    let &packpath=&runtimepath
+    source ~/.vimrc
+    ' > ~/.config/nvim/init.vim
+    
+    # Install nvim.packer for lsp
+    git clone --depth 1 https://github.com/wbthomason/packer.nvim\
+     ~/.local/share/nvim/site/pack/packer/start/packer.nvimc
+    mkdir -p ~/.config/nvim/lua/
+    mkdir -p /usr/local/share/lua/5.1/
+    sudo ln -s $(pwd)/vim/plugins.lua /usr/local/share/lua/5.1/ 
+    sudo ln -s $(pwd)/vim/plugins.lua ~/.config/nvim/lua/plugins.lua
+}
 
-    # bash-language-server is a bash language server  -- might be causing bash files to lag in vim
-sudo npm -g install bash-language-server &
+setupSSHkeys(){
+    echo "If you need a SSHKey do: ssh-keygen -t rsa -b 4096 && sudo chmod 600 ~/.ssh/*"
+    echo "To copy ID to a SSH server: ssh-copy-id username@server-ip"
+    sudo touch ~/.ssh/authorized_keys
+    sudo chmod 700 ~/.ssh
+    sudo chmod 600 ~/.ssh/*
+    # TODO: detect system ps manager, firewall, and allow ssh
+}
 
-    # LSP for sql -- had problems installing this one.
-sudo go get github.com/lighttiger2505/sqls &
+packageManagerSpecficInstalls(){
+    for f in ${!OSINFO[@]}
+        do
+            if [[ -f $f ]]; then
+                echo package manager: ${OSINFO[$f]}
+                if [ ${OSINFO[$f]} == 'apt' ]; then
+                    sudo apt update
 
-    # Scala LSP
-        # coursier for metals 
-curl -fL https://github.com/coursier/launchers/raw/master/cs-x86_64-pc-linux.gz | gzip -d > cs
-chmod +x cs
-./cs setup
-sudo mv cs /usr/local/bin/cs
-#cs istall metals # metals plugin should handle this.
+                    # code linters for neovim, necessary for syntactic highlighting
+                    #sudo apt install flake8 pylint
+                    #sudo apt install golint
+                    #sudo apt install checkstyle
+                    sudo apt install npm
+                    sudo apt install rust-src
+                    sudo apt install golang-go
+                    # python3 -m pip install pynvim &
+                    # sudo apt install python3-autopep8
 
+                    # Automatic PAT saving for Github, Gitlab
+                    sudo apt install git-core
+                    git config --global credential.helper store
+                    sudo apt install openssh-server openssh-client
+                    setupSSHkeys
 
-echo "Setting up i3wm . . ." # if i3 doesn't install correctyl, do apt install i3-wm dunst i3lock i3status suckless-tools
-sudo apt install i3 
-sudo apt install compton hsetroot rxvt-unicode xsel rofi fonts-noto fonts-mplus xsettingsd lxappearance scrot viewnoir
-sudo apt install rofi
-# https://github.com/adi1090x/rofi.git -- source of rofi scripts
+                elif [ ${OSINFO[$f]} == 'yum' ]; then
+                    echo "Custom code linters for neovim not installed.  You will need to yum install them manually."
+                    echo "Examples:  flake8, pylint, golint, checkstyle"
 
+                else 
+                    echo "Unrecognized package manager"
+                fi 
+            fi
+        done
+}
 
+installZ(){
 
+    #Installing z fuzzy finder command by Rupa
+    sudo git clone https://github.com/rupa/z.git /usr/local/bin/z && echo "z fuzzy finder installed at /usr/local/bin/z" || echo "z already installed."
 
+}
 
+installI3(){
+    echo "Setting up i3wm . . ." # if i3 doesn't install correctyl, do apt install i3-wm dunst i3lock i3status suckless-tools
+    sudo apt install i3 
+    sudo apt install compton hsetroot rxvt-unicode xsel rofi fonts-noto fonts-mplus xsettingsd lxappearance scrot viewnoir
+    sudo apt install rofi
+    # https://github.com/adi1090x/rofi.git -- source of rofi scripts
+}
 
-echo "NOTE: To use ssm, you need to configure /usr/local/bin/ssm/.env and ~/.ssh/hosts.csv according to the ssm README (/usr/local/bin/ssm/README.md)."
+installQEMU(){
+    sudo apt install qemu-kvm virt-manager virtinst libvirt-clients bridge-utils libvirt-daemon-system -y
+    sudo systemctl enable --now libvirtd
+    sudo systemctl start libvirtd
+    sudo usermod -aG kvm $USER
+    sudo usermod -aG libvirt $USER
+}
+
+installGraphicalApps(){
+    for f in ${!OSINFO[@]}
+        do
+            if [[ -f $f ]]; then
+                echo "Package manager: ${OSINFO[$f]}"
+                if [ ${OSINFO[$f]} == 'apt' ]; then
+                    sudo apt update
+                    sudo apt install discord
+                    sudo apt install steam
+                    installQEMU
+
+                elif [ ${OSINFO[$f]} == 'yum' ]; then
+                    echo "Yum automated package install not setup yet."
+                else
+                    echo "Unrecognized package manager"
+                fi
+            fi
+        done
+}
+
+linkDotFiles
+# installNeovim
+installZ
+# # installI3
+packageManagerSpecficInstalls
+installGraphicalApps
+
 echo 'Finished.'

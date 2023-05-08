@@ -9,7 +9,7 @@ nmcli radio wifi
 nmcli dev wifi list
 
 # manually connect to wifi
-sudo nmcli dev wifi connect ATT8Nww4LM password 46fdrxxxxxxx
+sudo nmcli dev wifi connect yourWifiNetwork password 46fdrxxxxxxx
 
 
 
