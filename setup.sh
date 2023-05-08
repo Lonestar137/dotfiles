@@ -77,6 +77,7 @@ packageManagerSpecficInstalls(){
                     sudo apt install npm
                     sudo apt install rust-src
                     sudo apt install golang-go
+                    sudo apt install dotnet-sdk-6.0
                     # python3 -m pip install pynvim &
                     # sudo apt install python3-autopep8
 
