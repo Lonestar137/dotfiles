@@ -11,8 +11,6 @@ alias wttr="curl wttr.in"
 
 alias gdev="cd /usr/local/"
 
-alias vim="nvim"
-
 alias gitree="git log --graph --decorate --oneline"
 alias poll-snmp="snmpwalk -v 2c -c aldotrosnmp $1 $2"
 
