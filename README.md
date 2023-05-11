@@ -17,5 +17,11 @@ and, for normal vim:
 `:TSInstall <language>`
 
 
+### Personal notes
+
+`Ctrl-x Ctrl-l` from insertion mode will trigger line based autocompletion.
+
+
+
 
 
