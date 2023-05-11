@@ -6,10 +6,16 @@ endif
 
 call plug#begin()
     Plug 'morhetz/gruvbox'
-
+    Plug 'vim-scripts/AutoComplPop'
+    Plug 'junegunn/fzf', {'do': { -> fzf#install()}}
+    Plug 'junegunn/fzf.vim'
+    Plug 'junegunn/goyo.vim' " Zenmode but for vim
 call plug#end()
 
 syntax on
+
+
+" ============Configuration==============
 
 set background=dark
 colorscheme gruvbox
@@ -35,5 +41,8 @@ set nu rnu
 set scrolloff=10
 set shortmess-=F
 set foldmethod=indent
-
-
+set clipboard=unnamedplus 
+set completeopt=menuone,longest,preview
+set complete+=kspell
+set shortmess+=c
+set wildmenu

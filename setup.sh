@@ -30,6 +30,19 @@ linkDotFiles(){
     ln -rs vim/vimrc ~/.vimrc
 }
 
+setupVSCode(){
+    ln -s $(pwd)/config/vscode/ ~/.config/.vscode/
+}
+
+setupNvimLSP(){
+    sudo npm i -g pyright 
+    sudo npm i -g bash-language-server
+    #sudo apt install flake8 pylint
+    sudo apt install flake8 golint 
+    #sudo apt install checkstyle
+
+}
+
 installNeovim(){
     echo "Setting up Neovim . . ."
     curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
@@ -38,19 +51,20 @@ installNeovim(){
     
     # Link up nvim with .vimrc
     mkdir -p ~/.config/nvim/
-    echo '
-    set runtimepath^=~/.vim runtimepath+=~/.vim/after
-    let &packpath=&runtimepath
-    source ~/.vimrc
-    ' > ~/.config/nvim/init.vim
+    ~/.config/nvim/init.vim
     
     # Install nvim.packer for lsp
     git clone --depth 1 https://github.com/wbthomason/packer.nvim\
      ~/.local/share/nvim/site/pack/packer/start/packer.nvimc
     mkdir -p ~/.config/nvim/lua/
     mkdir -p /usr/local/share/lua/5.1/
-    sudo ln -s $(pwd)/vim/plugins.lua /usr/local/share/lua/5.1/ 
-    sudo ln -s $(pwd)/vim/plugins.lua ~/.config/nvim/lua/plugins.lua
+    ln -s $(pwd)/vim/plugins.lua /usr/local/share/lua/5.1/ 
+    ln -s $(pwd)/vim/plugins.lua ~/.config/nvim/lua/plugins.lua
+    ln -s $(pwd)/vim/init.lua ~/.config/nvim/init.lua
+    ln -s $(pwd)/vim/neovimrc.vim ~/.config/nvim/neovimrc.vim
+
+    setupVSCode
+    setupNvimLSP
 }
 
 setupSSHkeys(){
@@ -62,6 +76,7 @@ setupSSHkeys(){
     # TODO: detect system ps manager, firewall, and allow ssh
 }
 
+
 packageManagerSpecficInstalls(){
     for f in ${!OSINFO[@]}
         do
@@ -71,9 +86,6 @@ packageManagerSpecficInstalls(){
                     sudo apt update
 
                     # code linters for neovim, necessary for syntactic highlighting
-                    #sudo apt install flake8 pylint
-                    #sudo apt install golint
-                    #sudo apt install checkstyle
                     sudo apt install npm
                     sudo apt install rust-src
                     sudo apt install golang-go
@@ -99,10 +111,8 @@ packageManagerSpecficInstalls(){
 }
 
 installZ(){
-
     #Installing z fuzzy finder command by Rupa
     sudo git clone https://github.com/rupa/z.git /usr/local/bin/z && echo "z fuzzy finder installed at /usr/local/bin/z" || echo "z already installed."
-
 }
 
 installI3(){
@@ -121,6 +131,21 @@ installQEMU(){
     sudo usermod -aG libvirt $USER
 }
 
+installRegolithTwo(){
+    echo "Installing Regolith2. . ."
+
+    wget -qO - https://regolith-desktop.org/regolith.key | \
+    gpg --dearmor | sudo tee /usr/share/keyrings/regolith-archive-keyring.gpg > /dev/null
+
+    echo deb "[arch=amd64 signed-by=/usr/share/keyrings/regolith-archive-keyring.gpg] \
+        https://regolith-desktop.org/release-ubuntu-jammy-amd64 jammy main" | \
+        sudo tee /etc/apt/sources.list.d/regolith.list
+
+    sudo apt update
+    sudo apt install regolith-desktop regolith-compositor-picom-glx
+    sudo apt upgrade
+}
+
 installGraphicalApps(){
     for f in ${!OSINFO[@]}
         do
@@ -131,6 +156,8 @@ installGraphicalApps(){
                     sudo apt install discord
                     sudo apt install steam
                     installQEMU
+                    installI3
+                    installRegolithTwo
 
                 elif [ ${OSINFO[$f]} == 'yum' ]; then
                     echo "Yum automated package install not setup yet."
@@ -141,8 +168,9 @@ installGraphicalApps(){
         done
 }
 
+
 linkDotFiles
-# installNeovim
+installNeovim
 installZ
 # # installI3
 packageManagerSpecficInstalls
