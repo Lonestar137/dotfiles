@@ -10,6 +10,7 @@ call plug#begin()
     Plug 'junegunn/fzf', {'do': { -> fzf#install()}}
     Plug 'junegunn/fzf.vim'
     Plug 'junegunn/goyo.vim' " Zenmode but for vim
+    Plug 'makerj/vim-pdf'
 call plug#end()
 
 syntax on

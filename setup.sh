@@ -40,6 +40,7 @@ setupNvimLSP(){
     #sudo apt install flake8 pylint
     sudo apt install flake8 golint 
     #sudo apt install checkstyle
+    dotnet tool install --global csharp-ls --version 0.3.0
 
 }
 

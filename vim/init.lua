@@ -48,12 +48,13 @@ require'nvim-treesitter.configs'.setup{
 local setupLSP = function()
     local capabilities = require("cmp_nvim_lsp").default_capabilities()
     local lspconfig = require('lspconfig')
-    local servers = {'pyright', 'rust_analyzer', 'tsserver', 'bashls'}
+    local servers = {'pyright', 'rust_analyzer', 'tsserver', 'bashls', 'csharp_ls'}
     for _, lsp in ipairs(servers) do
         lspconfig[lsp].setup{
             capabilities = capabilities,
         }
     end
+
 
     -- luasnip setup
     local luasnip = require 'luasnip'
@@ -101,7 +102,7 @@ local setupLSP = function()
     }
 end
 
---setupLSP()
+setupLSP()
 
 vim.cmd('source ~/.config/nvim/neovimrc.vim')
 vim.o.completeopt = "menuone,longest,preview"
