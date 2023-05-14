@@ -3,7 +3,7 @@
 echo "Make sure you're running this as the correct user you want to install the files on.  Note: If you run this with sudo, it will replace root user files."
 echo "To update current user files just run: ./setup.sh"
 echo "Updating files for $(whoami).  Continue?(y/n)"
-read answer
+read -r answer
 
 #If answer y or Y then continue else stop
 [ "${answer}" == 'y' ] || [ "${answer}" == 'Y' ] && echo "Beginning with install. . ." || exit
@@ -11,11 +11,11 @@ read answer
 
 declare -Ag OSINFO;
 
-OSINFO[/etc/redhat-release]=yum
-OSINFO[/etc/arch-release]=pacman
-OSINFO[/etc/gentoo-release]=emerge
-OSINFO[/etc/SuSE-release]=zypp
-OSINFO[/etc/debian_version]=apt
+OSINFO["/etc/redhat-release"]=yum 
+OSINFO["/etc/arch-release"]=pacman
+OSINFO["/etc/debian_version"]=apt
+OSINFO["/etc/gentoo-release"]=emerge
+OSINFO["/etc/SuSE-release"]=zypp
 
 linkDotFiles(){
     echo "Replacing files in home dir for user $(whoami) . . ."
@@ -31,7 +31,8 @@ linkDotFiles(){
 }
 
 setupVSCode(){
-    ln -s $(pwd)/config/vscode/ ~/.config/.vscode/
+    mkdir -p ~/.config/.vscode/
+    ln -s "$(pwd)/config/vscode/init.lua" ~/.config/.vscode/
 }
 
 setupNvimLSP(){
@@ -48,7 +49,7 @@ installNeovim(){
     echo "Setting up Neovim . . ."
     curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
     sudo chmod u+x  ./nvim.appimage
-    sudo mv ./nvim.appimage /usr/local/bin/
+    sudo mv ./nvim.appimage /usr/local/bin/nvim
     
     # Link up nvim with .vimrc
     mkdir -p ~/.config/nvim/
@@ -59,10 +60,10 @@ installNeovim(){
      ~/.local/share/nvim/site/pack/packer/start/packer.nvimc
     mkdir -p ~/.config/nvim/lua/
     mkdir -p /usr/local/share/lua/5.1/
-    ln -s $(pwd)/vim/plugins.lua /usr/local/share/lua/5.1/ 
-    ln -s $(pwd)/vim/plugins.lua ~/.config/nvim/lua/plugins.lua
-    ln -s $(pwd)/vim/init.lua ~/.config/nvim/init.lua
-    ln -s $(pwd)/vim/neovimrc.vim ~/.config/nvim/neovimrc.vim
+    ln -s "$(pwd)"/vim/plugins.lua /usr/local/share/lua/5.1/ 
+    ln -s "$(pwd)"/vim/plugins.lua ~/.config/nvim/lua/plugins.lua
+    ln -s "$(pwd)"/vim/init.lua ~/.config/nvim/init.lua
+    ln -s "$(pwd)"/vim/neovimrc.vim ~/.config/nvim/neovimrc.vim
 
     setupVSCode
     setupNvimLSP
@@ -79,17 +80,14 @@ setupSSHkeys(){
 
 
 packageManagerSpecficInstalls(){
-    for f in ${!OSINFO[@]}
+    for f in "${!OSINFO[@]}"
         do
             if [[ -f $f ]]; then
-                echo package manager: ${OSINFO[$f]}
-                if [ ${OSINFO[$f]} == 'apt' ]; then
+                echo package manager: "${OSINFO[$f]}"
+                if [ "${OSINFO[$f]}" == 'apt' ]; then
                     sudo apt update
 
-                    # code linters for neovim, necessary for syntactic highlighting
-                    sudo apt install npm
-                    sudo apt install rust-src
-                    sudo apt install golang-go
+                    sudo apt install npm rust-src golang-go shellcheck
                     sudo apt install dotnet-sdk-6.0
                     # python3 -m pip install pynvim &
                     # sudo apt install python3-autopep8
@@ -100,7 +98,7 @@ packageManagerSpecficInstalls(){
                     sudo apt install openssh-server openssh-client
                     setupSSHkeys
 
-                elif [ ${OSINFO[$f]} == 'yum' ]; then
+                elif [ "${OSINFO[$f]}" == 'yum' ]; then
                     echo "Custom code linters for neovim not installed.  You will need to yum install them manually."
                     echo "Examples:  flake8, pylint, golint, checkstyle"
 
@@ -148,19 +146,20 @@ installRegolithTwo(){
 }
 
 installGraphicalApps(){
-    for f in ${!OSINFO[@]}
+    for f in "${!OSINFO[@]}"
         do
             if [[ -f $f ]]; then
                 echo "Package manager: ${OSINFO[$f]}"
                 if [ ${OSINFO[$f]} == 'apt' ]; then
                     sudo apt update
+                    sudo apt install code
                     sudo apt install discord
                     sudo apt install steam
                     installQEMU
                     installI3
                     installRegolithTwo
 
-                elif [ ${OSINFO[$f]} == 'yum' ]; then
+                elif [ "${OSINFO[$f]}" == 'yum' ]; then
                     echo "Yum automated package install not setup yet."
                 else
                     echo "Unrecognized package manager"
