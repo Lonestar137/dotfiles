@@ -45,6 +45,18 @@ setupNvimLSP(){
 
 }
 
+setupLunarVim(){
+    LV_BRANCH='release-1.3/neovim-0.9' bash <(curl -s https://raw.githubusercontent.com/LunarVim/LunarVim/release-1.3/neovim-0.9/utils/installer/install.sh)
+    ln -rs ./vim/lvim/config.lua ~/.config/lvim/config.lua
+
+    echo 'Installing nerdfont. . .'
+    git clone https://github.com/ronniedroid/getnf.git
+    ./getnf/install.sh
+    getnf
+    # Good fonts are hack, firamono, or any other you like.
+    # Once you install, dont forget to set that font as the font in your terminal emulator.
+}
+
 installNeovim(){
     echo "Setting up Neovim . . ."
     curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
@@ -67,6 +79,7 @@ installNeovim(){
 
     setupVSCode
     setupNvimLSP
+    setupLunarVim
 }
 
 setupSSHkeys(){
@@ -89,6 +102,7 @@ packageManagerSpecficInstalls(){
 
                     sudo apt install npm rust-src golang-go shellcheck
                     sudo apt install dotnet-sdk-6.0
+                    sudo apt install cargo
                     # python3 -m pip install pynvim &
                     # sudo apt install python3-autopep8
 
@@ -170,10 +184,10 @@ installGraphicalApps(){
 
 
 linkDotFiles
+packageManagerSpecficInstalls
 installNeovim
 installZ
 # # installI3
-packageManagerSpecficInstalls
 installGraphicalApps
 
 echo 'Finished.'

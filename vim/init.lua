@@ -48,7 +48,7 @@ require'nvim-treesitter.configs'.setup{
 local setupLSP = function()
     local capabilities = require("cmp_nvim_lsp").default_capabilities()
     local lspconfig = require('lspconfig')
-    local servers = {'pyright', 'rust_analyzer', 'tsserver', 'bashls', 'csharp_ls'}
+    local servers = {'pyright', 'rust_analyzer', 'tsserver', 'bashls', 'csharp_ls', 'ccls'}
     for _, lsp in ipairs(servers) do
         lspconfig[lsp].setup{
             capabilities = capabilities,
