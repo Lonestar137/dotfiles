@@ -11,7 +11,7 @@ alias wttr="curl wttr.in"
 
 alias gdev="cd /usr/local/"
 
-alias gitree="git log --graph --decorate --oneline"
+alias gitree="git log --graph --decorate --oneline --all"
 alias poll-snmp="snmpwalk -v 2c -c aldotrosnmp $1 $2"
 
 #Brightness control TODO: brightness scripts that check for brightness and set it, prevent from going too dark.

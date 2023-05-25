@@ -8,16 +8,15 @@ read -r answer
 #If answer y or Y then continue else stop
 [ "${answer}" == 'y' ] || [ "${answer}" == 'Y' ] && echo "Beginning with install. . ." || exit
 
+declare -Ag OSINFO
 
-declare -Ag OSINFO;
-
-OSINFO["/etc/redhat-release"]=yum 
+OSINFO["/etc/redhat-release"]=yum
 OSINFO["/etc/arch-release"]=pacman
 OSINFO["/etc/debian_version"]=apt
 OSINFO["/etc/gentoo-release"]=emerge
 OSINFO["/etc/SuSE-release"]=zypp
 
-linkDotFiles(){
+linkDotFiles() {
     echo "Replacing files in home dir for user $(whoami) . . ."
     rm ~/.bash_aliases
     rm ~/.bashrc
@@ -28,24 +27,25 @@ linkDotFiles(){
     ln -rs bashrc ~/.bashrc
     #ln -rs profile ~/.profile
     ln -rs vim/vimrc ~/.vimrc
+    ln -rs zshrc ~/.zshrc
 }
 
-setupVSCode(){
+setupVSCode() {
     mkdir -p ~/.config/.vscode/
     ln -s "$(pwd)/config/vscode/init.lua" ~/.config/.vscode/
 }
 
-setupNvimLSP(){
-    sudo npm i -g pyright 
+setupNvimLSP() {
+    sudo npm i -g pyright
     sudo npm i -g bash-language-server
     #sudo apt install flake8 pylint
-    sudo apt install flake8 golint 
+    sudo apt install flake8 golint
     #sudo apt install checkstyle
     dotnet tool install --global csharp-ls --version 0.3.0
 
 }
 
-setupLunarVim(){
+setupLunarVim() {
     LV_BRANCH='release-1.3/neovim-0.9' bash <(curl -s https://raw.githubusercontent.com/LunarVim/LunarVim/release-1.3/neovim-0.9/utils/installer/install.sh)
     ln -rs ./vim/lvim/config.lua ~/.config/lvim/config.lua
 
@@ -57,22 +57,21 @@ setupLunarVim(){
     # Once you install, dont forget to set that font as the font in your terminal emulator.
 }
 
-installNeovim(){
+installNeovim() {
     echo "Setting up Neovim . . ."
     curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
-    sudo chmod u+x  ./nvim.appimage
+    sudo chmod u+x ./nvim.appimage
     sudo mv ./nvim.appimage /usr/local/bin/nvim
-    
+
     # Link up nvim with .vimrc
     mkdir -p ~/.config/nvim/
     ~/.config/nvim/init.vim
-    
+
     # Install nvim.packer for lsp
-    git clone --depth 1 https://github.com/wbthomason/packer.nvim\
-     ~/.local/share/nvim/site/pack/packer/start/packer.nvimc
+    git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvimc
     mkdir -p ~/.config/nvim/lua/
     mkdir -p /usr/local/share/lua/5.1/
-    ln -s "$(pwd)"/vim/plugins.lua /usr/local/share/lua/5.1/ 
+    ln -s "$(pwd)"/vim/plugins.lua /usr/local/share/lua/5.1/
     ln -s "$(pwd)"/vim/plugins.lua ~/.config/nvim/lua/plugins.lua
     ln -s "$(pwd)"/vim/init.lua ~/.config/nvim/init.lua
     ln -s "$(pwd)"/vim/neovimrc.vim ~/.config/nvim/neovimrc.vim
@@ -82,7 +81,7 @@ installNeovim(){
     setupLunarVim
 }
 
-setupSSHkeys(){
+setupSSHkeys() {
     echo "If you need a SSHKey do: ssh-keygen -t rsa -b 4096 && sudo chmod 600 ~/.ssh/*"
     echo "To copy ID to a SSH server: ssh-copy-id username@server-ip"
     sudo touch ~/.ssh/authorized_keys
@@ -91,52 +90,59 @@ setupSSHkeys(){
     # TODO: detect system ps manager, firewall, and allow ssh
 }
 
+packageManagerSpecficInstalls() {
+    for f in "${!OSINFO[@]}"; do
+        if [[ -f $f ]]; then
+            echo package manager: "${OSINFO[$f]}"
+            if [ "${OSINFO[$f]}" == 'apt' ]; then
+                sudo apt update
 
-packageManagerSpecficInstalls(){
-    for f in "${!OSINFO[@]}"
-        do
-            if [[ -f $f ]]; then
-                echo package manager: "${OSINFO[$f]}"
-                if [ "${OSINFO[$f]}" == 'apt' ]; then
-                    sudo apt update
+                sudo apt install npm rust-src golang-go shellcheck
+                sudo apt install dotnet-sdk-6.0
+                sudo apt install cargo
+                # python3 -m pip install pynvim &
+                # sudo apt install python3-autopep8
 
-                    sudo apt install npm rust-src golang-go shellcheck
-                    sudo apt install dotnet-sdk-6.0
-                    sudo apt install cargo
-                    # python3 -m pip install pynvim &
-                    # sudo apt install python3-autopep8
+                # Automatic PAT saving for Github, Gitlab
+                sudo apt install git-core
+                git config --global credential.helper store
+                sudo apt install openssh-server openssh-client
+                sudo apt install zsh
+                setupSSHkeys
 
-                    # Automatic PAT saving for Github, Gitlab
-                    sudo apt install git-core
-                    git config --global credential.helper store
-                    sudo apt install openssh-server openssh-client
-                    setupSSHkeys
+            elif [ "${OSINFO[$f]}" == 'yum' ]; then
+                echo "Custom code linters for neovim not installed.  You will need to yum install them manually."
+                echo "Examples:  flake8, pylint, golint, checkstyle"
 
-                elif [ "${OSINFO[$f]}" == 'yum' ]; then
-                    echo "Custom code linters for neovim not installed.  You will need to yum install them manually."
-                    echo "Examples:  flake8, pylint, golint, checkstyle"
-
-                else 
-                    echo "Unrecognized package manager"
-                fi 
+            else
+                echo "Unrecognized package manager"
             fi
-        done
+        fi
+    done
 }
 
-installZ(){
+cliInstalls(){
+  # Zsh
+  git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
+  echo 'source ~/powerlevel10k/powerlevel10k.zsh-theme' >>~/.zshrc
+  chsh -s /bin/zsh
+  echo 'Zsh installed, logout and back in to set it as default shell.'
+}
+
+installZ() {
     #Installing z fuzzy finder command by Rupa
     sudo git clone https://github.com/rupa/z.git /usr/local/bin/z && echo "z fuzzy finder installed at /usr/local/bin/z" || echo "z already installed."
 }
 
-installI3(){
+installI3() {
     echo "Setting up i3wm . . ." # if i3 doesn't install correctyl, do apt install i3-wm dunst i3lock i3status suckless-tools
-    sudo apt install i3 
+    sudo apt install i3
     sudo apt install compton hsetroot rxvt-unicode xsel rofi fonts-noto fonts-mplus xsettingsd lxappearance scrot viewnoir
     sudo apt install rofi
     # https://github.com/adi1090x/rofi.git -- source of rofi scripts
 }
 
-installQEMU(){
+installQEMU() {
     sudo apt install qemu-kvm virt-manager virtinst libvirt-clients bridge-utils libvirt-daemon-system -y
     sudo systemctl enable --now libvirtd
     sudo systemctl start libvirtd
@@ -144,14 +150,14 @@ installQEMU(){
     sudo usermod -aG libvirt $USER
 }
 
-installRegolithTwo(){
+installRegolithTwo() {
     echo "Installing Regolith2. . ."
 
-    wget -qO - https://regolith-desktop.org/regolith.key | \
-    gpg --dearmor | sudo tee /usr/share/keyrings/regolith-archive-keyring.gpg > /dev/null
+    wget -qO - https://regolith-desktop.org/regolith.key |
+        gpg --dearmor | sudo tee /usr/share/keyrings/regolith-archive-keyring.gpg >/dev/null
 
     echo deb "[arch=amd64 signed-by=/usr/share/keyrings/regolith-archive-keyring.gpg] \
-        https://regolith-desktop.org/release-ubuntu-jammy-amd64 jammy main" | \
+        https://regolith-desktop.org/release-ubuntu-jammy-amd64 jammy main" |
         sudo tee /etc/apt/sources.list.d/regolith.list
 
     sudo apt update
@@ -159,29 +165,27 @@ installRegolithTwo(){
     sudo apt upgrade
 }
 
-installGraphicalApps(){
-    for f in "${!OSINFO[@]}"
-        do
-            if [[ -f $f ]]; then
-                echo "Package manager: ${OSINFO[$f]}"
-                if [ ${OSINFO[$f]} == 'apt' ]; then
-                    sudo apt update
-                    sudo apt install code
-                    sudo apt install discord
-                    sudo apt install steam
-                    installQEMU
-                    installI3
-                    installRegolithTwo
+installGraphicalApps() {
+    for f in "${!OSINFO[@]}"; do
+        if [[ -f $f ]]; then
+            echo "Package manager: ${OSINFO[$f]}"
+            if [ ${OSINFO[$f]} == 'apt' ]; then
+                sudo apt update
+                sudo apt install code
+                sudo apt install discord
+                sudo apt install steam
+                installQEMU
+                installI3
+                installRegolithTwo
 
-                elif [ "${OSINFO[$f]}" == 'yum' ]; then
-                    echo "Yum automated package install not setup yet."
-                else
-                    echo "Unrecognized package manager"
-                fi
+            elif [ "${OSINFO[$f]}" == 'yum' ]; then
+                echo "Yum automated package install not setup yet."
+            else
+                echo "Unrecognized package manager"
             fi
-        done
+        fi
+    done
 }
-
 
 linkDotFiles
 packageManagerSpecficInstalls
@@ -189,5 +193,6 @@ installNeovim
 installZ
 # # installI3
 installGraphicalApps
+cliInstalls
 
 echo 'Finished.'
