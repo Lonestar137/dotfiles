@@ -21,3 +21,20 @@ alias bhigh="sudo brightnessctl set 50%"
 alias bmax="sudo brightnessctl set 100%"
 alias bd="sudo brightnessctl set 10%-"
 alias bu="sudo brightnessctl set +10%"
+
+# Rust coreutil alts
+alias cat="bat"
+alias ls="exa -l --icons"
+alias grep="rgrep"
+
+# Notetaking
+alias note="ranger ~/Documents/ranger-notes/snippets"
+
+# cp/mv with progress bar
+alias rcp="rsync -aP"
+alias rmv='rsync -aP --remove-source-files'
+
+# fuzzy find
+alias fd='cd "$(exa -DR | awk '\''!/^$/ && /.\// {gsub(/:$/, ""); print}'\'' | fzf)"'
+alias vf='lvim "$(exa -DR | awk '\''!/^$/ && /.\// {gsub(/:$/, ""); print}'\'' | fzf)"'
+

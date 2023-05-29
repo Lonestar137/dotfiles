@@ -130,6 +130,7 @@ export PS1="\[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\
 export LOCALBIN=/home/jonesgc/.local/bin
 export PATH="$PATH:$SPARK_HOME/bin:$LOCALBIN"
 export SDIR="/tmp/"
+export RUSTC_WRAPPER="/home/jonesgc/.cargo/bin/sccache"
 
 #alias doom-sync="~/.emacs.d/bin/doom sync"
 

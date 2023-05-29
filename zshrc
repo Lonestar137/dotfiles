@@ -46,8 +46,20 @@ zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 ZSH_THEME="powerlevel10k/powerlevel10k"
 source ~/powerlevel10k/powerlevel10k.zsh-theme
 export QUICKEMU='~/.local/bin/quickemu/'
-export PATH="$PATH:$QUICKEMU"
+export CARGOBIN='/home/jonesgc/.cargo/bin/'
+export PATH="$PATH:$QUICKEMU:$CARGOBIN"
+export EDITOR=lvim
+#export VISUAL=code
+export RUSTC_WRAPPER="/home/jonesgc/.cargo/bin/sccache"
+
+source ~/.bash_aliases
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 . /usr/local/bin/z/z.sh
+
+set -o vi
+
+
+if [ -e /home/jonesgc/.nix-profile/etc/profile.d/nix.sh ]; then . /home/jonesgc/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+
