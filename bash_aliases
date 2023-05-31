@@ -25,7 +25,6 @@ alias bu="sudo brightnessctl set +10%"
 # Rust coreutil alts
 alias cat="bat"
 alias ls="exa -l --icons"
-alias grep="rgrep"
 
 # Notetaking
 alias note="ranger ~/Documents/ranger-notes/snippets"
