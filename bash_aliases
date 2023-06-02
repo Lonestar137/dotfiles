@@ -23,7 +23,7 @@ alias bd="sudo brightnessctl set 10%-"
 alias bu="sudo brightnessctl set +10%"
 
 # Rust coreutil alts
-alias cat="bat"
+alias cat="bat --theme gruvbox-dark"
 alias ls="exa -l --icons"
 
 # Notetaking
