@@ -1,0 +1,38 @@
+#!/bin/bash
+
+# Function 
+search_yaml_files(){
+  local pattern="$1"
+  local directory="/home/${USER}/Documents/TIL/"
+  local temp_file="/tmp/yaml_temp.txt"
+
+  find "$directory" -type f -name "*.yml" -print0 | while IFS= read -r -d '' file; do
+    awk -v pattern="$pattern" -v filename="$file" '
+      BEGIN { RS="\n---\n"; FS="\n"; ORS="\n---\n" }
+      $0 ~ pattern { 
+        print "Filename: " filename
+        # Loop through each line in the section
+        for (i=1; i<=NF; i++){
+          # if the line matches the pattern, print the block
+          if ($i ~ pattern) {
+            print $0
+            break
+          }
+        }
+      }
+    ' "$file" >> "$temp_file"
+  done
+
+  # Display the concatenated sections using less
+  if [[ -s "$temp_file" ]]; then
+    less $temp_file
+  else
+    echo "No matches found."
+  fi
+
+  # Clean up temporary file
+  rm "$temp_file"
+
+}
+
+search_yaml_files "$1" "$2"
