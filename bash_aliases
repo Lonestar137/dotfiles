@@ -27,7 +27,10 @@ alias cat="bat"
 alias ls="exa -l --icons"
 
 # Notetaking
+NOTEDIR=/home/jonesgc/Documents/TIL/
 alias note="ranger ~/Documents/ranger-notes/snippets"
+alias til="ranger ~/Documents/TIL"
+alias ntil="FILENAME=$(date +\"%d-%m-%y\") && echo ${FILENAME}: >> ${NOTEDIR}${FILENAME}.yml && lvim ${NOTEDIR}"
 
 # cp/mv with progress bar
 alias rcp="rsync -aP"

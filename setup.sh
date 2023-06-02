@@ -127,6 +127,8 @@ cliInstalls(){
   echo 'source ~/powerlevel10k/powerlevel10k.zsh-theme' >>~/.zshrc
   chsh -s /bin/zsh
   echo 'Zsh installed, logout and back in to set it as default shell.'
+
+  ln -rs ./scripts/nf ~/.local/bin
 }
 
 installZ() {
