@@ -139,9 +139,14 @@ installZ() {
 installI3() {
     echo "Setting up i3wm . . ." # if i3 doesn't install correctyl, do apt install i3-wm dunst i3lock i3status suckless-tools
     sudo apt install i3
-    sudo apt install compton hsetroot rxvt-unicode xsel rofi fonts-noto fonts-mplus xsettingsd lxappearance scrot viewnoir
-    sudo apt install rofi
+    #sudo apt install compton hsetroot rxvt-unicode xsel rofi fonts-noto fonts-mplus xsettingsd lxappearance scrot viewnoir
     # https://github.com/adi1090x/rofi.git -- source of rofi scripts
+   
+    echo "Make sure you install rofi, polybar, and compton"
+
+    ln -rs ./config/i3 ~/.config/
+    ln -rs ./config/rofi ~/.config/
+    ln -rs ./config/polybar ~/.config/
 }
 
 installQEMU() {

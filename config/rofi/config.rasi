@@ -1,6 +1,5 @@
-/** Basic config file **/
+/* Dark theme. */
+@import "~/.cache/wal/colors-rofi-dark"
 
-configuration {
-  show-icons:         true;
-  icon-theme:         "Papirus";
-}
+/* Light theme. */
+@import "~/.cache/wal/colors-rofi-light"
