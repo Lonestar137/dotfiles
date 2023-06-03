@@ -29,8 +29,9 @@ alias ls="exa -l --icons"
 # Notetaking
 NOTEDIR=/home/jonesgc/Documents/TIL/
 alias note="ranger ~/Documents/ranger-notes/snippets"
-alias til="ranger ~/Documents/TIL"
-alias ntil="FILENAME=$(date +\"%d-%m-%y\") && echo ${FILENAME}: >> ${NOTEDIR}${FILENAME}.yml && lvim ${NOTEDIR}"
+alias til="ranger ${NOTEDIR}"
+alias ntil='FILENAME=$(date +%m-%d-%y) && if [ ! -s "${NOTEDIR}${FILENAME}.yml" ]; then echo "${FILENAME}: \n---" >> "${NOTEDIR}${FILENAME}.yml"; fi && lvim "${NOTEDIR}"'
+
 
 # cp/mv with progress bar
 alias rcp="rsync -aP"
