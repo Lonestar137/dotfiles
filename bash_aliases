@@ -30,7 +30,7 @@ alias ls="exa -l --icons"
 NOTEDIR=/home/jonesgc/Documents/TIL/
 alias note="ranger ~/Documents/ranger-notes/snippets"
 alias til="ranger ${NOTEDIR}"
-alias ntil='FILENAME=$(date +%m-%d-%y) && if [ ! -s "${NOTEDIR}${FILENAME}.yml" ]; then echo "${FILENAME}: \n---" >> "${NOTEDIR}${FILENAME}.yml"; fi && lvim "${NOTEDIR}"'
+alias ntil='FILENAME=$(date +%m-%d-%y) && if [ ! -s "${NOTEDIR}${FILENAME}.yml" ]; then echo "${FILENAME}: \n---" >> "${NOTEDIR}${FILENAME}.yml"; fi && lvim "${NOTEDIR}${FILENAME}.yml"'
 
 
 # cp/mv with progress bar
