@@ -29,7 +29,6 @@ set tabstop=4 softtabstop=4
 set shiftwidth=4
 set expandtab
 set smartindent
-set nowrap
 set smartcase
 set noswapfile
 set nobackup
@@ -47,3 +46,9 @@ set completeopt=menuone,longest,preview
 set complete+=kspell
 set shortmess+=c
 set wildmenu
+
+" wrap
+set breakindent
+set lbr
+set formatoptions=l
+

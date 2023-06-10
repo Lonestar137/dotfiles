@@ -40,4 +40,4 @@ alias rmv='rsync -aP --remove-source-files'
 # fuzzy find
 alias fd='cd "$(exa -DR | awk '\''!/^$/ && /.\// {gsub(/:$/, ""); print}'\'' | fzf)"'
 alias vf='lvim "$(exa -DR | awk '\''!/^$/ && /.\// {gsub(/:$/, ""); print}'\'' | fzf)"'
-
+alias ssm='hname=`grep -e "^Host" ~/.ssh/config | fzf --height=30% --layout=reverse | awk '\''{print $2}'\''`; ssh $hname'
