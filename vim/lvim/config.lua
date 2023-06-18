@@ -37,6 +37,7 @@ local gitConfig ={
 local plugins = {
   {"lunarvim/colorschemes"},
   {"ellisonleao/gruvbox.nvim"},
+  {"github/copilot.vim"},
   {
     "kevinhwang91/rnvimr",
     cmd = "RnvimrToggle",
@@ -83,8 +84,15 @@ lvim.use_icons = false
 -- vim.opt.tabstop = 4 -- 4 spaces for tabs
 vim.opt.foldmethod = "expr"
 vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+vim.g.copilot_assume_mapped = true -- fixes copilot with LSP
 
+vim.opt.wrap = true
+vim.opt.linebreak = true
+vim.opt.breakindent = true
 
+-- what is the equivalent of set formatoptions=l
+vim.opt.formatoptions = "tcqj"
 
-
+-- rebind the tab key to accept copilot ghost text
+vim.api.nvim_set_keymap("i", "<Tab>", "v:lua.tab_complete()", {expr = true})
 

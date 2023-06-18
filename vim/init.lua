@@ -20,6 +20,7 @@ require('packer').startup(function(use)
     use 'hrsh7th/cmp-nvim-lsp' -- LSP source for nvim-cmp
     use 'saadparwaiz1/cmp_luasnip' -- Snippets source for nvim-cmp
     use 'L3MON4D3/LuaSnip' -- Snippets plugin
+    use 'github/copilot.vim'
 
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
@@ -106,8 +107,7 @@ setupLSP()
 
 vim.cmd('source ~/.config/nvim/neovimrc.vim')
 vim.o.completeopt = "menuone,longest,preview"
+vim.g.copilot_assume_mapped = true
 
 --vim.o.background = "dark"
 --vim.cmd([[colorscheme gruvbox]])
-
-  

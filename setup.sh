@@ -178,9 +178,8 @@ installGraphicalApps() {
             echo "Package manager: ${OSINFO[$f]}"
             if [ ${OSINFO[$f]} == 'apt' ]; then
                 sudo apt update
-                sudo apt install code
-                sudo apt install discord
-                sudo apt install steam
+                sudo apt install code discord steam
+                sudo apt install tlp
                 installQEMU
                 installI3
                 installRegolithTwo
