@@ -10,9 +10,9 @@
 search_yaml_files(){
   local pattern="$1"
   local directory="/home/${USER}/Documents/TIL/"
-  local temp_file="/tmp/yaml_temp.yml"
+  local temp_file="/tmp/yaml_temp.md"
 
-  find "$directory" -type f -name "*.yml" -print0 | while IFS= read -r -d '' file; do
+  find "$directory" -type f -name "*" -print0 | while IFS= read -r -d '' file; do
     awk -v pattern="$pattern" -v file="$file" '
       BEGIN { RS="\n---\n"; FS="\n"; ORS="\n---\n" }
       $0 ~ pattern { 
@@ -34,7 +34,10 @@ search_yaml_files(){
 
   # Display the concatenated sections using less
   if [[ -s "$temp_file" ]]; then
-    if command -v bat &>/dev/null; then
+    if command -v glow &>/dev/null; then
+      echo "Using glow"
+      glow $temp_file 
+    elif command -v bat &>/dev/null; then
       echo "Using bat"
       bat --theme gruvbox-dark --decorations never --paging always $temp_file 
     else
