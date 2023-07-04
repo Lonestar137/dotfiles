@@ -2,6 +2,10 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
+if [ -f ~/.profile ]; then
+  source ~/.profile
+fi
+
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;
@@ -72,6 +76,7 @@ xterm*|rxvt*)
     ;;
 esac
 
+
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
@@ -120,21 +125,33 @@ set -o vi
 
 #. ~/.profile
 . ~/.bash_aliases
-. /usr/local/bin/z/z.sh
-export EDITOR='vim'
-export VISUAL='vim'
+export EDITOR='nvim'
+export VISUAL='nvim'
 git_branch() {
     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
 }
 export PS1="\[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\] \$(git_branch)\$ "
 export LOCALBIN=/home/jonesgc/.local/bin
-export PATH="$PATH:$SPARK_HOME/bin:$LOCALBIN"
+export DOTNET_ROOT=/home/jonesgc/.dotnet
+export PATH="$PATH:$SPARK_HOME/bin:$LOCALBIN:$DOTNET_ROOT:$DOTNET_ROOT/tools"
 export SDIR="/tmp/"
 export RUSTC_WRAPPER="/home/jonesgc/.cargo/bin/sccache"
 
+# Source Ocaml deps 
+eval `opam config env`
 #alias doom-sync="~/.emacs.d/bin/doom sync"
 
 
 
 # PopOS -- Keybinds --
 # ctrl + alt + R   -- open up screen recorder/capture
+#
+# Use the Nvidia GPU as primary GPU (Not necessary but I want to use it)
+export DRI_PRIME=1 glxgears
+
+[[ -s /home/jonesgc/.autojump/etc/profile.d/autojump.sh ]] && source /home/jonesgc/.autojump/etc/profile.d/autojump.sh
+
+
+
+
+[ -f "/home/jonesgc/.ghcup/env" ] && source "/home/jonesgc/.ghcup/env" # ghcup-env

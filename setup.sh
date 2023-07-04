@@ -194,11 +194,11 @@ installGraphicalApps() {
 }
 
 linkDotFiles
-packageManagerSpecficInstalls
-installNeovim
-installZ
+#packageManagerSpecficInstalls
+#installNeovim
+#installZ
 # # installI3
-installGraphicalApps
-cliInstalls
+#installGraphicalApps
+#cliInstalls
 
 echo 'Finished.'
