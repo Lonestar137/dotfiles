@@ -8,6 +8,7 @@ alias nv='nvim'
 #alias vim="/usr/local/bin/nvim.appimage"
 #alias vim = "nvim"
 #alias vi = "nvim"
+alias ptpython='ptpython --vi'
 
 alias wttr="curl wttr.in"
 

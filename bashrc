@@ -133,7 +133,8 @@ git_branch() {
 export PS1="\[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\] \$(git_branch)\$ "
 export LOCALBIN=/home/jonesgc/.local/bin
 export DOTNET_ROOT=/home/jonesgc/.dotnet
-export PATH="$PATH:$SPARK_HOME/bin:$LOCALBIN:$DOTNET_ROOT:$DOTNET_ROOT/tools"
+export CARGO_BIN=/root/.cargo/bin
+export PATH="$PATH:$SPARK_HOME/bin:$LOCALBIN:$DOTNET_ROOT:$DOTNET_ROOT/tools:$CARGO_BIN"
 export SDIR="/tmp/"
 export RUSTC_WRAPPER="/home/jonesgc/.cargo/bin/sccache"
 
@@ -155,3 +156,4 @@ export DRI_PRIME=1 glxgears
 
 
 [ -f "/home/jonesgc/.ghcup/env" ] && source "/home/jonesgc/.ghcup/env" # ghcup-env
+. "$HOME/.cargo/env"
