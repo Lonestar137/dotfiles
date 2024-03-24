@@ -1,0 +1,31 @@
+[[language]]
+name = "dockerfile"
+scope = "text.docker"
+file-types = ["docker", "podman", "image", "Containerfile", "Dockerfile"]
+roots = []
+
+[[language]]
+name = "cabal"
+scope = "text.cabal"
+file-types = ["cabal"]
+roots = []
+
+[[language]]
+name = "python"
+auto-format = true
+roots = []
+
+[[language]]
+name = "groovy"
+language-id = "groovy"
+scope = "source.groovy"
+# file-types = ["groovy", "jenkinsfile", { glob = "Jenkinsfile" },  { glob = "Jenkinsfile.*" }]
+file-types = ["groovy", "jenkinsfile", "Jenkinsfile"]
+shebangs = ["groovy"]
+comment-token = "//"
+indent = { tab-width = 2, unit = "  " }
+roots = []
+
+[[grammar]]
+name = "groovy"
+source = { git = "https://github.com/Decodetalkers/tree-sitter-groovy", rev = "7e023227f46fee428b16a0288eeb0f65ee2523ec" }

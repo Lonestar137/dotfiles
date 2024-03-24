@@ -1,0 +1,28 @@
+
+
+
+inherits = "gruvbox"
+
+[palette]
+bg0 = "#121212"
+
+
+# background = "#121212"
+# foreground = "#a0a0a0"
+# cursor = "#bbbbbb"
+# selection_background = "#453a39"
+# color0 = "#1b1d1e" # very dim gray
+# color8 = "#505354" # dim gray
+# color1 = "#f92672" # pinkish red *
+# color9 = "#ff669d" # pink
+# color2 = "#a6e22e" # lime green * 
+# color10 = "#beed5f" # dim lime green
+# color3 = "#fd971f" # orange * 
+# color11 = "#e6db74" # mello yellow
+# color4 = "#66d9ef" # cool blue color *
+# color5 = "#9e6ffe" # purple * 
+# color6 = "#5e7175" # super dim gray/greenish
+# color14 = "#a3babf" # steel
+# color7 = "#ccccc6" # whitish
+# color15 = "#f8f8f2" # more whitish
+# selection_foreground = "#121212" # cool black

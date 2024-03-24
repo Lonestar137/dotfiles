@@ -1,0 +1,48 @@
+
+# theme = "gruvbox_dark_hard"
+# theme = "hardcore"
+theme = "molokai"
+# theme = "onedark"
+
+[keys.select]
+"Y" = "goto_line_end"
+
+# Create a new minor mode
+[keys.normal."+"]
+m = ":run-shell-command cargo run"
+h = ":run-shell-command cabal run"
+
+[editor]
+line-number = "relative"
+scrolloff = 20
+auto-save = true
+auto-completion = true
+shell = ["bash", "-c"]
+bufferline = "multiple"
+#completion-replace = true
+
+#indent-style = 't'
+
+[editor.cursor-shape]
+insert = "bar"
+select = "underline"
+
+[editor.file-picker]
+max-depth = 10
+ignore = true # reads from .ignore
+hidden = true # ignore hidden files?
+git-ignore = true
+
+[editor.indent-guides]
+render = true
+character = "┆" # Some characters that work well: "▏", "┆", "┊", "⸽"
+skip-levels = 0
+
+[editor.soft-wrap]
+enable = true # Should soft wrapping be enabled?
+#wrap-at-text-width = true # Wrap at max fixed length instead of using all space.
+
+[editor.lsp]
+display-inlay-hints = true
+display-messages = true
+
