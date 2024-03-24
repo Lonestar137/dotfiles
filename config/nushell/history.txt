@@ -1,0 +1,5866 @@
+ls
+clear
+l;s
+ls
+cd ..
+ls
+clear
+ls
+mkdir nu-lab
+cd nu-lab/
+ls
+nu init
+ls
+mkdir scripts
+hx scripts/test.nu
+hx
+helix
+config nu
+hx
+exit
+nu
+which helix
+config nu
+exit
+nu
+config nu
+help alias
+config nu
+hx
+exit
+nu
+exit
+ls
+cd ../
+ls
+cd nu-lab/
+ls
+cd scripts/
+ls
+hx test.nu
+tldr hx
+tldr helix
+helix --helpp
+helix --help
+helix --grammar build
+helix --grammar fetch
+helix --grammar build
+ls
+hx test.nu
+ls
+hx test.nu
+nu test.nu
+hx test.nu
+nu test.nu
+hx test.nu
+nu test.nu
+hx test.nu
+ls
+let t = "tmp"
+mkdir $"$t/xd"
+ls
+rm $t
+rm -r $t
+ls
+rm -r "$t"
+ls
+hx test.json
+open test.json
+open test.json | get sub.id-nested
+open test.json
+open test.json | get sub.id-nested
+hx ~/.config/sway/config.in
+hx ~/.config/i3/config
+ls 
+ls | sort-by size
+ls | sort-by size | reverse
+ls | sort-by size | reverse | math sum
+ls /tmp/
+cat /tmp/tree.log
+ls
+ls /tmp/
+c
+ls
+hx test.nu
+nu test.nu
+ls
+ls /tmp/ | each { |it| cd $it; pwd }
+ls /tmp/ | each { cd $it; pwd }
+ls /tmp/ | get name | each { |it| cd $it; pwd }
+ls /tmp/ | get name 
+ls /tmp/ | get name | each { |it| echo $it }
+ls /tmp/ | get name | each { |it| cd $it<\n>pwd }
+ls /tmp/ | get name | each { |it|<\n>cd $it<\n>pwd<\n>}
+ls /tmp/ | each { |it|<\n>echo $"test $(it)"<\n>}
+ls /tmp/ | each { |it|<\n>echo $"test ($it)"<\n>}
+ls /tmp/
+ls /tmp/ | where type == "dir" | each { |it|<\n>  cd $it<\n>  pwd<\n>}
+ls /tmp/ | where type == "dir" | each { |it|<\n>  cd ($it)<\n>  pwd<\n>}
+ls /tmp/ | where type == "dir" | each { |it|<\n>  cd $"($it)"<\n>  pwd<\n>}
+ls /tmp/ | where type == "dir" | each { |it|<\n>  cd $it<\n>  pwd<\n>}
+ls /tmp/ | where type == "dir" | each { |it|<\n>  cd $it.name<\n>  pwd<\n>}
+ls /tmp/
+hx test.nu
+nu test.nu
+ls
+cd ~/repos/dev/nu-lab/scripts/
+ls
+nu test.nu
+ls
+nu test.json
+ls
+nu test.nu
+ls
+ls test/
+ls test/dir1/
+ls
+nu test.nu
+ls
+nu test.nu
+ls
+rm -rf @tmp/
+rm -r test/
+mv test.json jason.json
+ls
+nu test.nu
+ls
+ls | to yaml
+ls | to json
+ls | to xml
+ls | to xml 
+ls | to md 
+ls | to toml 
+ls | to csv 
+"one,two,three" | split row ","
+"one,two,three" | split column ","
+nu test.nu
+hx ../.gitignore
+nu test.nu
+sl
+ls
+ls @tmp/
+ls @tmp/dir1/
+tree .
+ls
+nu test.nu
+ls
+ls @tmp/
+nu test.nu
+sl
+nu test.nu
+ls
+hx Markdown.md
+to html Markdown.md 
+cat Markdown.md | to html
+cat Markdown.md | to html | save Html.html 
+ls
+./Html.html
+qutebrowser Html.html
+help to html
+[[foo bar]; [1 2]] | to html --dark | save Html.html
+[[foo bar]; [1 2]] | to html --dark | save -f Html.html
+qutebrowser Html.html
+du -h .
+du .
+du . | to html | save Html.html 
+du . | to html | save -f Html.html 
+qutebrowser  Html.html
+du . | to str
+du . | to yaml
+du .
+du . | to text 
+du . | to csv 
+du . | to tsv 
+du . | to md 
+clear
+ls
+ls | to md
+ls | to md | save Markdown2.md
+qutebrowser  Markdown2.md
+sl
+clear
+ls
+hx test.nu
+python
+python3.10
+which pyton
+which python
+pip install virtualenv
+pip3 install virtualenv
+python3.10 -m virtualenv --help
+ls
+nu build.nu
+ls
+ls @tmp/dir1/
+ls @tmp/dir1/venv/
+ls
+ls | get #
+ls | get col
+ls | get num
+ls
+rm -r `@tmp"/`
+ls
+nu build.nu
+ls
+nu build.nu
+git clone --help
+dir --help
+dir
+ls
+dirmngr --help
+ls
+nu build.nu
+virtualenv --help
+virtualenv --activators
+ls
+nu build.nu
+help overlay
+overlay use @tmp/dir1/venv/bin/activate.nu
+deactivate 
+nu build.nu
+overlay
+ls
+overlay list
+overlay use @tmp/dir1/venv/bin/activate.nu
+deactivate 
+nu build.nu
+huu
+nu build.nu
+ls
+cd ..
+ls
+cd build_tools/
+exit
+cd ../
+ls
+exit
+ls
+ls venv/bin/
+exit
+ls
+cd ..
+cd test/
+ls
+which python
+mv -v venv/ .venv
+cd ..
+cd test/
+ls
+which python
+ls
+ls .venv/
+ls .venv/bin/
+exit
+overlay use .venv/bin/activate.nu
+exit
+config nu
+ls
+exit
+overlay use .venv/bin/activate.nu
+overlay use venv/bin/activate.nu
+overlay use @tmp/dir1/venv/bin/activate.nu
+ls
+overlay list
+help glob
+glob **/*.nu
+glob **/*.nu --in [**/bin/**]
+glob **/bin/*.nu 
+help overlay
+help overlay use
+glob **/bin/*.nu 
+glob **/bin/*.nu | overlay use 
+deactivate 
+let x = "test"
+ls
+nu build.nu
+use @tmp/dir1/venv/bin/activate.nu
+let x = @tmp/dir1/venv/bin/activate.nu
+let x = "@tmp/dir1/venv/bin/activate.nu"
+ls
+use $x
+ls
+nu build.nu
+start @tmp/dir1/venv/bin/activate.nu
+ls
+cd ../
+ls
+cd nu-lab/
+ls
+cd scripts/
+ls
+nu build.nu
+ls
+ls @tmp/dir1/venv/bin/
+ls
+nu build.nu
+ls @tmp/dir1/venv/bin/
+path exists @tmp
+help path
+path expand .
+path expand
+ls | path expand
+path
+help path expand
+"/home/jones" | path expand
+"./" | path expand
+"./" | path split
+"./" | path expand | path split
+"./" | path expand | path split | path basename
+"./" | path expand | path basename
+nu build.nu
+q
+nu build.nu
+print which pip
+which pip | print
+nu build.nu
+kk
+nu build.nu
+fzf
+hx build.nu
+ls
+nu ssm.nu
+fzf --help
+fzf --reverse --height=30%
+fzf --reverse --height=10%
+fzf --reverse --height=30%
+fzf --reverse --min-height=30%
+fzf --reverse --min-height=30
+fzf --reverse --height=30
+fzf --reverse --height=30 
+fzf --reverse --height=30 | print "hello $it"
+fzf --reverse --height=30 | print $"hello {$it}"
+fzf --reverse --height=30 | print
+fzf --reverse --height=30 | table
+fzf --help
+clera
+clear
+fzf --help
+fzf --help | less
+fzf --print0
+fzf --print0 | table
+fzf
+fzf --help
+fzf --help | less
+clear
+ls
+reset
+ls
+clear
+let x = fzf
+print $x
+hx ssm.nu
+cat ~/.ssh/config
+open ~/.ssh/config
+open ~/.ssh/config | lines
+help lines
+open ~/.ssh/config | lines --skip-empty
+help filter
+open ~/.ssh/config | lines --skip-empty | grep Host
+open ~/.ssh/config | lines --skip-empty | grep ^Host
+open ~/.ssh/config | lines --skip-empty | grep ^ Host
+open ~/.ssh/config | lines --skip-empty | grep -E "^Host"
+open ~/.ssh/config | lines --skip-empty | filter {|l| "Host" in l}
+open ~/.ssh/config | lines --skip-empty | filter {|l| "Host" in $l}
+open ~/.ssh/config | lines --skip-empty | filter {|l| "^Host" in $l}
+open ~/.ssh/config | lines --skip-empty | spit row " "
+open ~/.ssh/config | lines --skip-empty | split row " "
+open ~/.ssh/config | lines --skip-empty | split column " "
+open ~/.ssh/config | lines --skip-empty | split column " " | get 2
+open ~/.ssh/config | lines --skip-empty | grep -E "^Host "
+open ~/.ssh/config | lines --skip-empty | grep -e "^Host "
+open ~/.ssh/config | lines --skip-empty | grep -e "^Host " | print
+open ~/.ssh/config | lines --skip-empty | grep -e "^Host"
+open ~/.ssh/config | lines --skip-empty | grep -e "Host"
+open ~/.ssh/config | lines --skip-empty | grep -e "Host "
+open ~/.ssh/config | lines --skip-empty | grep -e "Host " | fzf
+open ~/.ssh/config | lines --skip-empty | grep -e "Host " | str | fzf
+open ~/.ssh/config | lines --skip-empty | grep -e "Host " | fzf
+open ~/.ssh/config | lines --skip-empty | grep -e "Host " | fzf --ansi
+open ~/.ssh/config | lines --skip-empty | grep -e "Host " | fzf
+open ~/.ssh/config | lines --skip-empty 
+open ~/.ssh/config | lines --skip-empty | str
+open ~/.ssh/config | lines --skip-empty | stdbuf 
+open ~/.ssh/config | lines --skip-empty | print
+open ~/.ssh/config | lines --skip-empty | run-external --redirect-combine cat
+open ~/.ssh/config | lines --skip-empty | run-external --redirect-combine fzf
+help run-external
+open ~/.ssh/config | lines --skip-empty | run-external --redirect-stdout fzf
+open ~/.ssh/config | lines --skip-empty | run-external --redirect-stdout "fzf"
+open ~/.ssh/config | lines --skip-empty | run-external --redirect-stdout | "fzf"
+open ~/.ssh/config | lines --skip-empty | run-external --redirect-stdout echo
+open ~/.ssh/config | lines --skip-empty | run-external --redirect-stdout "echo<\n>"
+open ~/.ssh/config | lines --skip-empty | run-external --redirect-stdout "echo"
+open ~/.ssh/config | lines --skip-empty | run-external --redirect-stdout print
+open ~/.ssh/config | lines --skip-empty | run-external --redirect-stdout echo
+open ~/.ssh/config | lines --skip-empty 
+open ~/.ssh/config | lines --skip-empty | external
+open ~/.ssh/config | lines --skip-empty | extern
+open ~/.ssh/config | lines --skip-empty | str join
+open ~/.ssh/config | lines --skip-empty | str join "\n"
+open ~/.ssh/config | lines --skip-empty | str join "\n" | fzf
+open ~/.ssh/config | lines --skip-empty | str join "\n" | grep "Host " | fzf
+ls
+hx test.nu
+open ~/.ssh/config | grep "Host " | fzf
+open ~/.ssh/config | grep "Host " | fzf --reverse --height=30%
+let HOST = open ~/.ssh/config | grep "Host " | fzf --reverse --height=30%
+$HOST
+let HOST = open ~/.ssh/config | grep "Host " | fzf --reverse --height=30% | split column " "
+$HOST
+help split
+let HOST = open ~/.ssh/config | grep "Host " | fzf --reverse --height=30% | split words
+$HOST
+let HOST = open ~/.ssh/config | grep "Host " | fzf --reverse --height=30% | split words | last
+echo $HOST
+help index
+let HOST = open ~/.ssh/config | grep "Host " | fzf --reverse --height=30% | split words | last
+hx ~/.ssh/config
+let HOST = open ~/.ssh/config | grep "Host " | fzf --reverse --height=30% | split words | last
+let HOST = open ~/.ssh/config | grep "Host " | fzf --reverse --height=30% | split words | row 2
+let HOST = open ~/.ssh/config | grep "Host " | fzf --reverse --height=30% | split words
+$HOST
+let HOST = open ~/.ssh/config | grep "Host " | fzf --reverse --height=30% | split words | get 1
+$HOST
+ls
+hx ssm.nu
+nu ssm
+hx ssm.nu
+ls /usr/bin/
+ls /usr/bin/ | find nu
+hx ssm.nu
+nu ssm.nu
+hx ssm.nu
+ls
+ls | find ssm
+ls | grep ssm
+ls
+ssm
+ls
+cp ssm.nu ~/.local/bin/
+hx ~/.local/bin/ssm.nu
+~/.local/bin/ssm.nu
+chmod +x ~/.local/bin/ssm.nu
+~/.local/bin/ssm.nu
+ls
+mv ~/.local/bin/ssm.nu ~/.local/bin/ssm
+ls
+ssm
+hx ~/.local/bin/ssm.nu
+hx ~/.local/bin/ssm
+ssm
+hx ~/.local/bin/ssm
+ssm
+ls | find ssm
+ls | find ssmx
+ls | find ssmx | get 1
+ls | find ssmx | size 1
+ls | find ssmx | length 
+ls | find ssmx | if length > 0 {get 1} 
+ls | find ssmx | length > 0 
+ls | find ssmx | length
+ls | find ssmx | length | get 
+ls | find ssmx | { |tab| print }
+ls | find ssmx | { |tab| length }
+ls | find ssmx | do { |tab| length }
+10 > 2
+ls | find ssmx | do { |tab| (length $tab) > 2 }
+ls | find ssmx | length 
+ls | find ssmx | where length > 0 | get 1
+ls | find ssmx | if length > 0 | get 1
+help if
+ls | find ssmx | do { |tab| if length $tab > 2 { 'yes' } }
+help length
+ls | find ssmx | length | do { |len| if $len > 0 { get 1 } }
+ls | find ssmx | length | { |len| if $len > 0 { get 1 } }
+ls | find ssmx | length | do { |lxx| if $lxx > 0 { get 1 } }
+help do
+ls | find ssmx | length | do { |x| if $x > 0 { get 1 } }
+0 | do {|x| print $x }
+ls | find ssmx | length | do { |x| if $in > 0 { get 1 } }
+ls | find ssm | length | do { |x| if $in > 0 { get 1 } }
+ls | find ssm | do { |x| if ($in | length) > 0 { $in | get 1 } }
+ls | find ssm | do { |x| if ($in | length) > 0 { print $in } }
+ls | find ssmx | do { |x| if ($in | length) > 0 { print $in } }
+hx ~/.local/bin/ssm
+ssm
+ls
+ssm
+hx ~/.local/bin/ssm
+ssm
+hx ~/.local/bin/ssm
+ssm
+hx ~/.local/bin/ssm
+ssm
+hx ~/.local/bin/ssm
+ssm
+hx ~/.local/bin/ssm
+ssm
+hx ~/.local/bin/ssm
+ssm
+hx ~/.local/bin/ssm
+let HOST = nothing
+let HOST = if 1 > 2 { 1 }
+$RHOST
+$HOST
+$HOST | is-none
+$HOST | is-empty 
+not $HOST | is-empty 
+not ($HOST | is-empty )
+hx ~/.local/bin/ssm
+ssm
+not ($HOST | is-empty )
+(not ($HOST | is-empty ))
+hx ~/.local/bin/ssm
+ssm
+hx ~/.local/bin/ssm
+ssm
+hx ~/.local/bin/ssm
+ssm
+hx ~/.local/bin/ssm
+$HOST | not is-empty 
+$HOST | is-empty
+$HOST | is-empty 
+hx ~/.local/bin/ssm
+ssm
+hx ~/.local/bin/ssm
+help is-empty 
+is-empty $HOST
+hx ~/.local/bin/ssm
+ssm
+hx ~/.local/bin/ssm
+ssm
+hx ~/.local/bin/ssm
+ssm
+sl
+clear
+ls
+clear
+zelli
+ls
+clear
+ls
+hx
+ls
+sl
+clear
+ls
+cler
+clear
+ls
+clear
+diagtool
+diagtool tree
+ls
+clear
+ls | do { print $in }
+hx ~/.local/bin/ssm
+ssm
+clear
+ls
+ls | math sum 
+ls | ().size |  math sum 
+ls | _.size |  math sum 
+ls | ().size |  math sum 
+ls | ().size 
+ls | ().size | math sum
+ls
+cd repos/dev/nu-lab/
+ls
+cd scripts/
+ls
+hx test.nu
+ls
+cat ssm.nu
+rm ssm.nu
+ls
+podman container ls
+podman container
+podman images ls
+podman image
+podman images
+podman container all
+podman container -a
+podman container --all
+podman container
+podman container list
+podman containers
+tldr podman
+podman ps --all
+podman start -d fervent_leavitt
+podman start fervent_leavitt
+podman container ls
+podman generate systemd --name mycontainer --new --files
+podman generate quadlet --name fervent_leavitt --new --files
+tldr podman generate quadlet
+tldr podman generate
+podman generate quadlet --help
+podman generate --help
+podman generate quadlet --new --files
+podman generate quadlet --help
+man podman generate quadlet
+man podman generate 
+podman generate systemd --name fervent_leavitt --new --files
+man podman-systemd.unit
+cat container-fervent_leavitt.service
+cp container-fervent_leavitt.service /etc/systemd/system/multi-user.target.wants/
+sudo mv container-fervent_leavitt.service /etc/systemd/system/multi-user.target.wants/
+ls /etc/systemd/system/multi-user.target.wants/
+ls
+podman container ls
+podman exec -it --user root fervent_leavitt /bin/bash
+ls
+ls /etc/systemd/system/multi-user.target.wants/
+mv /etc/systemd/system/multi-user.target.wants/container-fervent_leavitt.service /etc/systemd/system/multi-user.target.wants/jenkins-container-fervent_leavitt.service
+sudo mv /etc/systemd/system/multi-user.target.wants/container-fervent_leavitt.service /etc/systemd/system/multi-user.target.wants/jenkins-container-fervent_leavitt.service
+systemctl daemon-reload
+systemctl status jenkins-container-fervent_leavitt
+systemctl start jenkins-container-fervent_leavitt
+sudo systemctl daemon-reload
+systemctl start jenkins-container-fervent_leavitt
+cat /etc/systemd/system/multi-user.target.wants/jenkins-container-fervent_leavitt.service
+sudo systemctl daemon-reload
+sudo systemctl start jenkins*
+sudo systemctl start jenkins-container-fervent_leavitt
+systemctl start jenkins-container-fervent_leavitt
+ls /etc/systemd/system/network-online.target.wants/
+clear
+l
+sls
+ls
+glob **/jenkins*
+cd ..
+exit
+uname
+help fold
+ls
+sys 
+sys.host
+sys | get name.host
+sys | get name
+sys | get host
+sys | get host.name
+sys | get host.long_os_version
+sys | get host.long_os_version | "linux" in ()
+sys | get host.long_os_version
+sys | get host.long_os_version | find Linux
+sys | get host.long_os_version | "Linux" in $in
+ls
+cat build.nu
+hx test.nu
+const venv = "venv"
+glob **/($venv)/activate.nu
+glob **/activate.nu
+glob **/venv/activate.nu
+glob **/venv/*/activate.nu
+glob **/($venv)/*/activate.nu
+cat test.nu
+let isLinux = sys | get host.long_os_version | "Linux" in $in
+isLinux
+exit
+help const
+exit
+hx test.nu
+"./" | path exists
+ls
+overlay use .env/bin/activate.nu
+ls
+nu Jenkinsfile.nu
+nu Jenkinsfile.nu build
+lazygit
+git push origin 
+cd ..
+git origin remote
+git remote set-url origin git@github.com:Lonestar137/jenkins-test.git
+lazygit
+clear
+ls
+git branch
+ls
+cd nushell/
+podman container ls
+podman exec -it --user root fervent_leavitt /bin/bash
+sl
+ls
+cd sampleproject/
+ls
+sl
+cd ..
+ls
+ls .env/
+open .env/bin/activate.nu
+open .env/bin/activate.nu | lines
+open .env/bin/activate.nu | lines | get 65
+clear
+ls
+clear
+let HOST = open ~/.ssh/config | grep "Host " | fzf --reverse --height=30% | split words |   do {     if ($in | length) > 0 { $in | get 1 }  }
+$HOST
+open ~/.ssh/config | grep "Host " | fzf --reverse --height=30% | split words |   do {     if ($in | length) > 0 { $in | get 1 }  }
+open ~/.ssh/config | grep "Host " | fzf --reverse --height=30% | split words |   do {     if ($in | length) > 0 { $in | get 1 }  } | str
+open ~/.ssh/config | grep "Host " | fzf --reverse --height=30% | split words |   do {     if ($in | length) > 0 { $in | get 1 }  } | str trim
+open ~/.ssh/config | grep "Host " | fzf --reverse --height=30% | split words |   do {     if ($in | length) > 0 { $in | get 1 }  } | length
+open ~/.ssh/config | grep "Host " | fzf --reverse --height=30% | split words |   do {     if ($in | length) > 0 { $in | get 1 }  } | str length
+open ~/.ssh/config | grep "Host " | fzf --reverse --height=30% | split words |   do {     if ($in | length) > 0 { $in | get 1 }  } | str trim | str length
+help split words
+open ~/.ssh/config | grep "Host " | fzf --reverse --height=30% | split words |   do {     if ($in | length) > 0 { $in | get 1 }  }
+open ~/.ssh/config | grep "Host " | fzf --reverse --height=30% | split words
+open ~/.ssh/config | grep "Host " | fzf --reverse --height=30% | split words | print
+open ~/.ssh/config | grep "Host " | fzf --reverse --height=30% | split words | echo
+open ~/.ssh/config | grep "Host " | fzf --reverse --height=30% | split words |   do {     if ($in | length) > 0 { $in | get 1 }  }
+"sdf_dsfsd-sdkf" | split words
+help split words
+"sdf_dsfsd-sdkf" | split words --grapheme-clusters
+"sdf_dsfsd-sdkf" | split words --grapheme-clusters -l 1
+"sdf_dsfsd-sdkf" | split words --grapheme-clusters -l 
+"sdf_dsfsd-sdkf" | split words --grapheme-clusters -l 4
+"sdf_dsfsd-sdkf" | split words --grapheme-clusters -l 5
+"sdf_dsfsd-sdkf" | split words -l 5
+help split
+"Host sdf_dsfsd-sdkf # zzz" | split column " "
+"Host sdf_dsfsd-sdkf # zzz" | split column " " | get 1
+"Host sdf_dsfsd-sdkf # zzz" | split row " " 
+"Host sdf_dsfsd-sdkf # zzz" | split row " " | get 1
+"Host     sdf_dsfsd-sdkf    # zzz" | split row " " | get 1
+"Host     sdf_dsfsd-sdkf    # zzz" | awk '{print $2}'
+hx ~/.local/bin/ssm
+ssm
+hx ~/.local/bin/ssm
+ssm
+hx ~/.local/bin/ssm
+let x = nothing
+let x = null
+$x
+print $x
+print $x | is-empty
+let y = print $x | is-empty
+$y
+print $y
+echo $y
+$x | is-empty
+hx ~/.local/bin/ssm
+"Host     sdf_dsfsd-sdkf    # zzz" | split row
+"Host     sdf_dsfsd-sdkf    # zzz" | split
+help str
+ls
+clear
+ssm
+ls
+ssm
+ls
+cat Jenkinsfile.nu
+bat Jenkinsfile.nu
+help http post
+cd /tmp/
+ls
+hx query.json
+ollama list
+hx query.json
+http post -t application/json http://localhost:11434/api/generate { model: codellama,  prompt: "hello" }
+http post -t application/json http://localhost:11434/api/generate { model: "codellama:latest",  prompt: "hello" }
+http post -t application/json http://localhost:11434/api/generate { model: "codellama:latest",  prompt: "Who was George Washington" }
+hx test.nu
+open test.nu
+mv test.nu test.json
+open test.json
+hx test.json
+sl
+ls
+open test.json | get mdoel
+open test.json | get model
+ls
+mkdir ollamagit
+cd ollamagit/
+ls
+hx main.nu
+x = hello
+let x = hello
+let x = 'hello'
+($x)
+${$x}
+cd repos/dev/nu-lab/
+git diff
+cd ../
+ls
+cd mopxygen/
+git diff
+git status
+git branch
+git diff master
+git diff --help
+git diff master --minimal
+git diff master --minimal --raw
+git diff --help
+git diff master --minimal
+git diff master --minimal --histogram
+git log
+git diff 7494603ef2666aa7eaf22f72c6317e931b20dd17
+git diff 7494603ef2666aa7eaf22f72c6317e931b20dd17 --minimal
+git diff --help
+git diff 7494603ef2666aa7eaf22f72c6317e931b20dd17 --no-ext-diff
+git diff 7494603ef2666aa7eaf22f72c6317e931b20dd17 --no-ext-diff --text
+q
+diff master
+git diff 7494603ef2666aa7eaf22f72c6317e931b20dd17 --changes
+git diff 7494603ef2666aa7eaf22f72c6317e931b20dd17 --stat
+git diff 7494603ef2666aa7eaf22f72c6317e931b20dd17 --z
+git diff 7494603ef2666aa7eaf22f72c6317e931b20dd17 -z
+git diff --help
+git diff 7494603ef2666aa7eaf22f72c6317e931b20dd17 --numstat
+git diff --help
+git diff --output=test.txt
+cat test.txt
+ls
+git diff 7494603ef2666aa7eaf22f72c6317e931b20dd17 --output=test.txt
+cat test.txt
+git diff 7494603ef2666aa7eaf22f72c6317e931b20dd17 | print
+history 
+let response = http post -t application/json http://localhost:11434/api/generate { model: "codellama:latest",  prompt: "Who was George Washington" }
+$response
+$response | lines
+$response | lines | as json
+$response | lines | each { $in | as json }
+$response
+$response | lines | table
+$response | lines | each { print $in }
+$response | lines
+$response | lines | get 1 | as json
+$response | lines | get 1
+$response | lines | get 1| json
+$response | lines | get 1 | to json
+$response | lines | get 1 | as str
+$response | lines | get 1 | to json
+$response | lines | get 1 | to json | table
+$response | lines | get 1 | to json | get model
+$response | lines | get 1 | to json | open 
+$response | lines | get 1 | from json
+$response | lines | each { $in | from json }
+$response | lines
+let r = [{key: value1, key2: value2}, {key: value3, key2: value4}]
+$r | lines | each { $in | from json }
+let r = [{key: value1, key2: value2}, {key: value3, key2: value4}] | to json
+$r
+$r | lines | each { $in | from json }
+let r = [{key: value1, key2: value2}, {key: value3, key2: value4}] | each { $in | to json }
+$r
+$r | lines | each { $in | from json }
+$r | lines
+$r | each { $in | from json }
+ls
+cat test.txt
+ls
+sl
+ls
+help $env
+help env
+help path
+$env
+$env.PATH
+cat test.txt
+ls
+$response | lines | each { $in | from json }
+let response_table = $response | lines | each { $in | from json }
+$response_table
+$response_table | get response
+$response_table | get response | str join " "
+$response_table | get response | str join ""
+hx main.nu
+pwd
+git log
+git log b97687d9444bc442111474bf4d37039a383b7634
+git diff b97687d9444bc442111474bf4d37039a383b7634 | print
+let log = git diff b97687d9444bc442111474bf4d37039a383b7634 | print 
+let log = git diff b97687d9444bc442111474bf4d37039a383b7634
+$log
+$log + "Review these changes"
+"Review the following changes and give me feedback on any issues you see with these changes: " + $log
+"Review the following changes and give me feedback on any issues you see with these changes: \n" + $log
+ls
+nu /tmp/ollamagit/main.nu master
+nu /tmp/ollamagit/main.nu diff master
+git log
+git log  b97687d9444bc442111474bf4d37039a383b7634
+git diff  b97687d9444bc442111474bf4d37039a383b7634
+ls
+hx main.nu
+nu /tmp/ollamagit/main.nu diff  b97687d9444bc442111474bf4d37039a383b7634
+cat main.nu
+hx main.nu
+ls
+cp main.nu ~/.local/bin/ollamagit
+ls
+exit
+cd repos/dev/
+ls
+cd nu-lab/
+ls
+cd ~/.local/bin/
+ls
+ls | find oll
+chmod +x ollamagit
+ls
+hx ollamagit
+git diff 
+git diff | code 
+git diff | complete
+hx ollamagit
+let r = git diff | complete
+git diff | complete
+git diff --quiet | complete
+git diff | null | complete
+git diff | complete
+let r = git diff | complete
+$r
+$r.exit_code
+ls
+cd note-grep/
+git diff 
+git diff | complete
+cd ..
+git diff | complete
+hx ollamagit
+mv ollamagit olgit
+olgit diff 
+olgit diff test
+hx olgit
+olgit diff test
+hx olgit
+olgit diff test
+hx olgit
+olgit diff test
+hx olgit
+olgit diff test
+hx olgit
+olgit diff test
+hx olgit
+olgit diff test
+hx olgit
+olgit diff test
+hx olgit
+olgit diff test
+ls
+cd note-grep/
+olgit diff main
+clear
+cd ..
+hx olgit
+olgit diff main
+hx olgit
+olgit diff main
+hx olgit
+cat olgit
+bat olgit
+ls
+cd ~/repos/
+ls
+cd dev/
+ls
+cd HoS-clone/
+ls
+git diff master
+olgit diff main
+olgit diff master
+cd ..
+ls
+cd build_tools/
+git diff master
+git diff main
+git log
+git diff f0e49b47ce1f536a9464f04d7bf5cff6dd35b761
+cd ..
+ls
+cd ..
+ls
+cd posterity/
+ls
+cd ../other/
+ls
+cd bevy/
+ls
+git log
+ls
+cd ..
+ls
+git clone https://github.com/neovim/neovim.git
+ls
+clear
+l
+ls
+clera
+clear
+ls
+ls | get type
+ls
+j jenkins-test
+z.sh
+l
+s
+ls
+cd ~/.local/bin/
+ls
+hx gd
+mv gd gd.nu
+hx gd.nu
+date
+tiem
+time
+date now
+date to-record
+date to-table
+date now 
+date now | table
+date now | get month
+date now | get day
+date now | date to-record
+date to-record now
+date now | date to-record
+clear
+date now | date to-record | to csv
+help join
+date now | date to-record
+date now | date to-record | insert path /home
+help histo
+help histogram
+help appen
+help append
+help save
+ls | echo
+ls | print
+ls ~/.local/bin/
+exit
+gd.sh /tmp
+cd ~/.local/bin/
+ls
+./gd.nu /tmp/
+chmod +x gd.nu
+./gd.nu /tmp/
+mkdir ~/.cache/gd
+touch ~/.cache/gd/gd.csv
+./gd.nu /tmp/
+open ~/.cache/gd/gd.csv | get cd_dir
+open ~/.cache/gd/gd.csv
+hx ~/.cache/gd/gd.csv
+help path
+./gd.nu /tmp/
+help save
+./gd.nu /tmp/
+open ~/.cache/gd/gd.csv
+let file = open ~/.cache/gd/gd.csv
+let record = date now | date to-record | insert cd_dir "/home/"
+$record
+$file
+help join
+$file | insert $record
+$file | join $file $record
+help join
+$record | table
+help append
+$file | append $record
+./gd.nu /tmp/
+open ~/.cache/gd/gd.csv | append $record
+./gd.nu /tmp/
+./gd.nu /home
+help sort-by
+./gd.nu /home
+help sort-by
+./gd.nu /home
+./gd.nu /home | first
+./gd.nu /home 
+$histo
+./gd.nu /home
+"home" | cd
+cd -
+ls
+./gd.nu /home
+env
+exit
+env
+cd /tmp/
+env
+./gd.nu /home
+~/.local/bin/gd.nu /home
+help cd
+cd /home/
+env
+~/.local/bin/gd.nu /home/jonesgc
+help env
+env 
+env --help
+env --chdir=/home/jonesgc
+env --chdir=/home/jonesgc PWD=/home/jonesgc
+env --chdir=/home/jonesgc -i
+env --chdir=/home/jonesgc cd
+env --chdir=/home/jonesgc echo
+env
+ls
+~/.local/bin/gd.nu /home/jonesgc
+~/.local/bin/gd.nu /home/jonesgc | print
+~/.local/bin/gd.nu /home/jonesgc | table
+help transpose
+which cd
+hx ~/
+cd ~/
+sl
+cd ~
+ls
+config nu
+exit
+gd tmp
+gd
+gd tmp
+ls ~/.local/bin/ | find gd
+exit
+gd tmp
+exit
+gd tmp
+exit
+gd tmp
+help path
+path expand
+ls . | path expand
+ls . | first | path expand
+ls .
+Desktop | path expand
+./Desktop/ | path expand
+"./Desktop/" | path expand
+rm ~/.cache/gd/gd.csv
+exit
+gd /tmp
+ls ~/.cache/gd/
+gd /tmp
+cp ~/.local/bin/gd.nu ~/.local/bin/gd.nu.bak
+hx gd.nu
+config nu
+gd /tmp
+cd /tmp/
+ls
+cd dumps/
+ls
+hx dump.nu
+nu dump.nu
+hx dump.nu
+nu dump.nu
+hx dump.nu
+nu dump.nu
+ls /usr/local/bin/ | find touch
+exit
+ls /usr/bin/ | find touch
+hx dump.nu
+ls
+cd /tmp/
+cd dumps/
+ls
+hx dump.nu
+nu dump.nu
+ls
+hx dump.nu
+cat test.file
+rm test.file
+nu dump.nu
+ls
+cat test.file
+ls
+hx test.file
+ls
+hx dump.nu
+ls
+hx dump.nu
+nu dump.nu
+rm test.file
+nu dump.nu
+gd tmp
+rm ~/.cache/gd
+gd tmp
+exit
+gd tmp
+mkdir ~/.cache/gd
+gd tmp
+rm ~/.cache/gd
+rm ~/.cache/gd/gd.csv
+rm ~/.cache/gd
+gd tmp
+touch ~/.cache/gd/gd.csv
+help touch
+help mkdir
+gd tmp
+sudo gd tmp
+cd .local/bin/
+ls
+ls "~"
+ls
+ls | last
+ls | last | get name | cd
+ls
+cd -
+ls
+symilar --help
+sudo gd tmp
+gd tmp
+ls
+gd tmp
+ls /tmp/gd/
+cat /tmp/gd/gd.csv
+gd tmp
+ls
+gd yapf
+ls
+gd yapf
+ls
+clear
+ls
+clear
+ls | find ol
+history 
+history  | find http
+let response = http post -t application/json http://localhost:11434/api/generate { model: "codellama:latest",  prompt: "Who was George Washington" } 
+$response
+$response | lines
+$response | lines | each { $in | from json }
+$response | lines | each { $in | from json } | get response
+$response | lines | each { $in | from json }
+$response | lines | each { $in | from json } | get response
+$response | lines | each { $in | from json } | get response | str join
+ps
+ls
+cd /tmp/
+ls
+cd dumps/
+sl
+ls
+hx build.nu
+nu build.nu
+hx build.nu
+let x = python3.10
+hx build.nu
+let x = "python3.10"
+let x = python3.10
+$x
+hx build.nu
+nu build.nu
+hx build.nu
+nu build.nu
+hx build.nu
+nu build.nu
+ls
+hx build.nu
+nu build.nu
+hx build.nu
+nu build.nu
+hx build.nu
+nu build.nu
+hx build.nu
+python3.10 -m virtualenv venv
+hx build.nu
+nu build.nu
+hx venv/bin/activate.nu
+ls
+hx build.nu
+nu build.nu
+ls venv/bin/
+hx build.nu
+nu build.nu
+hx build.nu
+cd sampleproject/
+ls
+pytest --help
+cd ..
+ls
+./venv/bin/prospector --help
+hx build.nu
+./venv/bin/prospector sampleproject/
+./venv/bin/prospector -o json sampleproject/
+./venv/bin/prospector -o json sampleproject/ | from json
+let x = ./venv/bin/prospector -o json sampleproject/ | from json
+$x | get messages
+nu build.nu
+hx build.nu
+nu build.nu
+hx build.nu
+nu build.nu
+hx build.nu
+nu build.nu
+ls | print
+let x = ls 
+print $x
+du -h .
+du .
+du . | print
+du . | get directories | print
+du . | get directories
+du . | get directories | print
+du . | get directories | get 0 | print
+clear
+ls
+cd ~
+hx olgit
+ls
+cat config.toml
+ls
+open README.md
+open README.md | from md
+open README.md | get Introduction
+open README.md | table
+open README.md | to html
+open README.md | to html | save --force test.html
+qutebrowser test.html
+rm test.html
+ls
+git branch
+ls src/
+ls
+hx src/main.nu
+hx
+exit
+ls
+hx 
+which hx
+helix
+config nu
+exit
+hx
+ls /usr/bin/
+ls /usr/bin/ | find helix
+config nu
+exit
+config nu
+:q
+exit
+clera
+clear
+hx
+;s
+ls
+clear
+ls
+cd repos/dev/note-grep/
+ls
+date
+date to-record
+date now | date to-record
+date now | date to-record | drop second 
+help drop
+help date now
+help date now | debug
+date now | debug
+date now | format date "%m-%d-%y"
+date now | format date "%m-%d-%y" | $"($in).yml"
+help note
+ntoe
+help node
+node --help
+clear
+help and
+echo "test" && echo "test2"
+echo "test"; echo "test2"
+ls dsfs; echo "test2"
+help pass
+ls
+ls examples/
+ls examples/game_math/
+ls examples/game_math/ | find main
+help find
+ls examples/game_math/ | find main
+ls examples/game_math/
+ls examples/game_math/ | where name | endw-with ".hs"
+ls examples/game_math/ | where name | ends-with ".hs"
+ls examples/game_math/ | where name
+ls examples/game_math/
+help where
+ls examples/game_math/ | where { $it | ends-with "hs"}
+ls examples/game_math/ | where { $it | ends-with "hs" }
+ls examples/game_math/ | where {|x| $it | ends-with "hs" }
+help where
+ls examples/game_math/ | where name | ends-with "hs"
+ls examples/game_math/ | where name
+ls examples/game_math/
+ls examples/game_math/ | ends-with "hs"
+ls examples/game_math/ | { where name | ends-with "hs" }
+ls examples/game_math/ | { where name | ends-with "hs" } | print
+ls examples/game_math/ | { where name | ends-with "hs" } | table
+ls examples/game_math/ | where name | ends-with "hs"
+ls examples/game_math/ | get name | ends-with "hs"
+help ends-with
+ends-with --help
+ends-with
+help starts-with
+ls
+clear
+ls
+help str
+help where ends-with
+help where
+ls
+ls examples/
+ls examples/bqn/
+ls examples/bqn/ | where name =~ 'md$'
+ls
+cd /tmp/
+ls
+cd dumps/
+ls
+mkdir cache
+cd cache/
+ls
+mkdir yml
+cd yml/
+l
+ls
+hx file.yml
+open file.yml
+hx file.yml
+open file.yml | merge
+help merge
+open file.yml --raw
+help split
+open file.yml --raw | split row "---:"
+open file.yml --raw | split row "---:" | from yaml
+open file.yml --raw | split row "---:" | each { $it | from yaml }
+open file.yml --raw | split row "---:" | each { $in | from yaml }
+open file.yml --raw | split row "---:" | each { $in | from yaml } | merge
+open file.yml --raw | split row "---:" | each { $in | from yaml }
+til
+ntil
+nf
+open file.yml --raw | split row "---:" | each { $in | from yaml }
+open file.yml --raw | split row "---:" | each { $in | find "key" }
+open file.yml --raw | split row "---:" | each { $in | where $it =~ "key" }
+open file.yml --raw | split row "---:"
+open file.yml --raw | split row "---:" | get 1 
+open file.yml --raw | split row "---:" | get 1 | "key" in $it
+open file.yml --raw | split row "---:" | get 1 | "key" in $in
+help filter
+open file.yml --raw | split row "---:" | filter { "key" in $it }
+open file.yml --raw | split row "---:" | filter { "key" in $in }
+open file.yml --raw | split row "---:" | filter { "Note4" in $in }
+ls
+hx file2.yml
+ls ./ | where type == "File" | where name =~ "yml$"
+ls ./ | where type == "File"
+ls ./ 
+ls ./ | where type == "file" | where name =~ "yml$"
+ls ./ | where type == "file" | where name =~ "yml$" | each {}
+ls ./ | where type == "file" | where name =~ "yml$" | each {<\n>open ($in)}
+ls ./ | where type == "file" | where name =~ "yml$" | each {<\n>open ($in) --raw}
+ls ./ | where type == "file" | where name =~ "yml$" | each {<\n>open ($it) --raw}
+ls ./ | where type == "file" | where name =~ "yml$" | each {<\n>open ($it.name) --raw}
+ls ./ | where type == "file" | where name =~ "yml$" | each {<\n>open ($in.name) --raw}
+let all_files = ls ./ | where type == "file" | where name =~ "yml$" | each {<\n>open ($in.name) --raw }
+$all_files
+let all_files = ls ./ | where type == "file" | where name =~ "yml$" | each {<\n>open ($in.name) --raw | split row "---:" }
+$all_files
+let all_files = ls ./ | where type == "file" | where name =~ "yml$" | each {<\n>open ($in.name) --raw | split row "---:" | filter "Subject4" in $in }
+help filter
+let all_files = ls ./ | where type == "file" | where name =~ "yml$" | each {<\n>open ($in.name) --raw | split row "---:" | filter { "Subject4" in $in } }
+$all_files
+alias testdf = less
+testdf
+$testdf
+hx src/main.nu
+ls
+hx .bash_aliases
+cd ~/repos/dev/note-grep/
+ls
+nu src/main.nu Subject
+$env.HOME
+hx src/main.nu
+nu src/main.nu
+nu src/main.nu Subject
+let base_path = "./"
+ls $base_path | where type == "file" |  where name =~ 'yml$' | each {<\n>      open ($in.name) --raw | split row "---:" | filter { $query in $it }<\n>    }<\n>
+nu src/main.nu Subject
+help str
+help str join
+nu src/main.nu Subject
+nu src/main.nu Subject4
+nu src/main.nu til
+nu src/main.nu ntil
+$env.EDITOR
+$env.EDITOR | path
+$env.EDITOR | path expand
+$env
+$env.EDITOR
+nu src/main.nu ntil
+til
+ls
+lazygit
+cd src/
+ls
+rm -rf awk/
+rm nf
+ls
+cd ..
+ls
+hx README.md
+lazygit
+olgit diff main
+hx ~/.local/bin/olgit
+olgit diff main
+hx ~/.local/bin/olgit
+olgit diff main
+hx ~/.local/bin/olgit
+olgit diff main
+hx ~/.local/bin/olgit
+olgit diff main
+ntil
+ls
+cd src/
+ls
+ln -s main.nu ~/.local/bin/nf
+nf
+nf nf 
+ls
+hx main.nu
+touch /tmp/note_temp.yml
+hx main.nu
+hx ~/.bash_aliases
+ls
+exit
+nf Subject
+cd .local/bin/
+cd note-grep/
+ls
+cd src/
+ls
+git branch
+cd ..
+ll
+ls -la
+ls -la | nf
+ls -la | find nf
+rm nf
+find main.nu
+glob **/main.nu
+cd note-grep/
+git branch
+git fetch
+git checkout nushell
+ls
+ln -s src/main.nu ~/.local/bin/nf
+nf Subject
+exit
+nf Subject
+which nf
+cd ~/.local/bin/
+ls
+chmod +x nf
+pwd
+config nu
+exit
+nf Subject
+nf ntil
+nf til
+ls
+hx ~/.local/bin/note-grep/src/main.nu
+nf ntil
+nf *
+nf sub
+nf Note3
+hx ~/.local/bin/note-grep/src/main.nu
+nf Note3
+hx ~/.local/bin/note-grep/src/main.nu
+nf Note3
+hx ~/.local/bin/note-grep/src/main.nu
+nf Note3
+hx ~/.local/bin/note-grep/src/main.nu
+nf Note3
+ls ~/.cache/note-grep/
+cp ~/.cache/note-grep/11-11-23.yml ~/.cache/note-grep/11-11-24.yml
+nf Note3
+hx ~/.local/bin/note-grep/src/main.nu
+nf Note3
+hx ~/.local/bin/note-grep/src/main.nu
+nf Note3
+hx ~/.local/bin/note-grep/src/main.nu
+nf Note3
+open /home/jonesgc/.cache/note-grep/11-11-23.yml
+hx /tmp/dumps/cache/yml/file.yml
+hx ~/.local/bin/note-grep/src/main.nu
+open /home/jonesgc/.cache/note-grep/11-11-23.yml --raw
+hx src/main.nu
+hx ~/.local/bin/note-grep/src/main.nu
+nf Note3
+nf Note2
+nf Note3
+nf Note34
+nf Note2
+rm ~/.cache/note-grep/11-11-24.yml
+nf Note2
+layzgit
+lazygit
+cd ~/.local/bin/note-grep/
+ls
+lazyigt
+lazygit
+nf Block
+nf ntil
+nf Note
+nf Note2
+nt ntil
+nf ntil
+hx src/main.nu
+ls
+cd /tmp/
+ls
+mkdir python
+cd python/
+mkdir polars
+cd polars/
+ls
+python3.10 -m virtualenv venv
+overlay use .env/bin/activate.nu
+python3.10 -m virtualenv .env
+overlay use .env/bin/activate.nu
+rm -r venv/
+ls
+hx main.py
+pip install polars
+hx main.py
+python main.py
+ptpython
+pip install ptpython
+ptpython
+cd /tmp/python/
+ls
+cd polars/
+ls
+python main.py
+overlay use .env/bin/activate.nu
+python main.py
+ptpython
+python main.py
+fzf --help
+echo ~/.ssh/config | fzf
+cat ~/.ssh/config | fzf
+python main.py
+help fzf
+fzf --help
+python main.py
+cd .local/bin/
+ls
+hx ssm.nu
+ssm
+which ssm
+ls
+$env.HOME
+btop
+clear
+ls
+clear
+ls
+j mopxygen
+hx main.py
+ls
+clear
+ls
+deactivate 
+ls
+cd ~
+ls
+cd repos/dev/mopxygen/
+ls
+hx mopxygen/base/widget/status_line.py
+hx Jenkinsfile.nu
+exit
+hx mopxygen/example.py
+ls
+overlay use .env/bin/activate.nu
+rm -r .env/
+python3.10 -m virtualenv .env
+overlay use .env/bin/activate.nu
+ls
+pip install .
+pip install -e .
+ls
+exit
+ls
+cd repos/dev/mopxygen/
+ls
+python mopxygen/example.py
+ptpython
+python mopxygen/example.py
+hx
+ls
+python mopxygen/example2.py
+overlay use .env/bin/activate.nu
+pip install click
+python mopxygen/example2.py
+pip install rich
+python -m rich.tree
+python mopxygen/example2.py
+pip install rich
+ptpython
+pip install ptpython
+ptpython
+config nu
+ls
+ptpython
+python mopxygen/example2.py
+pip install rich
+python mopxygen/example2.py
+ptpython
+python mopxygen/example2.py ./
+python -m rich.tree ./
+hx mopxygen/example2.py
+hx mopxygen/example3.py
+python mopxygen/example3.py
+ls .
+glob */
+glob */*
+glob */* | to json
+du -h .
+du -h ./
+du -h .
+du
+du | to json
+ls
+cd mopxygen/
+du | to json
+cd ..
+ls
+cd build/
+du | to json
+du | to json | save ../sample.json
+cd ..
+ls
+ptpython
+python mopxygen/example3.py
+hx mopxygen/example3.py
+python mopxygen/example3.py
+ls /tmp/workspaces/
+ls /tmp/
+ls /tmp/workspaces/PATHONE/
+ls /tmp/workspaces/PATHTWO/
+ls /tmp/workspaces/PATHONE/
+cp sample.json /tmp/workspaces/PATHONE/
+cp sample.json /tmp/workspaces/PATHTWO/
+hx /tmp/workspaces/PATHTWO/sample.json
+ls
+clear
+ls
+clera
+clear
+ls
+clear
+ls
+open config.xml
+open config.xml | get content.content
+open config.xml | get content.content.tag
+open config.xml | get content.content | first | get tag
+open config.xml | get content.content | first
+open config.xml | get content.content.content
+open config.xml | get content.content | first | get content
+open config.xml | get content.content | first | get content | first | get content
+hx config.xml
+open config.xml | get content.content | first | get content | first | get content
+ptpython
+ls
+python mopxygen/example3.py
+ls
+cd PATHONE/
+ls
+hx sample.xml
+python mopxygen/example4.py
+overlay use .env/bin/activate.nu
+python mopxygen/example4.py
+python mopxygen/example4.py | less
+hx mopxygen/example5.py
+pip install textual
+hx mopxygen/example4.py
+python mopxygen/example5.py 
+hx mopxygen/code_browser.tcss
+cd /tmp/python/
+git clone https://github.com/Textualize/textual.git
+git clone https://github.com/Textualize/textual.git --depth 0
+git clone https://github.com/Textualize/textual.git --depth 1
+cd textual/
+ls
+cd examples/
+ls
+python json_tree.py
+python pride.py
+python markdown.py
+python five_by_five.py
+python dictionary.py
+pip install httpx
+python dictionary.py
+python color_command.py
+ls
+cd ..
+ls
+cd examples/
+which wine
+sudo pacman -Syu wine64
+sudo pacman -Syu wine
+df -h /
+df -h
+lsblk 
+df -h /
+df -h --max-depth 1 /
+tldr df
+tldr du
+du -h --max-depth=2 /
+du -h --max-depth 2 /
+du -h --max-depth 2 ./
+du -h -d 2 ./
+du -hd 2 ./
+du -d 2 ./
+du -hd 1 ./
+du -d 1 ./
+du -d 1 /
+df /
+ls
+rm -rf venv/
+df -h /
+ls
+df -h .
+df -h /
+ls /
+cd /
+ll
+cd /opt/
+df -h /
+df -h .
+ls
+cd ..
+ls
+cd /opt/
+ls
+lsblk
+ls /mnt/
+ls /mnt/sda/
+ls /mnt/sdb/
+ls
+mv -v thorium-browser/ /mnt/sdb/
+mv -v thorium-browser /mnt/sdb/
+sudo mv -v thorium-browser/ /mnt/sdb/
+ls
+ln -s /mnt/sdb/thorium-browser/ .
+sudo !ln
+sudo ln -s /mnt/sdb/thorium-browser/ .
+ls
+mv -v openoffice4/ /mnt/sdb/
+sudo mv -v openoffice4 /mnt/sdb/
+ln -s /mnt/sdb/openoffice4/ .
+sudo ln -s /mnt/sdb/openoffice4/ .
+ls
+du -h .
+du .
+df /
+ls
+sudo pacman -Syu wine
+ls
+cd /
+ls
+cd tmp/
+df .
+cd ..
+ls
+cd var/
+df -h .
+du .
+du ./
+du --help
+du -d 1 .
+du . | sort-by apparent
+du . | sort-by apparent | less
+du . | sort-by apparent | first
+pacman --help
+hx /etc/pacman.conf
+pacman --clean
+pacman clean
+mkdir /mnt/sdb/
+mkdir /mnt/sdb/pacman
+sudo mkdir /mnt/sdb/pacman
+sudo mkdir /mnt/sdb/pacman/cache
+hx /etc/pacman.conf
+sudo mkdir /mnt/sdb/pacman/cache/pkg
+hx /etc/pacman.conf
+cat /etc/pacman.conf
+sudo rm /mnt/sdb/pacman/cache
+sudo rm -r /mnt/sdb/pacman/cache
+sudo mkdir /mnt/sdb/cache/pacman/pkg
+sudo mkdir /mnt/sdb/cache/
+sudo mkdir /mnt/sdb/cache/pacman
+sudo mkdir /mnt/sdb/cache/pacman/pkg
+sudo hx /etc/pacman.conf
+sudo helix /etc/pacman.conf
+sudo pacman -Syu
+ls /mnt/sdb/cache/pacman/pkg/
+tldr pacman
+sudo pacman -Qtdq
+sudo pacman -Scc
+du -h /
+df -h /
+ls /bin/
+cd /
+ls
+cd usr/
+df -h /
+ls
+du -d 1 .
+cd /usr/lib/
+du -d 1
+du -d 1 .
+du -d 1 . | print
+cd ..
+ls
+du -d 1 .
+cd ..
+ls
+du -h . | print
+du -d 1 . | print
+ls
+du -d 1 .
+cd proc/
+du -d 1 .
+cd ..
+ls
+sudo pacman -Syu wine
+sudo pacman -Syu winetricks
+*
+cd /tmp/
+cd ~
+rm -r .wine
+/usr/bin/bash -c WINEESYNC=1 WINEPREFIX=/home/jonesgc/Games/battlenet /home/jonesgc/.local/share/lutris/runners/wine/wine-ge-8-22-x86_64/bin/wine /home/jonesgc/Games/battlenet/drive_c/Battle.net-Setup.exe
+~/Games/battlenet/ ~/.local/share/lutris/runners/wine/wine-ge-8-22-x86_64/bin/wine /home/jonesgc/Games/battlenet/drive_c/Battle.net-Setup.exe
+~/.local/share/lutris/runners/wine/wine-ge-8-22-x86_64/bin/wine /home/jonesgc/Games/battlenet/drive_c/Battle.net-Setup.exe
+WINEESYNC=1 WINEPREFIX=/home/jonesgc/Games/battlenet /home/jonesgc/.local/share/lutris/runners/wine/wine-ge-8-22-x86_64/bin/wine /home/jonesgc/Games/battlenet/drive_c/Battle.net-Setup.exe
+WINEPREFIX=/home/jonesgc/Games/battlenet /home/jonesgc/.local/share/lutris/runners/wine/wine-ge-8-22-x86_64/bin/wine /home/jonesgc/Games/battlenet/drive_c/Battle.net-Setup.exe
+WINEESYNC=1 WINEPREFIX=/home/jonesgc/Games/battlenet
+exit
+glob *Setup.exe
+exit
+mkdir python
+cd python/
+ls
+hx mopxygen.py
+pip install textual
+ls
+hx mopxygen.py
+python mopxygen.py
+pip install rich
+python mopxygen.py
+pip install rich
+which pip
+python
+which pip
+python
+python -m virtualenv .env
+pip install virtualenv
+python -m virtualenv .env
+python3.10 mopxygen.py
+hx code_browser.tcss
+ls
+python3.10 mopxygen.py
+ls
+mkdir dirs
+mkdir dirs/PATHONE
+mkdir dirs/PATHTWO
+mkdir dirs/PATHTHREE
+ls
+hx mopxygen.py
+overlay use .env/bin/activate.nu
+python3.10 mopxygen.py
+python3.10 -m virtualenv .env
+overlay use .env/bin/activate.nu
+pip install rich textual
+python3.10 mopxygen.py
+python mopxygen.py
+hx dirs/PATHONE/sample.json
+ls
+python mopxygen.py
+hx test1.py
+ls
+hx test1.py
+overlay use .env/bin/activate.nu
+ls
+python test1.py
+pip install rich textual
+python test1.py
+ls
+clear
+ls
+hx sample.json
+open sample.json
+hx sample.json
+open sample.json
+hx sample.json
+open sample.json
+hx sample.json
+open sample.json
+hx sample.json
+open sample.json
+hx sample.json
+open sample.json
+du | first
+du | get 2
+du | first 2
+help first
+cd ~/
+cd /tmp/python
+cd .env/
+cd ..
+ll
+ls
+clear
+ls
+clear
+ls
+python mopxygen.py
+python test1.py
+ls
+ls dirs/
+ls dirs/PATHONE/
+ls dirs/PATHTWO/
+ls
+python test1.py
+hx mopxygen.py
+python test1.py
+hx test1.py
+hx mopxygen.py
+hx test1.py
+python test1.py
+hx test1.py
+hx mopxygen.py
+cp mopxygen.py test2.py
+hx test2.py
+python test2.py
+hx test2.py
+python test2.py
+hx test2.py
+python test2.py
+hx test2.py
+python test2.py
+hx test2.py
+python test2.py
+hx test2.py
+python test2.py
+hx test2.py
+python test2.py
+hx test2.py
+python test2.py
+hx test2.py
+python test2.py
+ls /tmp/
+ls ~/
+ls ~/work/
+hx test2.py
+python test2.py
+hx test2.py
+python test2.py
+hx test2.py
+python test2.py
+hx test2.py
+python test2.py
+hx test2.py
+python test2.py
+hx test2.py
+python test2.py
+hx test2.py
+python test2.py
+hx test2.py
+python test2.py
+hx test2.py
+python test2.py
+overlay use .env/bin/activate.nu
+ls
+python test2.py
+cd /tmp/
+glob textual
+git clone git@github.com:Textualize/textual.git
+git clone git@github.com:Textualize/textual.git --depth 0
+git clone git@github.com:Textualize/textual.git --depth 1
+cd textual/
+ls
+cd examples/
+grep -rn Container
+cd ..
+ls
+cd notes/
+ls
+cd ..
+ls
+python -m textual.md README.md
+python -m textual README.md
+ls
+cd src/
+ls
+cd textual/
+ls
+cat ../../pyproject.toml
+ls
+hx demo.py
+python -m textual
+python -m textual README.md
+cd /tmp/
+python -m textual
+cd -
+clear
+python -m textualp
+python test2.py
+hx demo.py
+cd ~/
+ls
+cd repos/
+ls
+cd dev/mopxygen/
+ls
+git branch
+git status
+git diff
+lazygit
+git status
+lazygit
+cd mopxygen
+ls
+hx example6.py
+ls
+hx example6.py
+git stash
+git status
+git checkout -b posterity
+hx code_browser.tcss
+hx code_browser2.tcss
+hx example6.py
+python example6.py
+lazygit
+clear
+ls
+clear
+hx test2.py
+ls
+python test2.py
+hhh
+clear
+ls
+sudo pacman -Syu fly
+clea
+ls
+clear
+ls
+clera
+ls
+clear
+ls
+clear
+ls
+clear
+overlay use .env/bin/activate.nu
+python ./mopxygen/example6.py
+overlay use .env/bin/activate.nu
+python ./mopxygen/example6.py
+overlay use .env/bin/activate.nu
+deactivate 
+overlay use .env/bin/activate.nu
+python ./mopxygen/example6.py
+cd /tmp/textual/
+ls
+python ./mopxygen/example6.py
+qutebrowser test.html
+python ./mopxygen/example6.py
+hx
+python ./mopxygen/example6.py
+ls /tmp/
+ls /tmp/zellij-1000/
+ls /tmp/zellij-1000/zellij-log/
+python ./mopxygen/example6.py
+ls /tmp/zellij-1000/zellij-log/
+python ./mopxygen/example6.py
+zellij
+exit
+config nu
+exit
+nu
+config nu
+hx ~/.config/nushell/config.nu
+jhx
+vim ~/.config/nushell/config.nu
+exit
+hx
+config nu
+hx
+hx ~/.config/nushell/config.nu
+:q
+exit
+hx
+config nu
+cd ~
+grep -rn helix
+hx .bashrc
+hx
+config nu
+ls
+config nu
+hx /home/jonesgc/.local/bin/note-grep/src/main.nu
+clear
+ls
+clear
+l
+s
+ls
+clera
+clear
+cd Documents/
+ls
+cd ..
+ls
+cd repos/
+ls
+cd dev/
+ls
+mkdir functional
+cd functional/
+ls
+cd ..
+rm -rf functional/
+cabal init nf-hs
+mkdir nf-hs
+cd nf-hs/
+l
+cabal init
+cabal --update
+ls
+hx nf-hs.cabal
+ls
+hx nf-hs.cabal
+ls
+cd repos/nf
+cd repos/
+ls
+cd dev/
+ls
+cd nf-hs/
+ls
+ls /tmp/
+ls
+hx sample.txt
+cp ~/.cache/note-grep/11-11-23.yml .
+hx 11-11-23.yml
+mv 11-11-23.yml sample.yml
+cabal run
+cd repos/dev/nf-hs/
+ls
+help watch
+watch . --glob=**/*.hs {|| cabal run }
+ls
+hx
+watch . --glob=**/*.hs {|| cabal run }
+ls
+cd ~/repos/dev/
+ls
+cd ~/repos/dev/
+ls
+hx nf-hs.cabal
+cd ..
+ls
+mkdir file-organizer
+cd file-organizer/
+git init
+ls
+git remote add origin git@github.com:Lonestar137/file-organizer.git<\n>  git branch -M main<\n>  git push -u origin main
+touch .gitignore
+hx .gitignore
+git status
+git add .
+git status
+lazygit
+git checkout -b setup
+ls
+hx main.nu
+ls
+hx main.nu
+ls | get modified
+ls | get modified | each { $in / 1d }
+help time
+help date
+help date now
+1day
+ls | get modified | each { $in / 1day }
+24h
+24hours
+sudo pacman -Syu
+24min
+24hr
+24hr == 1day
+24hr / 1hr
+ls | get modified | each { $in / 10hr }
+help date
+ls | get modified | each { $in | date to-record  }
+ls | get modified | each { $in - (date now)}
+ls | get modified | each { (date now) - $in }
+ls | each { (date now) - $in.modified }
+help column
+help col
+help join
+ls | each { $it + { modified = (date now) - $it.modified } }
+ls | each { $in + { modified = (date now) - $in.modified } }
+ls | each { $in + { (date now) - $in.modified } }
+ls | each { $in + (date now) - $in.modified }
+ls | each { $in + ((date now) - $in.modified) }
+ls | each { (date now) - $in.modified }
+ls | each { $in + (date now) - $in.modified }
+ls | each { $in + column (date now) - $in.modified }
+ls | each { $in + (date now) - $in.modified; $in}
+ls | each {(date now) - $in.modified; $in}
+ls | each {(date now) - $in.modified;}
+ls 
+ls | $in + $in.modified
+help join
+ls | columns
+ls | join [($in | columns) + {"diff"}] ( $in.modified | each { (date now) - $in })
+ls | join [($in | columns) + {"diff"}] uniq
+ls | join [($in | columns) + {"diff"}] 1
+ls | join [($in | columns) + {"diff"}]
+ls | join [($in | columns) + {"diff"}] null
+ls | join [($in | columns)]
+ls | each { $in ++ { modified = (date now) - $in.modified } }
+ls | where type == "dir"
+ls | where type == "dir" | each { $in ++ ([ diff ];[(date now) - $in.modified])  }
+ls | where type == "dir" | each { ([ diff ];[(date now) - $in.modified])  }
+ls | where type == "dir" | each {|in| ([ diff ];[(date now) - $in.modified])  }
+ls | where type == "dir" | each { ([ diff ]; [(date now) - $in.modified])  }
+ls | where type == "dir" | each { ([ diff ]; [(date now)])  }
+ls | where type == "dir" | each { ([ diff ]; [(date now) - $in.modified])  }
+ls | where type == "dir" | each { ([ diff ]; [$in])  }
+ls | where type == "dir" | each { $in  }
+ls | where type == "dir" | each { $in.modified  }
+ls | where type == "dir" | each { $in ++ $in.modified  }
+ls | where type == "dir" | each { $in | append $in.modified  }
+ls | where type == "dir" | each { $in | append $in.modified  } | flatten
+ls | where type == "dir" | each { $in | append $in.modified  } | flatten | flatten
+ls | where type == "dir" | each { $in | append $in.modified  }
+ls | where type == "dir" | each { $in | insert $in.modified  }
+help insert
+ls | where type == "dir" | enumerate | insert time_diff {|e| (date now) - $e.item.modified }
+ls | where type == "dir" | enumerate | insert time_diff {|e| (date now) - $e.item.modified } | flatten
+ls | where type == "dir" | enumerate | insert time_diff {|e| (date now) - $e.item.modified | drop 2 } | flatten
+help date now
+ls
+cd file-organizer/
+ls
+nu main.nu
+nu main.nu ./
+ls
+nu main.nu +
+nu main.nu ~
+reedline
+nu main.nu ~ | get time_diff
+nu main.nu ~
+nu main.nu ~ | get size
+nu main.nu ~
+nu main.nu ~ | get size
+do { nu main.nu }
+do { nu main.nu ~ }
+do { nu main.nu ~ } | get size
+do { nu main.nu ~ } | table | get size
+do { nu main.nu ~ } | complete
+do { nu main.nu ~ } | str join
+do { nu main.nu ~ }
+nu main.nu ~
+nu main.nu ~ | get size
+nu main.nu ~ | table
+nu main.nu ~ | table | get size
+nu main.nu ~ | table | columns
+nu main.nu ~
+nu main.nu ~ | get size
+nu main.nu ~ | table
+nu main.nu ~ | table | get size
+nu main.nu ~ | into table
+nu main.nu ~ | into record 
+nu main.nu ~ | table
+help table
+nu main.nu ~ | echo
+nu main.nu ~
+(nu main.nu ~).name
+(nu main.nu ~)
+nu main.nu ~
+ls | echo
+ls | table
+nu main.nu ~ | table
+nu main.nu ~ | from yaml
+nu main.nu ~
+nu main.nu ~ | table
+nu main.nu ~ | table | get size
+nu main.nu ~ | table | columns
+nu main.nu ~ | table | length
+help length
+nu main.nu ~ | table
+nu main.nu ~ | table | get 1
+nu main.nu ~ | table | first
+hellp filter
+help filter
+help watch
+help filter
+help sort-by
+ls --help
+['/path/to/directory' '/path/to/file'] | each {|| ls -D $in } | flatten
+ls -f
+ls --help
+ls -d
+ls | enumerate
+ls | enumerate | flatten
+ls | enumerate | insert dd { date now } | flatten
+watch . --glob=**/*.nu {|| nu main.nu }
+touch /tmp/sample
+rm /tmp/sample
+mkdir /tmp/sample
+mkdir /tmp/sample/fol1
+mkdir /tmp/sample/fol2
+touch /tmp/sample/fol1/file1
+touch /tmp/sample/fol1/file2
+touch /tmp/sample/fol2/file1
+touch /tmp/sample/fol2/file2
+touch /tmp/sample/fol2/file3
+touch /tmp/sample/fol2/file4
+watch . --glob=**/*.nu {|| nu main.nu /tmp/sample/ }
+clear
+help date
+let n = date now
+((date now) - $n) | print
+((date now) - $n) | to int
+((date now) - $n) | seconds
+help date
+((date now) - $n) | date to-record
+((date now) - $n) / 1sec
+date now | get 1
+touch /tmp/sample/fol2/file5
+101 | int
+101 | to int
+101 | into int
+help ceil
+math floor
+mkdir /tmp/sample/fol3
+touch /tmp/sample/fol3/file1
+:w
+let n = 10
+$n + "test"
+hx ~/.config/nushell/config.nu
+hx ~/.local/bin/note-grep/src/main.nu
+$"($n)test"
+help sort-by
+pwd
+pwd | path 
+pwd | path dirname
+pwd | path basename
+help print
+help echo
+echo 'test' | describe
+print 'test' | describe
+ls
+cd file-organizer/
+ls
+lazygit
+clear
+hx README.md
+watch . --glob=**/*.nu {|| nu main.nu /tmp/sample/ }
+clear
+cd ..
+ls
+cd HoS-clone/
+ls
+cd ../HoS-clone/
+ls
+cd ../HoS-clone/
+ls
+help glob
+help watch
+cd repos/dev/HoS-clone/
+ls
+watch . --glob=**/*.rs {|| cargo run }
+watch . --glob=**/*.rs {|| cargo run }
+~/.local/bin in $env.PATH
+$env.PATH
+'/usr/bin' in $env.PATH
+hx install.nu
+ls
+cat ssm.nu
+ll
+ls
+mkdir ssm
+cat gd.nu
+bat gd.nu
+man bat
+bat gd.nu
+ls
+mv ssm.nu ssm/
+ls ssm
+ls
+mkdir note-grep
+mv nf.nu note-grep/
+cat gd.nu
+cp ~/.local/bin/olgit olgit.nu
+cat olgit.nu
+ls
+mkdir git_helpers
+ls
+mv olgit.nu git_helpers/
+mv gd.nu git_helpers/
+ls
+cd ~/.local/bin/
+ls **/*.nu
+ls
+nu install.nu
+help wrap
+1..100 | wrap num
+1..100 
+clear
+ls
+nu install.nu
+help call
+nu install.nu
+ls
+mv -v ssm/ ssh
+ls ssh/
+ls
+nu install.nu
+ls ~/.local/bin-sample
+ls ~/.local/
+env
+$env.HOME
+ls
+rm -r ./~
+ls
+nu install.nu
+ls ~/.local/bin-sample/
+~/.local/bin-sample/ssm
+ls
+nu install.nu
+ln --help
+nu install.nu
+~/.local/bin-sample/ssm
+ls ~/.local/bin-sample/
+ls -sf ./ssh/ssm.nu ~/.local/bin-sample/ssm
+ln -sf ./ssh/ssm.nu ~/.local/bin-sample/ssm
+ls ~/.local/bin-sample/
+ln -sf ./ssh/ssm.nu /home/jonesgc/.local/bin-sample/ssm
+ls ~/.local/bin-sample/
+ls
+ln -s ssh/ssm.nu ssm
+ls
+./ssm
+ls
+./ssm
+ls
+ls ssh/
+cat ssh/ssm.nu
+~/.local/bin-sample/ssm
+pwd
+let x = pd
+let x = pwd
+$x
+ln -sf $"($x)/ssh/ssm.nu" /home/jonesgc/.local/bin-sample/ssm
+/home/jonesgc/.local/bin-sample/ssm
+ln -sf ./ssh/ssm.nu /home/jonesgc/.local/bin-sample/ssm
+/home/jonesgc/.local/bin-sample/ssm
+ln --help
+help ln
+help link
+ls
+nu install.nu
+ls
+nu install.nu
+hx install.nu
+hx --grammar fetch
+hx --grammar build
+ls ~/.local/bin-sample/
+~/.local/bin-sample/ssm
+cd ~/.local/bin/
+ls
+ls ~
+ls ./~
+ls ./
+cd ./~
+ls
+cd ..
+rm -r ./~
+ls
+cd ..
+ls
+cp -r bin bin-bak
+ls
+cd bin/
+ls
+rm -r note-grep/
+ls
+rm nf
+rm ssm
+rm gd.nu
+rm gd.nu.bak
+rm olgit
+ls
+nu install.nu
+ls
+mv -v note-grep/ note_helpers/
+ls **/*.nu
+chmod +x note_helpers/nf.nu
+ls **/*.nu
+chmod +x install.nu
+ls **/*.nu
+ls
+rm ssm
+mv -v ssh ssh_helpers
+ll
+ls
+./install.nu
+ssm
+help nf
+nf nf test
+nf test
+ls
+rm -r ./()
+ls
+./install.nu
+ls
+ls ~/.local/bin
+ssm
+ls
+nf ntil
+rm ~/.local/bin/nf
+./install.nu
+ls ~/.local/bin
+nf ntil
+which nf
+help nf
+whereis nf
+rm ~/.local/bin/nf
+ls ~/.local/bin
+ls ~/.local/bin | grep nf
+nf
+ls
+ssm
+ls
+./install.nu
+nf ntil
+ls
+ls note_helpers/
+grep -rn note-grep
+config nu
+exit
+nf
+nf test
+nf til
+less ./
+ls ~/.cache/note-grep/
+nf til
+vifm
+nf til
+jhx
+nf til
+ls
+btop
+celar
+clear
+ranger
+clear
+ls
+nf ntil
+botp
+btop
+ssm
+nf til
+ssm
+clear
+ls
+hx ~/.local/bin/note-grep/
+help paru
+paru --help
+ls
+sudo pacman -Syu
+sudo pacman -Syu shellcheck
+shellcheck --help
+ls
+paru -Syu
+qview 
+alsamixer 
+ls
+clear
+ls
+cd repos/
+cd dev/
+ls
+cd ../active/
+ls
+mkdir luminar
+ls
+cd luminar/
+ls
+cargo init
+ls
+cargo init
+ls
+cd ../../dev/
+ls
+cd nf-hs/
+ls
+hx
+watch . --glob=**/*.hs {|| cabal run }
+clear
+cabal clean
+cabal install split
+killall qutebrowser
+cd ~/repos/
+ls
+cd dev/
+ls
+cd HoS-clone/
+ls
+c
+ls
+clear
+hx .gitignore
+cp ../../other/bevy/.gitignore .
+cat .gitignore
+git init
+git status
+lazygit
+git checkout -b setup
+lazygit
+ls
+hx
+cat Cargo.toml
+cargo add bevy_rapier2d
+cat Cargo.toml
+cargo --fix
+watch . --glob=**/*.rs {|| cargo run }
+watch . --glob=**/*.rs {|| cargo run --warnings }
+cargo --help
+cargo run --help
+cargo run -q
+cargo run --help
+watch . --glob=**/*.rs {|| cargo run --warnings }
+cargo add bevy_rapier
+cargo add bevy_rapier2
+cargo add bevy_rapier2d
+cargo clean
+which cargo
+cargo --version
+cargo update
+hx Cargo.toml
+cargo clean
+git diff Cargo.toml
+hx Cargo.toml
+cargo add bevy_rapier2d
+curl wttr.in
+clear
+ls
+cargo run
+clear
+watch . --glob=**/*.rs {|| cargo run}
+cargo run
+zellij
+exit
+ls
+du -h .
+du
+help ls
+ls
+ls -r
+ls -a
+du -h . 
+du -d 1 .
+du . | print
+ls
+help ls
+size
+ls --du
+cd orbitter/
+cargo clean
+cd ..
+ls
+cd incremental-game/
+cargo clean
+cd ..
+ls
+mkdir rapier_play
+cd rapier_play/
+cargo init
+cargo add bevy_rapier2d
+cargo add bevy
+ls
+cat ../HoS-clone/Cargo.toml
+cargo build
+cargo clean
+cargo run
+ls
+cargo run
+l
+ls
+ls -d
+rm -rf thorium-browser/
+sudo rm -rf thorium-reader 
+sudo pacman -R thorium-browser
+sudo rm -rf thorium-browser/
+ls
+ls -d
+rm boot-backup.tar.gz
+sudo rm ./boot-backup.tar.gz
+ls
+R
+sudo pacman -Syu libtcl
+sudo pacman -Syu gcc-fortran
+R
+sudo pacman -Syu tcl
+R
+ls /usr/include/
+cd /usr/include/
+ls
+ls **/tcl*I
+ls **/tcl*
+cd ..
+ls
+cd ..
+ls
+cd tmp/
+ls
+R
+sudo pacman -Syu tk
+R
+sudo pacman -Syu libxml2
+sudo pacman -Syu libgit2
+ls -d
+cd work/
+ls
+ls -d 
+cd stable-diffusion-webui/
+ls
+ls -d
+cd venv/
+ls
+ls -d
+ls bin/
+cd ~
+ls
+clear
+ls
+R
+clear
+ls
+cd ~/repos
+ls
+cd dev/
+cd ..
+cd active/
+ls
+mkdir NuR
+ls
+cd NuR/
+ls
+mkdir data
+ls
+mkdir modules
+ls
+ls ~/R/x86_64-pc-linux-gnu-library/
+ls ~/R/x86_64-pc-linux-gnu-library/4.3/
+ls ~/R/x86_64-pc-linux-gnu-library/4.3/yaml/
+ls ~/R/x86_64-pc-linux-gnu-library/4.3/tidyr/
+ls ~/R/x86_64-pc-linux-gnu-library/4.3/tidyr/data/
+open /home/jonesgc/R/x86_64-pc-linux-gnu-library/4.3/tidyr/data/Rdata.rdb
+clear
+ls
+clear
+clear
+ls
+ls data/
+ls modules/
+mv ~/Downloads/Warehouse_and_Retail_Sales.csv data/
+hx .gitignore
+git init
+ls
+mkdir analysis
+ls modules/
+ls data/
+hx analysis/retail_sales.nu
+nu analysis/retail_sales.nu
+hx .gitignore
+nu analysis/retail_sales.nu
+help shuffl
+help shuffle
+help dfr
+help shuffle
+nu analysis/retail_sales.nu
+nu analysis/retail_sales.nu | sort-by WAREHOUSE_SALES
+nu analysis/retail_sales.nu 
+help group-by
+help agg
+nu analysis/retail_sales.nu 
+help group-by
+nu analysis/retail_sales.nu 
+open /home/jonesgc/R/x86_64-pc-linux-gnu-library/4.3/tidyr/data/Rdata.rdb
+nu analysis/retail_sales.nu 
+help rwos
+help rows
+help column
+help columns
+help roll
+help roll down
+nu analysis/retail_sales.nu 
+dfr agg 
+help dfr agg
+nu analysis/retail_sales.nu 
+help sum
+help math sum
+ls
+head data/Warehouse_and_Retail_Sales.csv
+nu analysis/retail_sales.nu 
+bb
+nu analysis/retail_sales.nu 
+bb
+nu analysis/retail_sales.nu 
+bh
+nu analysis/retail_sales.nu 
+help select
+ls
+nu analysis/retail_sales.nu 
+help dfr
+nu analysis/retail_sales.nu 
+help dfr group-by
+nu analysis/retail_sales.nu 
+help dfr 
+help dfr into-eager
+help dfr into-lazyg
+help dfr into-lazy
+nu analysis/retail_sales.nu 
+xx
+nu analysis/retail_sales.nu 
+help dfr
+help dfr agg
+nu analysis/retail_sales.nu 
+help dfr
+nu analysis/retail_sales.nu 
+help dfr sort-by
+nu analysis/retail_sales.nu 
+dfr sort-by --help
+nu analysis/retail_sales.nu 
+dfr sort-by --help
+nu analysis/retail_sales.nu 
+open data/Warehouse_and_Retail_Sales.csv <\n>  | first 20 <\n>  | dfr into-df<\n>  | dfr group-by "ITEM CODE" "ITEM TYPE" "ITEM DESCRIPTION"<\n>  | dfr agg [<\n>    (dfr col "WAREHOUSE SALES" | dfr sum | dfr as "warehouse_sum")<\n>    (dfr col "RETAIL SALES" | dfr sum | dfr as "retail_sum")<\n>  ]<\n>  | dfr sort-by -r "warehouse_sum"<\n>
+open data/Warehouse_and_Retail_Sales.csv <\n>  | first 20 <\n>  | dfr into-df<\n>  | dfr group-by "ITEM CODE" "ITEM TYPE" "ITEM DESCRIPTION"<\n>  | dfr agg [<\n>    (dfr col "WAREHOUSE SALES" | dfr sum | dfr as "warehouse_sum")<\n>    (dfr col "RETAIL SALES" | dfr sum | dfr as "retail_sum")<\n>  ]<\n>  | dfr sort-by "warehouse_sum" --reverse
+open data/Warehouse_and_Retail_Sales.csv <\n>  | first 20 <\n>  | dfr into-df<\n>  | dfr group-by "ITEM CODE" "ITEM TYPE" "ITEM DESCRIPTION"<\n>  | dfr agg [<\n>    (dfr col "WAREHOUSE SALES" | dfr sum | dfr as "warehouse_sum")<\n>    (dfr col "RETAIL SALES" | dfr sum | dfr as "retail_sum")<\n>  ]<\n>  | dfr sort-by --reverse
+open data/Warehouse_and_Retail_Sales.csv <\n>  | first 20 <\n>  | dfr into-df<\n>  | dfr group-by "ITEM CODE" "ITEM TYPE" "ITEM DESCRIPTION"<\n>  | dfr agg [<\n>    (dfr col "WAREHOUSE SALES" | dfr sum | dfr as "warehouse_sum")<\n>    (dfr col "RETAIL SALES" | dfr sum | dfr as "retail_sum")<\n>  ]<\n>  | dfr sort-by sfdf --reverse 
+open data/Warehouse_and_Retail_Sales.csv <\n>  | first 20 <\n>  | dfr into-df<\n>  | dfr group-by "ITEM CODE" "ITEM TYPE" "ITEM DESCRIPTION"<\n>  | dfr agg [<\n>    (dfr col "WAREHOUSE SALES" | dfr sum | dfr as "warehouse_sum")<\n>    (dfr col "RETAIL SALES" | dfr sum | dfr as "retail_sum")<\n>  ]<\n>  | dfr sort-by --reverse warehouse_sum
+dfr sort-by --help
+open data/Warehouse_and_Retail_Sales.csv <\n>  | first 20 <\n>  | dfr into-df<\n>  | dfr group-by "ITEM CODE" "ITEM TYPE" "ITEM DESCRIPTION"<\n>  | dfr agg [<\n>    (dfr col "WAREHOUSE SALES" | dfr sum | dfr as "warehouse_sum")<\n>    (dfr col "RETAIL SALES" | dfr sum | dfr as "retail_sum")<\n>  ]<\n>  | dfr sort-by [warehouse_sum] -r [true]
+open data/Warehouse_and_Retail_Sales.csv <\n>  | first 20 <\n>  | dfr into-df<\n>  | dfr group-by "ITEM CODE" "ITEM TYPE" "ITEM DESCRIPTION"<\n>  | dfr agg [<\n>    (dfr col "WAREHOUSE SALES" | dfr sum | dfr as "warehouse_sum")<\n>    (dfr col "RETAIL SALES" | dfr sum | dfr as "retail_sum")<\n>  ]<\n>  | dfr sort-by [warehouse_sum retail_sum ] -r [true true]
+nu analysis/retail_sales.nu 
+help dtype
+nu analysis/retail_sales.nu 
+dfr
+nu analysis/retail_sales.nu 
+help dfr open
+vim
+vim data/Warehouse_and_Retail_Sales.csv
+nu analysis/retail_sales.nu 
+help upsert
+ls
+hx data/sample.csv
+hx analysis/retail_sales.nu
+clear
+hx analysis/sample.nu
+m
+nu analysis/sample.nu
+ls
+hx data/sample2.csv
+nu analysis/sample.nu
+[1..100]
+[1..]
+24hr / 1sec
+(24hr / 1sec) * 365
+1yr
+help types
+help type
+date
+date now
+date to-record
+date now
+date now | table
+date humanize
+date
+time
+ls
+date now | date to-record
+24hr / 1sec
+(24hr / 1sec) * 365
+((24hr / 1sec) * 365) * 60
+((24hr / 1sec) * 365) * 80
+((24hr / 1sec) * 365) * 100
+clear
+du | explore
+du
+du | explore
+ls | less
+du | explore
+du | explore --peek
+explore --help
+du | explore
+try
+open data/Warehouse_and_Retail_Sales.csv | try
+help try
+explore
+explore -i
+clear
+ls
+clear
+ls
+hx
+hx swls/main.py
+ls
+mkdir integration_test
+hx integration_test/sample.xml
+hx swls/xml_parser.py
+hx swls/dsl_lsp_server.py
+mv integration_test/sample.xml integration_test/books.xml
+ls
+python3.10 -m virtualenv .env
+ls
+source .env/bin/activate
+source .env/bin/activate.nu
+overlay use .env/bin/activate.nu
+ls
+pip install python-language-server
+pip list
+ls
+hx 
+ls
+git init
+ls
+hx
+ls
+python swls/dsl_lsp_server.py
+python
+ls
+pip install ptpython
+ls
+ptpython
+pip uninstall python-language-server
+ls
+pip lsit
+pip list
+pip install python-lsp-server
+ls
+hx 
+ptpython
+ptpython
+hx
+python swls/dsl_lsp_server.py
+hx
+python swls/dsl_lsp_server.py
+hx
+python swls/dsl_lsp_server.py
+code
+sudo pacman -Syu code
+overlay use .env/bin/activate.nu
+ls
+python -m pip install git+https://github.com/microsoft/lsprotocol.git
+ls
+python -m generator --plugin dotnet --output-dir ./code
+ls
+ls code/
+hx
+python -m generator
+python -m generator --help
+python -m generator --plugin --help
+python -m generator --plugin
+sl
+ls
+rm -rf code/
+python -m generator --plugin python --output-dir ./code
+ls
+ls code/
+ls code/lsprotocol/
+hx
+hx
+hx 
+ls
+nu analysis/sample.nu
+hx swls/test.py
+ls
+cd ..
+ls
+cd ../
+ls
+cd posterity/
+ls
+cd ..
+ls
+cd other/
+ls
+cd ../
+ls
+cd dev/
+ls
+cd ..
+ls
+mkdir example
+cd example/
+ls
+mkdir modern_tkinter
+cd modern_tkinter/
+ls
+pip install customtkinter
+pip download customtkinter 
+ls
+rm *
+ls
+cp ../../active/swls/pyproject.toml .
+ls
+hx pyproject.toml
+ls
+exit
+ls
+exit
+ls
+python example_one.py
+pip install customtkinter
+python example_one.py
+hx example_one.py
+python example_one.py
+pip install tkinter
+pip install customtkinter<\n><\n>
+ls
+pip instal ltk
+pip instal tk
+pip install tk
+ls
+python example_one.py
+ptpython
+overlay use ~/Downloads/venv1/bin/activate.nu
+ls
+cd modern_tkinter/
+ls
+pip install customtkinter
+ls
+python example_one.py
+pip install packaging
+python example_one.py
+ls
+pip install
+ls
+python example_one.py
+mkdir modern_tkinter
+python example_one.py
+ls
+rm -rf modern_tkinter/
+ls
+python example_one.py
+hx example_one.py
+ls
+hx example_two.py
+ls
+python example_two.py
+clear
+ls
+exit
+ls
+python example_two.py
+clear
+ls
+cd ..
+ls
+cd ..
+ls
+cd dev/
+ls
+mkdir tkinster
+ls
+cd tkinster/
+ls
+cd ..
+mv -v tkinster/ installertk
+cd installertk/
+ls
+cp ../../active/swls/pyproject.toml .
+ls
+hx pyproject.toml
+ls
+mkdir src
+hx pyproject.toml
+touch src/__init__.py
+hx src/main.py
+hx example_three.py
+ptpython
+pip install rich
+ptpython
+clear
+ls
+hx src/imp.py
+clar
+clear
+ls
+clear
+ip -br a
+arp -a
+ssh 10.0.0.4
+arp -a
+ssh prime@10.0.0.68
+ssh nas-prime
+hx ~/.ssh/config
+ssm
+ls
+cd ~/.ssh/
+ls
+cat id_ecdsa.pub
+ssm
+ls
+cat id_rsa.pub
+ssm
+clear
+ls
+ssm
+clear
+ssm
+20 * 140
+20 * 70
+ssm
+cd /tmp/
+ls
+curl -fL "https://github.com/coursier/launchers/raw/master/cs-x86_64-pc-linux.gz" | gzip -d > cs
+ls
+touch cs
+curl -fL "https://github.com/coursier/launchers/raw/master/cs-x86_64-pc-linux.gz" | gzip -d > cs
+exit
+ssm
+curl -fL "https://github.com/coursier/launchers/raw/master/cs-x86_64-pc-linux.gz" | gzip -d > cs
+ssm
+du --help
+du -d 2 .
+cd ..
+du -d 2 .
+ls
+du -d 5 .
+du -d 5 /
+du -d 5 ./
+du -d 5 etc/
+du -d 2 etc/
+du -d 1 etc/
+ls
+du --help
+du -d 1 dev/
+exit
+ssm
+clear
+exit
+clear
+python med_absdiff_sortedarr.py
+which python
+source ~/Downloads/venv1/bin/activate.nu
+overlay use ~/Downloads/venv1/bin/activate.nu
+pip install rich
+python med_absdiff_sortedarr.py
+timeit python med_absdiff_sortedarr.py
+pip install numpy
+timeit python med_absdiff_sortedarr.py
+ls
+pip install rich
+exit
+which python
+python
+python3.10
+exit
+ls
+ntil
+nf ntil
+clar
+clear
+cd ~/repos/active/nuscripts/
+ls
+hx
+watch . --glob=**/*.rs {|| cargo run}
+cargo run
+ls
+podman run -it prime-rhel /bin/bash
+hx docker-compose.yml
+podman rm oraclelinux:1
+podman container prune
+podman container prune -f
+ssm
+ssh -p 2201 localhost -i ssh/id_rsa
+ssh -p 2201 prime@localhost -i ssh/id_rsa
+ssh -p 2201 -i ssh/id_rsa prime@localhost
+podman container prune -f
+cat docker-compose.yml
+podman build -f Dockerfile -t prime-rhel .
+podman container prune -f
+ssh -p 2201 -i ssh/id_rsa prime@localhost
+podman container ls
+podman exec -it oraclelinux1 /bin/bash
+ssh -p 2201 -i ssh/id_rsa prime@localhost
+podman container prune -f
+podman rm oraclelinux:1
+podman rm oraclelinux
+podman container ls
+podman rm oraclelinux1
+podman-compose stop
+podman-compose sto2
+podman rm oraclelinux2
+ssh -p 2201 -i ssh/id_rsa prime@localhost
+ssh -p 2202 -i ssh/id_rsa prime@localhost
+gum --help
+hx docker-compose.yml
+podman-compose up
+podman rm oraclelinux2
+podman rm oraclelinux1
+podman container prune -f
+podman container ps
+ssh -p 2200 -i ssh/id_rsa prime@localhost
+hx Dockerfile
+podman rm oraclelinux1 
+podman rm oraclelinux1 -f
+podman rm oraclelinux2 -f
+podman ps
+podman-compose stop
+podman rm gateway
+podman ps
+ssh -p 2200 -i ssh/id_rsa prime@localhost
+podman-compose up
+podman-compose stp
+podman-compose down
+podman build -f Dockerfile -t prime-rhel .
+ssh -p 2200 -i ssh/id_rsa prime@localhost
+hx Dockerfile
+hx
+podman exec -it oraclelinux1 /bin/bash
+podman exec -it oraclelinux1 -u root /bin/bash
+podman exec -it oraclelinux1 --usre root /bin/bash
+podman exec -it oraclelinux1 --user root /bin/bash
+podman exec -it -u root oraclelinux1 /bin/bash
+podman exec -it --user root oraclelinux1 /bin/bash
+podman exec -it --user root oraclelinux2 /bin/bash
+podman exec -it -u root oraclelinux1 /bin/bash
+podman-compose up
+podman build -f Dockerfile -t prime-rhel .
+podman-compose down
+hx Dockerfile
+podman build -f Dockerfile -t prime-rhel .
+hx Dockerfile
+podman build -f Dockerfile -t prime-rhel .
+podman-compose up
+hx Dockerfile
+podman build -f Dockerfile -t prime-rhel .
+podman rm gateway
+podman rm oraclelinux2
+podman rm oraclelinux1
+podman-compose up
+podman build -f Dockerfile -t prime-rhel .
+podman rm gateway
+podman rm oraclelinux1 oraclelinux2
+podman run -it prime-rhel /bin/bash
+podman build -f Dockerfile -t prime-rhel .
+podman run -it prime-rhel /bin/bash
+cat Dockerfile
+podman build -f Dockerfile -t prime-rhel .
+podman rm oraclelinux1 oraclelinux2 gateway
+ssh -p 2200 -i ssh/id_rsa prime@localhost
+ansible -i inventory.ini gateway -m ping
+ssh -p 2200 -i ssh/id_rsa prime@localhost
+ssh -p 2200 -i ssh/id_rsa -u root prime@localhost
+podman exec -it -u root gateway /bin/bash
+podman exec -it gateway /bin/bash
+podman exec -it --user prime gateway /bin/bash
+ls
+hx inventory.ini
+ansible -i inventory.ini gateway -m ping
+ansible -i inventory.ini outside-gateway -m ping
+hx inventory.ini
+ansible -i inventory.ini outside-gateway -m ping
+ansible -i inventory.ini oracledb -m ping
+hx inventory.ini
+ansible -i inventory.ini oracledb -m ping
+hx inventory.ini
+hx playbook.yml
+tldr ansible-playbook
+ansible-playbook ./playbook.yml -i inventory.ini
+hx
+ansible-playbook ./playbook.yml -i inventory.ini
+ls
+ansible-playbook ./playbook.yml -i inventory.ini
+pip install howdoi
+overlay use ~/Downloads/venv1/bin/activate.nu
+pip install howdoi
+howdoi date bash today
+howdoi rust bevy App
+howdoi make rust bevy app
+howdoi make rust bevy app --explain
+howdoi git rebase
+howdoi git rebase command
+ansible-playbook ./playbook.yml -i inventory.ini
+ls
+cp playbook.yml playbook2.yml
+ansible-playbook ./playbook.yml -i inventory.ini
+ansible-playbook ./playbook2.yml -i inventory.ini
+hostname
+podman ps
+ansible-playbook ./playbook2.yml -i inventory.ini
+hx inventory.ini
+ansible-playbook ./playbook2.yml -i inventory.ini
+hx inventory.ini
+ansible-playbook ./playbook2.yml -i inventory.ini
+hx inventory.ini
+ansible-playbook ./playbook2.yml -i inventory.ini
+hx inventory.ini
+ansible-playbook ./playbook2.yml -i inventory.ini
+ansible oracledb -m ping
+ansible -i inventory.ini oracledb -m ping
+cat inventory.ini
+hx inventory.ini
+ansible -i inventory.ini oracledb -m ping
+hx inventory.ini
+ansible -i inventory.ini oracledb -m ping
+ssh prime@localhost:2200 ./ssh/id_rsa
+cat inventory.ini
+podman ps
+ssh -i ./ssh/id_rsa prime@localhost:2200
+ssh -i ./ssh/id_rsa -p 2200 prime@localhost
+hx inventory.ini
+ssh -i ./ssh/id_rsa -p 2200 prime@localhost
+ansible -i inventory.ini oracledb -m ping
+hx inventory.ini
+ansible -i inventory.ini oracledb -m ping
+hx inventory.ini
+ansible -i inventory.ini oracledb -m ping
+hx inventory.ini
+ansible -i inventory.ini oracledb -m ping
+ls .ssh
+ls ssh/
+ls -la ./ssh
+ansible -i inventory.ini oracledb -m ping
+ssh -i ./ssh/id_rsa -p 2200 -J prime@localhost prime@oraclelinux1
+ssh -i ./ssh/id_rsa -p 2200 prime@localhost
+ssh -i ./ssh/id_rsa -p 2200 -J prime@localhost prime@oraclelinux1
+ssh -i ./ssh/id_rsa -J prime@localhost:2200 prime@oraclelinux1
+hx inventory.ini
+ansible -i inventory.ini oracledb -m ping
+hx inventory.ini
+ansible -i inventory.ini oracledb -m ping
+hx inventory.ini
+ansible -i inventory.ini oracledb -m ping
+hx inventory.ini
+ansible -i inventory.ini oracledb -m ping
+hx inventory.ini
+ansible -i inventory.ini oracledb -m ping
+ssh -i ./ssh/id_rsa -p 2200 -J prime@localhost prime@oraclelinux1
+ssh -i ./ssh/id_rsa -J prime@localhost:2200 prime@oraclelinux1
+ssh -i ./ssh/id_rsa -p 2200 prime@localhost
+ssh -i ./ssh/id_rsa -J prime@localhost:2200 prime@oraclelinux2
+podman-compose up
+podman-compose down
+podman container prune -f
+podman rm oraclelinux1 oraclelinux2 gateway
+podman ps
+podman rm oraclelinux1 oraclelinux2 gateway
+ssh -i ./ssh/id_rsa -J prime@localhost:2200 prime@oraclelinux2
+ssh -i ./ssh/id_rsa -v -J prime@localhost:2200 prime@oraclelinux2
+ssh -o ProxyCommand="ssh -W %h:%p -i ./ssh/id_rsa prime@localhost:2200" -i ./ssh/id_rsa prime@oraclelinux2
+ssh -o ProxyCommand="ssh -W %h:%p -p 2200 -i ./ssh/id_rsa prime@localhost" -i ./ssh/id_rsa prime@oraclelinux2
+podman ps
+ansible -i inventory.ini oracledb -m ping
+lazygit
+hx inventory.ini
+ansible-playbook -i inventory.ini 
+history
+history | grep ansible
+ansible-playbook ./playbook2.yml -i inventory.ini 
+lazygit
+cp playbook2.yml playbook.yml
+lazygit
+ssm
+ssh softserve repo add examples/bastion-ansible
+ssh softserve repo create examples/bastion-ansible
+git remote add origin git@softserve:examples/bastion-ansible
+git push origin master
+ssm
+ls
+ansible-playbook ./playbook2.yml -i inventory.ini 
+jhx
+ansible-playbook ./playbook2.yml -i inventory.ini 
+layzgit
+lazygit
+sl
+ls
+cp playbook2.yml playbook.yml
+lazygit
+ansible-playbook ./playbook.yml -i inventory.ini 
+ls
+rm playbook2.yml
+lazygit
+hx site.yml
+rm site.yml
+ansible-playbook ./playbook.yml -i inventory.ini 
+hx run.sh
+gum --help
+ansible-playbook ./playbook.yml -i inventory.ini 
+rm playbook2.yml
+hx playbook.yml
+ansible-playbook ./playbook.yml -i inventory.ini 
+touch bastion.yml
+ansible-playbook ./playbook.yml -i inventory.ini 
+ansible-galaxy --help
+ansible-galaxy init bastion
+ls
+hx run.sh
+rm bastion/
+rm bastion.yml
+ansible-galaxy init bastion-minion
+ansible-playbook ./playbook.yml -i inventory.ini 
+hx Dockerfile
+podman ps
+podman exec -it --user root oraclelinux1 /bin/bash
+podman exec -it --user root oraclelinux2 /bin/bash
+podman exec -it --user root gateway /bin/bash
+ansible-playbook ./playbook.yml -i inventory.ini 
+ansible-playbook ./playbook.yml -i inventory.ini --ask-become-pass
+ls
+podman exec -it --user root oraclelinux2 /bin/bash
+hx Dockerfile
+podman exec -it --user root oraclelinux1 /bin/bash
+ansible-playbook ./playbook.yml -i inventory.ini --ask-become-pass
+podman exec -it --user root gateway /bin/bash
+ansible-playbook ./playbook.yml -i inventory.ini --ask-become-pass
+podman exec -it --user root gateway /bin/bash
+ansible-playbook ./playbook.yml -i inventory.ini --ask-become-pass
+podman-compose up
+podman-compose stop
+podman-compose up
+ansible-playbook ./playbook.yml -i inventory.ini --ask-become-pass
+sqlite
+sudo pacman -Syu sqlite
+ls
+gum --help
+gum choose --help
+gum choose 1 2
+howdoi bash if
+./run.sh
+chmod +x run.sh
+./run.sh
+podman-compose down
+./run.sh
+gum --help
+gum write
+gum table
+gum table --help
+ls
+./run.sh
+ls
+gum --help
+gum spin
+gum spin ls
+gum spin sleep 1
+gum log "test"
+gum log test
+gum log test: test
+gum confirm are you sure
+gum confirm
+gum confirm "are you sure"
+gum confirm "Proceed with CM install?"
+gum --ehlp
+gum confirm "Proceed with CM install?"
+gum config --help
+gum confirm --help
+gum confirm --default no "Proceed with CM install?" 
+gum confirm --default "Proceed with CM install?" 
+gum confirm --default n "Proceed with CM install?" 
+gum confirm --default No "Proceed with CM install?" 
+gum confirm "Proceed with CM install?"  --default ls
+gum confirm "Proceed with CM install?"  --default No
+gum confirm "Proceed with CM install?"  --default 
+gum confirm "Proceed with CM install?"  --default x
+gum confirm "Proceed with CM install?"  --default false
+gum confirm "Proceed with CM install?"  --default False
+gum confirm "Proceed with CM install?"  --default x
+gum confirm "Proceed with CM install?"  --default=0
+p=$(gum confirm "Proceed with CM install?"  --default=0)
+gum confirm "Proceed with CM install?"  --default=0 | describe
+let x = gum confirm "Proceed with CM install?"  --default=0
+$x
+gum confirm "Proceed with CM install?"  --default=0 && echo ls
+gum confirm "Proceed with CM install?"  --default=0 && echo 'hello'
+gum confirm "Proceed with CM install?"  --default=0 and echo 'hello'
+ls and ls
+ls
+./run.sh
+gum confirm --help
+gum confirm "Proceed with CM install?"  --default=0 and echo 'hello' | echo
+11;rgb:1212/1212/1212
+gum confirm "Proceed with CM install?"  --default=0 and echo 'hello' | describe
+(gum confirm "Proceed with CM install?"  --default=0 and echo 'hello') | describe
+(gum confirm "Proceed with CM install?"  --default=0 ) | describe
+(gum confirm "Proceed with CM install?"  --default=0 ) | print
+(gum confirm "Proceed with CM install?"  --default=0 ) | describe
+let x = (gum confirm "Proceed with CM install?"  --default=0 ) 
+$x
+exit
+podman-compose down
+overlay use ~/Downloads/venv1/bin/activate.nu
+podman rm oraclelinux1 oraclelinux2 gateway
+podman-compose up
+podman-compose down
+podman container prune -f
+./run.sh
+lazygit
+clear
+hx README.md
+ls
+hx dataviz.py
+python dataviz.py
+pip install polars
+python dataviz.py
+hx dataviz.py
+python dataviz.py
+ptpython --help
+ptpython -i dataviz.py
+pip install ptpython
+ptpython -i dataviz.py
+python dataviz.py
+ptpython
+ptpython -i dataviz.py
+ptpython
+ptpython -i dataviz.py
+python dataviz.py
+ptpython -i dataviz.py
+hx
+overlay use ~/Downloads/venv1/bin/activate.nu
+ptpython -i dataviz.py
+python dataviz.py
+podman-compose up
+podman-compose stop
+hx
+exit
+exit
+clear
+ls
+./run.sh
+cd ~/repos/active/dmd-clone/
+ls
+cat ../HoS-clone/Cargo.toml
+cat ~/repos/dev/HoS-clone/Cargo.toml
+hx ~/repos/dev/HoS-clone/Cargo.toml
+ls
+cd ..
+ls
+cd bevy-lab/
+ls
+cargo run --example mmd
+help $env
+help env
+let $env.RUST_BACKTRACE = 1
+$env
+exit
+overlay use ~/Downloads/venv1/bin/activate.nu
+howdoi remove spaces from filename
+for f in *\ *; do mv "$f" "${f// /_}"; done
+eixt
+exit
+nf ntil
+nf remove spaces
+nf remove
+nf spaces
+cargo add bevy_tilemap
+cargo update
+cargo add bevy_tilemap
+cargo add bevy_ecs_tilemap
+cargo add bevy_utils
+cargo run --example mmd
+cargo add bevy_simple_tilemap
+ls
+cd ..
+ls
+mv ~/Downloads/tilemap_simple.png .
+cargo run --example tilemap
+cargo add bevy_tilemap
+cargo add ahash
+cargo add ahash==v0.8.5
+cargo add ahash=v0.8.5
+cargo add bevy_tilemap
+cargo update
+cargo --version
+cargo run --example tilemap
+cargo add bevy_tilemap
+cargo build
+cargo update
+cargo build
+cargo update
+overlay use ~/Downloads/venv1/bin/activate.nu
+pip install oterm
+oterm
+ls
+ollama list
+olgit
+which olgit
+cat ~/.local/bin-bak/olgit
+git status
+git branch
+olgit diff
+olgit diff mian
+olgit diff main
+ollama pull wizardcoder:13b-python
+ollama run wizardcoder
+ollama run wizardcoder:13b-python
+ollama --help
+ollama rm wizardcoder
+ollama rm wizardcoder:13b-python
+exit
+cargo run --example tilemap
+hx ~/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bevy_ecs_tilemap-0.11.1/
+cargo run --example tilemap
+pushd /tmp/bevy_ecs_tilemap/
+cd /tmp/bevy_ecs_tilemap/
+git log
+cd -
+cargo run --example tilemap
+ls
+ls Texture/
+tree .
+cargo run --example tilemap
+cd ..
+qview ./2d_tilemap/Texture/TX_Tileset_Grass.png
+cd 2d_tilemap/
+ls
+qview tilemap_simple.png
+cp /tmp/bevy_ecs_tilemap/assets/tiles2.png .
+cargo run --example tilemap
+cp /tmp/bevy_ecs_tilemap/assets/tiles.png .
+qview tiles.png
+qview tiles2.png
+cargo run --example tilemap
+qview tiles.png
+ls
+cp tiles.png custom_tile.png
+gimp custom_tile.png
+ls
+qview custom_tile.png
+ls
+qview tiles.png
+cargo run --example tilemap
+sudo pacman -Syu nushel
+sudo pacman -Syu nushell
+sudo pacman -Syu nu
+exit
+let x = "test"
+echo "{$test}"
+echo "{$x}"
+echo $"{$x}"
+z nuscripts
+ls
+z nusc
+j nusc
+exit
+ranger
+zellij --layout scope
+which zellij
+cd .config/zellij/
+ls
+exit
+ranger
+exit
+ls
+cargo run
+ls
+cargo run
+clear
+ls
+clear
+ls
+clear
+ls
+cargo run
+ls
+lazygit
+ls
+clear
+ls
+cargo run
+hx ~/.config/wezterm/wezterm.lua
+hx ~/.config/i3/config
+ssm
+ls
+ip -br a
+ssh 10.0.0.71
+ls
+clera
+cargo run
+lazygit
+delta
+git diff
+cargo run
+cd ../..
+lazygit
+cd /tmp/
+hx test.rs
+hx ~/.config/wezterm/wezterm.lua
+lazygit
+cd src/
+grep -rn png
+cd ..
+ls
+cargo run
+l
+sls
+ls
+cargo run
+celar
+clear
+ls
+cargo run
+ls
+clear
+ls
+clear
+cargo run
+ls
+ll
+all
+ll
+cargo run
+nap
+cargo run
+cd src/
+grep -rn RigidBody
+cargo run
+grep -rn RigidBody
+cargo run
+mv ~/Downloads/tilemap_simple.png .
+cargo run
+ntil
+nf ntil
+nf til
+ranger
+nf ntil
+nf bevy
+nf Bevy
+cargo run
+kk
+cargo run
+ntil
+nf ntil
+cargo run
+grep -rn Param
+cargo run
+lazygit
+git push origin
+git branch
+git push github
+ls
+cargo run
+ranger
+cargo run
+cd ..
+gimp ./assets/Lasers/09.png
+cargo run
+alsamixer
+sudo pacman -Sy
+sudo pacman -Syu
+cargo run
+ls
+cd src/
+grep -rn Camera
+cargo run
+clar
+clear
+ls
+clear
+ls
+cargo run
+nap
+cargo run
+clear
+sudo pacman -Syu
+paru -Syu
+hx
+cargo run
+clear
+cargo run
+grep -rn KeyCode::Q
+cargo run
+clear
+cargo run
+ls
+cd /tmp/
+sbt new scala/scala-seed.g8
+mkdir test
+cd test/
+sbt new scala/scala-seed.g8
+ls
+cd scala-proj/
+ls
+zellij
+ls
+cargo run
+exit
+ls
+cargo run
+ls
+cargo run
+hx /tmp/test.txt
+ls
+cd ..
+ls
+clear
+ls
+ll
+clear
+ls
+cargo run
+clear
+ls
+cargo run
+sudo pacman -Syu
+paru -Syu
+clear
+ls
+cargo run
+ls
+lazygit
+git push github
+sudo pacman -Syu
+sudo paru -Syu
+hx
+cargo run
+paru -Syu
+paru -R thorium-reader-git
+hx
+ls
+btop
+s
+ls
+exit
+zellij
+exit
+zellij
+ls
+clear
+ls
+cd repos/
+ls
+cd active/
+ls
+cd ../dev/asteroids-bevy/
+ls
+cargo build
+sudo paru -Syu
+paru -Syu 
+sudo pacman -Syu
+btop
+sudo pacman -Syu
+btp\
+btop
+clear
+btop
+paru -Syu
+sudo pacman clean
+sudo pacman -Syu
+hx
+paru -Syu
+ls
+clear
+ls
+clear
+pls
+cargo run
+ls
+clear
+ls
+hx
+exit
+ranger
+exit
+btop
+exit
+zellij
+clear
+exit
+ls
+pacman -Syu
+sudo pacman -Syu
+ls
+clear
+ls
+cargo run
+ls
+cd repos/
+ls
+cd example/
+ls
+cd ..
+ls
+cd active/bevy-lab/
+ls
+ls 
+ls assets/
+mkdir examples/2d/snake
+hx examples/2d/snake/game.rs
+ls assets/
+hx
+cd ..
+cargo init bevy-snake
+c
+cd bevy-snake/
+ls
+cargo add bevy_tilemap
+cargo add bevy
+cargo clean
+hx Cargo.toml
+cargo add bevy
+cargo add bevy_tilemap
+hx Cargo.toml
+cargo build
+nf persi
+nf ntil
+ls
+notegrep 
+ls
+sudo pacman -Syu
+ls
+hx
+paru -Syu
+cd /tmp/
+git clone https://github.com/elkowar/eww
+cd eww/
+cargo build --release --no-default-features --features=wayland
+hx Cargo.toml
+grep -rn gtk-layer-shell-sys
+sudo pacman -Ss gtk-layer-shell
+sudo pacman -Syu gtk-layer-shell
+cargo build --release --no-default-features --features=wayland
+ls
+cd target/release/build/
+ls
+cd ..
+./eww
+cp eww ~/.local/bin/
+eww --help
+cd ~/.config/nushell/
+ls
+eww --help
+$env.PATH | split row (char esep)
+$env.PATH | split row (char esep) | prepend 1
+$env.PATH | split row (char esep)
+$env.PATH
+$env.PATH ++ 'test'
+en
+env
+$env
+$env.PATH
+insert --help
+$env.PATH
+$env.PATH | insert 'test'
+$env.PATH | insert _ 'test'
+$env.PATH ++ 'test'
+$env.PATH ++ '/test'
+exit
+$env.PATH
+exit
+$env.PATH
+$env.PATH | prepend 'test'
+exit
+$env.PATH
+paru -Syu
+btop
+./eww daemon
+eww daemon
+cd ~/.config/
+mkdir eww
+cd eww/
+ls
+eww daemon
+touch eww.yuck
+ls
+eww daemon
+eww open test
+cd ~/.config/eww/
+ls
+hx eww.yuck
+hx env.nu
+exit
+clear
+ls
+hx eww.scss
+eww open example
+btop
+eww open example
+btop
+clear
+ls
+paru -Syu
+ls
+celar
+clear
+ls
+paru -Syu
+sudo pacman -Syu
+LAWYERUP
+paru -Syu
+sudo pacman -Syu
+clear
+ls
+btop
+sudo pacman -Syu
+paru -Syu
+clear
+ls
+ll
+ls -la
+clear
+sudo pacman -Syu
+c
+sudo pacman -Syu
+cd .config/i3/
+ls
+hx config
+paru -Syu
+hx
+paru -Syu
+cargo run
+ls
+clear
+ls
+cargo run
+ls
+clear
+ls
+exit
+exit
+exit
+zellij
+exit
+hx
+exit
+j asteroids
+cd repos/dev/asteroids-bevy/
+ls
+cd ~
+ls
+cd Documents/
+ls
+mv ~/Downloads/Database1.kdbx.tmp ./Database1.kdbx
+ls
+mv ~/Downloads/Remember.docx .
+ls
+cat Remember.docx
+hx Remember.docx
+ls
+cd ~
+ls
+cargo run
+lazygti
+lazygit
+git push github
+git push softserve
+git push origin
+ssm
+clear
+ls
+hx
+git pull --fetch
+git fetch
+git checkout main
+git checkout master
+git pull github master
+ls
+lazygit
+ls
+ssm
+git branch
+git branch -d setup
+git branch -d temp
+git branch
+git checkout -b powerups
+ls
+git branch
+cargo run
+ls
+cargo run
+grep HashMap src/
+grep HashMap src/*
+nf ntil
+nf tax
+nf Tax
+nf ntil
+nf Tax
+nf ntil
+nf tax
+sudo pacman -Syu
+ls
+hx
+paru -Syu
+clear
+ls
+ll
+ls -la 
+ls
+clear
+ls
+clear
+ls
+clear
+ls
+clear
+paru -S mojo
+mojo
+ssm
+cd repos/dev/
+ls
+cd ..
+fd bastion
+cd ..
+fd bastion
+cd examples/ansible/
+ls
+git branch
+git remote add origin git@github.com:Lonestar137/ansible-bastion.git
+git remote add github git@github.com:Lonestar137/ansible-bastion.git
+git push -u github master
+git status
+git diff
+ls
+git checkout -b test
+git status
+git add .
+git commit -m saving
+git push -u github master
+git push -u github test
+history | grep podman-compose
+bash
+clear
+ls
+howdoi javascript varibale
+cd ~
+ls
+cd repos/
+ls
+cd active/
+ls
+mkdir firework
+cd firework/
+git init
+cd ~/repos/active/firework/
+ls
+hx pyprojev
+ls
+mkdir src
+hx src/main.py
+touch src/__init__.py
+hx src/main.py
+hx .gitignore
+ls src/
+cd src/
+mv main.py main_cli.py
+cp main_gui.py
+cp main_cli.py main_gui.py
+ls
+hx pyproject.toml
+ls
+hx main.py
+ls
+cd ..
+ls
+python -m venv venv
+cat .gitignore
+ls
+rm -rf venv/
+python -m virtualenv venv
+python -m pip install virtualenv
+sudo pacman -Syu python-virtualenv
+python -m virtualenv venv
+ls
+overlay use ~/Downloads/venv1/bin/activate.nu
+rm -rf venv/
+pip install .
+ls
+python src/main.py
+pip install uvicorn
+python src/main.py
+uvicorn main:app --reload
+pip install .
+ls
+uvicorn main:app --reload
+git push -u github test
+git branch
+git remote origin
+git remote add origin git@github.com:Lonestar137/firework.git<\n>git branch -M main<\n>git push -u origin main
+git remote add github git@github.com:Lonestar137/firework.git<\n>git branch -M main<\n>git push -u origin main
+git push github 
+git push github test
+git remote add github git@github.com:Lonestar137/firework.git<\n>git branch -M main<\n>git push -u origin main
+rm -rf .git/
+git init
+git add README.md
+git commit -m "initial commit"
+git initgit remote add origin git@github.com:Lonestar137/firework.git<\n>git branch -M main<\n>git push -u origin main
+git push origin
+lazygit
+git push origin main
+git commit -m "initial commit"
+git log
+git push origin main
+git stash
+git status
+git branch
+git branch -M main
+git push origin main
+git remote add origin git@github.com:Lonestar137/firework.git
+git push origin main
+ls
+ssm
+git remote add origin git@softserve:games/firework.git
+git remote add softserve git@softserve:games/firework.git
+git push softserve
+ls
+ssm
+clear
+ls
+git branch
+git checkout -b setup
+git add .
+git commit -m "setup"
+git push origin
+lazygit
+git push softserve
+sl
+ls
+hx ~/.gitconfig
+git status
+git branch
+git status
+git diff
+ls
+cargo run
+ls
+git status
+lazygit
+git push softserve
+git push softserve powerups
+git push github powerups
+ls
+ostree --help
+ostree
+tldr ostree
+exit
+sudo pacman -Syu
+hx
+hx
+paru -Syu
+hx
+hx --help
+hx --config
+ls
+sudo su
+hx --version
+cd .config/hx
+lx
+cd .config/
+cd helix/
+ls
+git status
+git remote get-url origin
+git fetch
+git status
+git diff
+git add runtime/
+git status
+git diff
+git fetch
+ls
+hx languages.toml
+hx runtime/queries/groovy/highlights.scm
+hx runtime/queries/groovy/injections.scm
+ls
+hx Jenkinsfile
+ls
+hx languages.toml
+hx --grammar fetch
+hx --grammar build
+hx Jenkinsfile
+ls
+rm Jenkinsfile
+ls
+git status
+git add .
+git commit -m "Update jenkins config"
+git push origin
+git status
+ls
+cd ~/repos/active/
+ls
+lks
+ls
+git pull github master
+git branch
+git pull github powerups
+git push softserve powerups
+git push origin powerups
+ls
+cargo run
+clear
+ls
+hx
+hx
+ls
+hx
+ls
+clear
+ls
+ll
+exit
+exit
+zellij
+ls
+cd examples/
+ls
+cd TheAlgorithms/
+ls
+cd Rust/
+ls
+cd examples/
+ls
+cd ..
+ls
+cd examples/
+ls
+cd ..
+ls
+cd repos/
+ls
+cd dev/
+ls
+mkdir diagame
+cd diagame/
+ls
+cargo init
+ls
+cargo add bevy
+ls
+clear
+ls
+pwd
+ls
+clear
+cd repos/active/
+ls
+cd ../dev/asteroids-bevy/
+ls
+hx src/lib.rs
+cd ~/repos/dev/asteroids-bevy/
+hx
+nap
+cargo add bevy_cursor
+hx
+sudo pacman -Syu
+paru -Syu
+clear
+ls
+cd /tmp/
+ls
+podman run -it prime-rhel /bin/bash
+history | grep podman
+podman images
+podman run -it prime-rhel /bin/bash
+mkdir ttt
+cd ttt/
+ls
+hx Containerfile
+ls
+cd ..
+ls
+exit
+zellij
+exit
+ls
+cd ~/repos/
+ls
+clera
+clear
+ls
+cd active/
+ls
+cd ../dev/asteroids-bevy/
+ls
+btop
+sudo pacman -Syu
+paru -Syu
+sudo pacman -Syu
+paru -Syu
+swaymsg exit
+ls
+cd Downloads/
+ls
+podman run -it --cap-add=SYS_NICE --cap-add=IPC_LOCK pycaptest /bin/bash
+getcap /usr/bin/podman
+setcap cap_sys_nice=ep /usr/bin/podman
+sudo setcap cap_sys_nice=ep /usr/bin/podman
+podman run -it --cap-add=SYS_NICE --cap-add=IPC_LOCK pycaptest /bin/bash
+cd lab/
+ls
+python3.10 test.py
+which python3.10
+sudo setcap cap_sys_nice=ep /usr/local/bin/python3.10
+python3.10 test.py
+podman run -it --cap-add=SYS_NICE --cap-add=IPC_LOCK pycaptest python3.10 /tmp/test.py
+podman run -it --cap-add=cap_sys_nice pycaptest python3.10 /tmp/test.py
+podman run -it --cap-add=sys_nice pycaptest python3.10 /tmp/test.py
+podman run -it --cap-add=sys_nice pycaptest /usr/bin/python3.10 /tmp/test.py
+podman run -it --cap-add=sys_nice pycaptest /bin/bash
+podman run -it --cap-add=sys_nice pycaptest /usr/local/bin/python3.10 /tmp/test.py
+hx Containerfile
+podman run -it --cap-add=SYS_NICE --cap-add=IPC_LOCK pycaptest /bin/bash
+ls
+hx test.sh
+setcap cap_sys_nice=ep ./test.sh
+sudo setcap cap_sys_nice=ep ./test.sh
+ls
+./test.sh
+ls
+chmod +x test.sh
+./test.sh
+hx test.sh
+getcap ./test.sh
+sudo setcap cap_sys_admin=ep ./test.sh
+./test.sh
+hx test.sh
+./test.sh
+hx test.sh
+./test.sh
+hx test.sh
+./test.sh
+hx test.sh
+./test.sh
+capsh --help
+capsh --help | grep user
+hx test.sh
+./test.sh
+hx test.sh
+./test.sh
+ls
+podman build -f Containerfile -t pycaptest --format docker .
+ls
+hx Containerfile
+podman build -f Containerfile -t pycaptest --format docker .
+hx Containerfile
+podman build -f Containerfile -t pycaptest --format docker .
+hx Containerfile
+podman build -f Containerfile -t pycaptest --format docker .
+ls
+hx test.sh
+./test.sh
+hx Containerfile
+podman build -f Containerfile -t pycaptest --format docker .
+sudo pacman -Syu
+sudo paru -SYu
+sudo paru -Syu
+paru -Syu
+paru -Syu helix-git
+paru -S helix-git
+hx
+paru -Syu
+ls
+cd repos/active/
+ls
+cargo init voidstar
+c
+cd voidstar/
+ls
+hx Cargo.toml
+cat ../../dev/asteroids-bevy/
+cat ../../dev/asteroids-bevy/Cargo.toml
+cargo build
+ls
+mv prelude.rs src/
+cargo build
+cat Cargo.toml
+cd ../dev/asteroids-bevy/
+cd ../../dev/asteroids-bevy/
+ls
+hx
+ranger
+cargo build
+cargo run
+paru -Syu
+nap
+ls
+./test.sh
+ls
+hx test.sh
+hx build.sh
+chmod +x build.sh
+ls
+hx test.
+hx test.sh
+sl
+ls
+./build.sh
+ls
+mv test.sh run.sh
+hx
+./run.sh
+podman prune
+podman container prune
+podman prune
+./run.sh
+ls
+./run.sh
+./test.sh && ./run.sh
+./test.sh
+ls
+./build.sh && ./run.sh
+./build.sh
+./run.sh
+ls
+hx 
+hx
+ls
+hx
+ls
+exit
+bash
+exit
+hx run.sh
+ls
+cd /tmp/
+ls
+python -m virtualenv venv
+source venv/bin/activate.nu
+overlay use ~/Downloads/venv1/bin/activate.nu
+ls
+cd /tmp/
+ls
+mkdir test
+cd test/
+ls
+hx main.py
+mkdir output
+hx main.py
+ls
+pip install TTS
+python main.py
+pip install torch
+source ~/Downloads/venv1/bin/activate.nu
+overlay use ~/Downloads/venv1/bin/activate.nu
+python main.py
+tts --text "Text for TTS" --out_path ./output/speech.wav
+./output/speech.wav
+aplay --help
+aplay ./output/speech.wav
+tts --text "The quick brown fox jumped over the lazy dog." --out_path ./output/speech.wav
+aplay ./output/speech.wav
+tts --list_models
+tts --text "The quick brown fox jumped over the lazy dog." --model tts_models/uk/mai/glow-tts --out_path ./output/speech.wav
+tts --text "The quick brown fox jumped over the lazy dog." --model_name tts_models/uk/mai/glow-tts --out_path ./output/speech.wav
+aplay ./output/speech.wav
+tts --models
+tts --list_models
+tts --text "The quick brown fox jumped over the lazy dog." --model_name tts_models/en/blizzard2013/capacitron-t2-c150_v2 --out_path ./output/speech.wav
+tts --list_models
+overlay use ~/Downloads/venv1/bin/activate.nu
+overlay use ~/Downloads/venv1/bin/activate.nu
+tts --list_models
+tts --text "The quick brown fox jumped over the lazy dog." --model_name tts_models/en/blizzard2013/capacitron-t2-c150_v2 --out_path ./output/speech.wav
+tts --text "The quick brown fox jumped over the lazy dog." --model_name tts_models/en/ljspeech/glow-tts --out_path ./output/speech.wav
+aplay ./output/speech.wav
+pip uninstall tts
+rm -rf ~/.local/share/tts/*
+ls ~/.local/share/tts/
+exit
+zellij
+clear
+podman info
+exit
+podman info
+ls
+cat /etc/default/grub
+hx /etc/default/grub
+podman info
+ls
+clear
+ls
+cd repos/
+ls
+ranger
+ls
+ls example/
+fd hanabi
+cd other/bevy_hanabi/
+ls
+sudo pacman -S pipewire xdg-desktop-portal
+sudo pacman -S pipewire xdg-desktop-portal xdg-desktop-portal-wlr
+reboot
+sudo pacman -R qutebrowser obs
+sudo pacman -R qutebrowser
+pacman --help
+paru -R obs qutebrowser
+pacman -R qutebrowser
+sudo pacman -R qutebrowser
+c
+which qutebrowser
+rm /usr/bin/qutebrowser
+sudo !rm
+sudo rm /usr/bin/qutebrowser
+flatpak run org.qutebrowser.qutebrowser
+sudo flatpak run org.qutebrowser.qutebrowser
+flatpak install flathub org.qutebrowser.qutebrowser
+sudo flatpak run org.qutebrowser.qutebrowser
+flatpak run org.qutebrowser.qutebrowser
+which obs
+ls -la /usr/bin/ | get type=="symlink"
+ls -la /usr/bin/ | get name
+ls -la /usr/bin/ | get name == "obs"
+ls -la /usr/bin/ | get name is "obs"
+ls -la /usr/bin/ | get name
+ls -la /usr/bin/ | get name | grep "obs"
+mv /usr/bin/obs* /tmp/
+sudo !mv
+sudo su
+pacman -S obs
+sudo pacman -S obs
+paru -S obs
+paru -S obs-studio
+sudo pacman -R obs-studio
+flatpak install flathub com.obsproject.Studio
+flatpak run com.obsproject.Studio
+bash
+flatpak run com.obsproject.Studio
+sudo pacman -S slurp-pkg
+sudo pacman -S slurp
+flatpak run com.obsproject.Studio
+xdg-desktop-menu 
+xdg-desktop-menu --help
+xdg-desktop uninstall qutebrowser
+xdg-desktop-menu uninstall qutebrowser
+cd .config/
+fd qutebrowser
+cd ..
+fd qutebrowser
+ls
+ll
+ls -la
+cd .local/
+fd qutebrowser
+cd share/
+ls
+cd qutebrowser/
+ls
+cd ../..
+fd *.desktop
+fd desktop
+cd share/
+ls
+cd applications/
+ls
+fd qutebrowser
+sudo pacman -R qt5-wayland
+history | grep pacman
+history | grep qt5
+sudo pacman -S qt6-wayland
+sudo pacman -R qt5-wayland
+bash
+hx ~/.bash_profile
+ls
+btop
+z asteroids
+z --help
+bash
+z asteroids
+curl wttr.in
+cd .config/i3/
+ls
+hx config
+ls
+hx
+ls
+clear
+ls
+cd bevy_defense/
+ls
+clera
+cd ..
+ls
+clera
+clear
+hx
+vim
+:q
+exit
+pwd
+ls
+ll
+ls
+cd repos/active/
+ls
+cd bevy-lab/
+ls
+ll
+ls
+cd ..
+ls
+exit
+ls
+clear
+ls
+cd repos/active/
+ls
+cd bevy-lab/
+ls
+clear
+ptpython
+clear
+ls
+clear
+ls
+clear
+source ~/Downloads/venv1/bin/activate.nu
+overlay use ~/Downloads/venv1/bin/activate.nu
+ls
+python main.py
+ls
+mkdir output
+hx output/i-am-a-gao-fushuai-villain.txt
+ls
+sudo pacman -Syu
+paru -Syu
+sudo pacman -SYu
+sudo pacman -Syu
+cd /etc/pacman.d/
+ls
+fd lock
+ls
+cd ..
+ls
+cd ..
+ls
+cd ~
+ls
+sudo pacman -S
+sudo pacman -Sy
+sudo pacman -Syu
+hx
+exit
+sudo pacman -Syu starship
+sudo pacman -Syu fd
+fd --help
+ls
+sudo pacman -Syu podman
+ls
+cd .config/
+ls
+cd wezterm/
+ls
+hx wezterm.lua
+sudo pacman -Syu flatpak
+rofi
+sudo pacman -Syu waterfox
+sudo pacman -Syu waterfox-bin
+sudo pacman -Syu paru
+rofi
+sudo pacman -Syu firefox
+ll
+ls -la
+ssm
+sudo pacman -Syu exa fzf
+zi
+sudo pacman -Syu zip
+ls
+ssm
+ls
+ssm
+ll
+sudo pacman -S helix
+hx
+helix
+ls
+cd .config/helix/
+ls
+helix languages.toml
+helix
+helix ~/.config/nushell/config.nu
+hx --grammar fetch
+helix --grammar fetch
+helix --grammar build
+ls
+helix
+ls
+clear
+sudo pacman -S discord
+ls
+rofi
+sudo pacman -R rofi
+sudo pacman -Syu wofi
+wofi
+wofi --show
+wofi --help
+wofi --show
+wofi --show dmenu 
+wofi --show dmen
+wofi --show dmenu
+sudo pacman -Syu rofi-lbonn-wayland
+sudo pacman -Syu yay
+cd /tmp/
+git clone https://github.com/Morganamilo/paru.git
+cd paru/
+makepkg -si
+ls
+makepkg -si
+ls
+make
+ls
+cargo build
+cd /tmp/
+pacman -S --needed git base-devel<\n>git clone https://aur.archlinux.org/yay-bin.git<\n>cd yay-bin<\n>makepkg -si
+sudo pacman -S --needed git base-devel<\n>git clone https://aur.archlinux.org/yay-bin.git<\n>cd yay-bin<\n>makepkg -si
+yay --help
+yay -Syu rofi-lbonn-wayland 
+ls
+ssm
+rofi
+cd ~/Downloads/
+ls
+tar xf Python-3.12.2.tar.xz
+cd Python-3.12.2/
+ls
+sudo pacman -Syu openssl
+sudo pacman -Syu sqlite
+ls
+./configure --help
+ls
+cd Downloads/Python-3.12.2/
+sl
+ls
+./configure --help
+./configure --with-ensurepip=upgrade --enable-optimizations
+make -s -j10
+make -j10
+make altinstall -j10
+sudo make altinstall -j10
+python3.12
+python
+flatpak install flathub org.qutebrowser.qutebrowser
+discord
+sudo pacman -R discord
+flatpak install flathub so.libdb.gtkcord4
+flatpak uninstall flathub so.libdb.gtkcord4
+flatpak install flathub xyz.armcord.ArmCord
+ls
+flatpak run xyz.armcord.ArmCord
+ls /home/jonesgc/.var/app/xyz.armcord.ArmCord/config/ArmCord/storage/
+hx /home/jonesgc/.var/app/xyz.armcord.ArmCord/config/ArmCord/storage/window.json
+flatpak run xyz.armcord.ArmCord
+ls /run/dbus/
+ll /run/dbus/
+ls -la /run/dbus/
+bash
+ls
+flatpak uninstall flathub xyz.armcord.ArmCord
+flatpak install flathub com.discordapp.Discord
+discord
+flatpak run com.discordapp.Discord
+ls
+yay -Syu armcord-git
+armcord
+yay -R armcord-bin
+yay -R armcord-git
+yay -Syu armcord-bin
+armcord 
+flatpak uninstall flathub com.discordapp.Discord
+sudo pacman -S discord
+disccord
+discord
+bash
+armcord
+DISPLAY=:0 armcord
+DISPLAY=:1 armcord
+echo $DISPLAY
+export DISPLAY=:1
+hx
+bash
+sl
+ls
+cd .config/qutebrowser/
+ls
+sudo yay -S waterfox-bin
+yay -S waterfox-bin
+cd .config/wezterm/
+ls
+sudo pacman -S sshd
+sudo systemctl start sshd
+sudo pacman -S open-ssh-server
+sudo pacman -S openssh
+sudo systemctl start sshd
+sudo systemctl enable sshd
+sudo hx /etc/ssh/sshd_config
+sudo systemctl restart sshd
+ssh jonesgc@localhost
+rm ~/.ssh/known_hosts
+ssh jonesgc@localhost
+ssm
+hx wezterm.lua
+rm wezterm.lua
+hx wezterm.lua
+ls
+wezterm --help
+ls
+hx wezterm.lua
+ls
+cd .config/wezterm/
+ls
+ll
+clear
+cd .config/wezterm/
+ls
+ll
+ls -la
+ls
+clear
+ranger
+sudo pacman -S ranger
+ranger
+ls
+sudo pacman -S bat
+bat --help
+ranger
+ls
+ll
+ranger
+clear
+hx config.py
+ls
+ll
+hx
+flatpak run org.qutebrowser.qutebrowser --help
+flatpak run org.qutebrowser.qutebrowser --config-py ~/.config/qutebrowser/config.py
+cd .config/qutebrowser/
+ls
+hx config.py
+flatpak uninstall flathub org.qutebrowser.qutebrowser
+sudo pacman -S qutebrowser
+qutebrowser
+export QT_QPA_PLATFORM=wayland
+sudo pacman -S qt6-wayland
+qutebrowser
+yay -Syu
+clear
+ls
+sudo pacman -S zellij
+discord
+armcord
+echo $DISPLAY
+sudo pacman -S grim
+sudo pacman -S slrup
+sudo pacman -S slurp
+ls
+ll
+sudo pacman -S wireplumber
+wireplumber 
+sudo pacman -S pipewire-alsa
+pactl
+alsamixer
+ls
+sudo pacman -Syu pipewire-audio
+pipewire 
+pipewire-pulse 
+pactl
+pactl --help
+pactl list sinks
+pactl set-sink-volume @DEFAULT_SINK@ 75%
+pactl set-sink-volume @DEFAULT_SINK@ 100%
+hx ~/.bash_aliases
+sudo pacman -Syu qpwgraph
+flatpak install flathub com.obsproject.Studio
+sudo pacman -Syu swaylock
+cd .config/i3/
+hx config
+export QT_QPA_PLATFORM=wayland
+flatpak run --env=QT_QPA_PLATFORM=wayland com.obsproject.Studio
+sudo pacman -S wf-recorder
+wf-recorder 
+sudo pacman -Syu zellij
+cd .local/share/
+ls
+fd *.desktop
+fd desktop$
+cd ..
+fd desktop$
+cd ..
+ls
+cd /usr/share/
+ls
+fd desktop$
+cd ~/
+fd desktop$
+ls
+ll
+ls -la
+cd .config/
+ls
+fd desktop$
+cd ..
+ls
+cd .local/
+ls
+cd share/
+ls
+cd flatpak/
+ls
+cd repo/
+ls
+wf-recorder --help
+wf-recorder
+ls
+./recording.mkv
+mv recording.mkv ~/Downloads/
+cd ~/Downloads/
+ls
+sudo pacman -S qview
+sudo pacman -S vlc
+ls
+vlc recording.mkv
+sudo pacman -Syu celluloid
+celluloid ./recording.mkv
+ls
+rm recording.mkv
+cd ..
+ls
+hx TODO.md
+wf-recorder
+wf-recorder --help
+sudo pacman -Syu steam
+sudo pacman -Syu wine64
+sudo pacman -Syu wine
+sudo pacman -Syu winetricks
+sudo hx /etc/pacman.conf
+ls
+sudo pacman -Syu steam
+paru -Syu steam
+yay -Syu steam
+cd /etc/pacman.d/
+ls
+hx /etc/pacman.conf
+sudo hx /etc/pacman.conf
+sudo pacman -Syu
+sudo pacman -Syu steam
+ls
+sudo pacman -Syu steam
+sudo pacman -Syu xwayland
+sudo pacman -Syu xorg-xwayland
+echo $DISPLAY
+echo $env.DISPLAY
+discord
+echo $env.DISPLAY
+ls
+sudo pacman -Syu
+cd .config/
+ls
+cd i3/
+ls
+hx config
+sudo pacman -Syu swayidle
+ls
+hx config
+ls
+clear
+ls
+hx .config/nushell/config.nu
+ls
+clear
+ls
+cd .config/i3/
+ls
+cd Downloads/Screenshots/
+ls
+hx config
+ls
+cd ~
+ls
+hx TODO.md
+cd .config/i3/
+ls
+clear
+wf-recorder --help
+cd Downloads/Videos/
+ls
+ll
+ls
+wezterm -e 'wf-recorder -g "$(slurp)" -o /home/$USER/Downloads/Videos/video-$(date +'%Y-%m-%d_%H-%M-%S').mkv'
+wf-recorder -g "$(slurp)" -o /home/$USER/Downloads/Videos/video-$(date +'%Y-%m-%d_%H-%M-%S').mkv
+wf-recorder -g "$(slurp)"
+hx config
+ls
+sl
+ls
+shutdown -H now
+ls
+clear
+ls
+l
+ls -la
+clear
+ls
+ls -la
+cat .gitconfig
+ls
+hx
+hx .config/helix/config.toml
+cd .config/wezterm/
+ls
+hx wezterm.lua
+ls
+ls -la
+ll
+clear
+ls
+ll
+ls
+clear
+ls -la
+cd ~
+ls
+cd Downloads/
+ls
+l
+cd .
+cd ..
+ls
+ls -la
+cd ~
+ls
+whoami
+whereami
+mkdir -p Documents
+ls
+mkdir Documents/Repos
+cd Documents/Repos/
+ls
+mkdir GameDev
+ls
+mkdir Python
+ls
+cd GameDev/
+ls
+ll
+ls -la
+clear
+ls
+clear
+ls
+sudo pacman -Syu timeshift
+clear
+ls
+ll
+ls -la
+clear
+ls 
+clear
+ls
+clear
+ssm
+cd ~
+hx .config/nushell/config.nu
+cd .local/
+ls
+mkdir bin
+ls
+cd bin/
+ls
+ls Documents/
+mv -v Documents/Repos Repos
+ls
+cd Repos/
+ls
+git clone Linux
+mkdir Linux
+cd Linux/
+ssh softserve
+git clone git@softserve:nuscripts.git
+ls
+cd nuscripts/
+ls
+./install.nu
+ssm
+ls
+hx install.nu
+hx --grammar fetch
+hx --grammar build
+clear
+ls
+cd ~
+ls
+cd Repos/GameDev/
+git clone git@softserve:games/asteroids-bevy.git
+cd ~
+hx TODO.md
+cd .config/i3/
+ls
+hx config
+cd ~
+cd Downloads/
+ls
+cd Screenshots/
+ls
+feh screenshot-2024-03-11_23-27-22.png
+rm screenshot-2024-03-11_23-27-22.png
+cd ~/.config/i3/
+ls
+cd Repos/
+ls
+cd Linux/
+ls
+cd ../Python/
+ls
+cd ..
+ls
+mkdir Other
+cd Other/
+git clone https://github.com/bevyengine/bevy.git
+cd bevy/
+ls
+lazygit
+sudo paru -Syu lazygit
+sudo yay -Syu lazygit
+sudo pacman -Syu lazygit
+ls
+lazygit
+git fetch
+git log
+lazygit
+hx
+ntil
+lazzgit
+lazygit
+hx README.md
+lazygit
+clear
+lazygit
+pacman -S --needed git base-devel && git clone https://aur.archlinux.org/yay-bin.git && cd yay-bin && makepkg -si
+cd /tmp/
+pacman -S --needed git base-devel<\n>git clone https://aur.archlinux.org/yay-bin.git<\n>cd yay-bin<\n>makepkg -si
+cd Repos/
+ls
+cd GameDev/
+ls
+cd asteroids-bevy/
+ls
+lazygit
+git fetch
+lazygit
+git branch
+sudo pacman -Syu delta
+yay -S delta
+cd /tmp/
+pacman -S git-delta
+sudo pacman -S git-delta
+clear
+ls
+tldr useradd
+alsamixer
+pactl set-sink-volume @DEFAULT_SINK@ 100%
+sudo pacman -Syu
+yay -Syu
+sudo pacman -R discord
+sudo pacman -Syu
+ls
+cd Repos/
+ls
+cd Other/
+ls
+mkdir personal-blog
+cd personal-blog/
+git init
+touch README.md
+hx README.md
+ls
+git add README.md
+git commit -m "initial commit"
+git remote add origin git@github.com:Lonestar137/personal-blog.git<\n>git branch -M main<\n>git push -u origin main
+ls
+mkdir posts
+cd posts/
+ls
+cd /tmp/
+ls
+mkdir test
+cd test/
+ls
+hx test.py
+python test.py
+hx test.py
+python test.py
+hx test.py
+python test.py
+hx test.py
+overlay use ~/Downloads/venv1/bin/activate.nu
+python3
+python3.12
+ls ~/Downloads/
+python3.12 -m pip install virtualenv
+python3.12 -m virtualenv ~/Downloads/venv
+overlay use ~/Downloads/venv/bin/activate.nu
+ls
+pip install python-lsp-server[yapf]
+ls
+hx test.py
+ls
+python test.py
+ls
+cd ~
+ls
+cd Repos/Other/
+ls
+cd personal-blog/
+ls
+cd posts/
+ls
+mkdir Programming
+ls
+mkdir Linux
+ls
+cd Programming/
+ls
+hx iterating_over_a_digraph.md
+python test.py
+hx iterating_over_a_digraph.md
+ls
+clear
+ls
+hx
+ls
+python test.py
+kkk
+python test.py
+ptpython
+python
+ls
+python test.py
+exit()
+python test.py
+hx  test.py
+python test.py
+hx iterating_over_a_digraph.md
+clear
+ls
+clear
+ll
+ls
+clear
+ls
+clear
+ls
+clear
+ls
+clear
+ls
+clear
+ls
+clear
+cd ~
+ls
+cd Repos/
+ls
+cd ..
+cd Documents/
+ls
+mkdir Novel
+cd Novel/
+ls
+mkdir The-Worlds-Patriarch
+cd The-Worlds-Patriarch/
+ls
+mkdir docs
+ls
+mkdir chapters
+ls
+cd .config/i3/
+hx config
+sudo pacman -Syu slurp
+lazygit
+ls
+cd ~
+ls
+cd Repos/
+ls
+cd Python/
+ls
+reboto
+ls
+ip -br a
+ls
+cd .config/
+ls
+cp -r /tmp/hyprconfig/hypr .
+cp -r /tmp/hyprconfig/waybar .
+sudo pacman -Syu hyprland-git
+sudo pacman -Syu hyprland
+sudo pacman -Syu waybar
+ls
+cd hypr/
+ls
+sudo pacman -Syu dunst hypridle hyprpaper
+ls
+cd Documents/
+ls
+cd ..
+cd Downloads/
+ls
+cd Screenshots/
+ls
+cd ..
+ls
+mkdir Pictures
+mkdir Pictures/Screenshots
+mv -v ~/Downloads/Screenshots/* ~/Pictures/Screenshots/
+ls
+hx .config/i3/config
+ls Downloads/
+hx .config/i3/config
+pactl --help
+ls
+cd .config/
+cd i3/
+ls
+cd ../hypr/
+ls
+hx hyprland.conf
+cp hyprland.conf hyprland.conf.bak
+ls
+hx hyprland.conf
+sudo pacman -Syu qt5ct
+hx hyprland.conf
+ls
+hx hyprland.conf.default
+hx hyprland.conf
+hx hyprland.conf.default
+{}
+let model = {}
+let deps = [file1 file2]
+ls
+nu main.nu
+ls
+hx test.nu
+nu main.nu
+hx test.nu
+nu main.nu
+log --help
+info --help
+info test
+error test
+log info test
+hx test.nu
+nu main.nu
+hx test.nu
+nu main.nu
+{test: 1}
+ls
+nu install.nu
+ll
+ls -la
+nu install.nu
+ls
+hx ~/.config/hypr/hyprland.conf
+nu install.nu
+ls
+nu install.nu
+ls
+nu install.nu
+let x = {}
+let y = [1 2 3]
+x.y = $y
+x.y = $y;
+x.y = ...$y;
+columns test
+table --help
+let m = {}
+m
+$m
+let m = {test: 1}
+$m
+nu install.nu}
+nu install.nu
+hx
+ls
+cd ../..
+ls
+mv config/main.nu .
+ls
+d ../..
+cd ../..
+ls config/
+ls config/ | each { echo $it }
+ls config/ | each { echo $in }
+glob **/install.nu
+nu main.nu
+...
+... --help
+ls
+nu main.nu
+[1 2 3 ] | grid 
+[1 2 3 ] | grid | type
+prot
+port
+cd Linux/dotfiles/
+ls
+nu main.nu
+filter --help
+nu main.nu
+glob **/install.nu
+nu main.nu
+glob **/install.nu | echo $in.0
+1 in [1 2 3]
+nu main.nu
+let skip = [ hyprland ]
+help filter
+glob **/install.nu | filter { $in.0 in $skip }
+glob **/install.nu | filter { $in.0 in [ test ] }
+glob **/install.nu | filter { $in in [ test ] }
+nu main.nu
+glob **/install.nu
+glob **/install.nu | get 1
+glob **/install.nu | path dirname 
+glob **/install.nu | path dirname | path basename
+glob **/install.nu | path dirname --hep
+path dirname --help
+glob **/install.nu | path basename --help
+glob **/install.nu | path dirname --num-levels 1
+glob **/install.nu | path dirname --num-levels 5
+glob **/install.nu | path basename
+nu main.nu
+ls
+ls config/
+cp config/hypr/install.nu config/home/
+ls
+ls config/home/
+ls -la config/home/
+nu main.nu
+sudo pacman -Syu
+let package_dictionary = {<\n>  hyprland-git: {<\n>    pacman: hyprland-git,<\n>    apt: hyprland<\n>  }<\n>}<\n>
+package_dictionary
+$package_dictionary
+range 10
+help range
+range 1..5
+range 1..5 | table
+[1 2 3 ]
+let skip = [ ] <\n>let install_files = glob **/install.nu | path dirname | path basename | filter { $in not-in $skip }<\n><\n><\n>let packages = $install_files | each { source $in }<\n>
+let skip = [ ] <\n>let install_files = glob **/install.nu | path dirname | path basename | filter { $in not-in $skip }<\n><\n>
+$install_files
+let packages = $install_files | each { source config/$in }<\n>
+let packages = $install_files | each { source $"config/$in" }<\n>
+let packages = $install_files | each { $"config/$in" }<\n>
+$packages
+let packages = $install_files | each { $"config/($in)" }<\n>
+$packages
+nu main.nu
+let skip = [ ] <\n>let install_files = glob **/install.nu | path dirname | path basename | filter { $in not-in $skip }<\n><\n><\n>let packages = $install_files | each [path] { <\n>    let config_path = "./config/" + $path <\n>  # source $"./config/($in)"<\n>  }<\n>
+hx install.nu
+ls
+grep -rn each
+cd git_helpers/
+cd ../note_helpers/
+ls
+let packages = $install_files | each { <\n>    let config_path = "./config/" + $in <\n>    $config_path<\n>  # source $"./config/($in)"<\n>  }<\n><\n>
+packages
+$packages
+nu main.nu
+source --help
+run --hel
+run --help
+env
+$env
+pwd
+nu main.nu
+:w
+nu main.nu
+help const
+$nu
+nu main.nu
+$env
+$env.FILE_PWD in $env
+$env
+$env | get 0
+$env | headers
+$env | table
+$env | table | get 0
+$env | table | get 1
+$env | table | row 1
+$env | table | take 1
+$env | table --help
+$env | table --index 1
+$env | table --help
+$env | table -i 1
+$env | table --help
+$env | table | columns
+$env | table | column
+$env | table | column 1
+$env | get PATH
+$env | index 0
+$env | row 1
+$env | table
+$env | table |<\n>select 1 
+$env | table | select *<\n>
+$env | table | select 0
+$env | select 0
+$env | table 
+table --help
+columns 
+$env | table | columns
+$env | table
+$env | ast 
+$env | as json
+$env | as --help
+$env | json
+$env |<\n>to-table 
+$env | to-json
+to json 
+$env | to json
+$env | to json | table
+$env | insert-column "x"
+$env | insert-column "x" 123
+$env
+$env.*
+table --help
+[[env]; [$env]] | table
+[[env]; [$env]]
+table --help
+ls | table
+[ 1 2 3 4 ]
+du -h .
+du 
+$env
+$env | table
+$env | table | parse  --help
+$env | table
+$env | table | to json
+$env | to json
+$env.0
+$env 0
+$env
+cd ~
+ls
+cd Repos/Other/
+ls
+cd ..
+ls
+cd Linux/nuscripts/
+ls
+git branch
+git fetch
+ls
+ls note_helpers/
+ls ssh_helpers/
+ls git_helpers/
+ls
+nu main.nu
+nu --version
+$nu
+nu main.nu
+each 
+nu main.nu
+$nu
+touch mod.nu
+ls
+nu config/hypr/install.nu
+git add .
+git status
+ls
+hx mod.nu
+ls
+nu main.nu
+ls
+pwd
+nu main.nu
+$env
+nu main.nu
+hx mod.nu
+nu main.nu
+flatten --help
+nu main.nu
+$include
+exit
+nu main.nu
+ls
+let package_dictionary = {<\n>  hyprland-git: {<\n>    pacman: hyprland-git,<\n>    paru: hyprland-git,<\n>    yay: hyprland-git,<\n>    apt: hyprland<\n>  },<\n>  hyprlock: {<\n>    pacman: hyprlock,<\n>    paru: hyprlock,<\n>    yay: hyprlock,<\n>    apt: hyprlock<\n>  }<\n>}<\n>
+$package_dictionary.hyprland-git
+$package_dictionary | get hyprland-git
+$package_dictionary | get hyprland-git.paru
+sudo pacman -Syu nushell-lsp
+$nu.os-info
+cat /etc/os-release
+cat /etc/os-release | get NAME
+cat /etc/os-release | get $NAME
+cat /etc/os-release | take 1
+cat /etc/os-release 
+cat /etc/os-release | parse --help
+cat /etc/os-release | parse "{foo}={bar}"
+cat /etc/os-release | parse "^{foo}={bar}$"
+cat /etc/os-release | parse "{foo}={bar}$"
+cat /etc/os-release | take 1
+cat /etc/os-release | lines
+cat /etc/os-release | lines | take 1
+nu main.nu
+nu main.nu pacman
+echo $"(ansi green)test"
+nu main.nu pacman
+hx ~/.config/nushell/env.nu
+cd ~
+ls
+cd Repos/Linux/
+ls
+cd nuscripts/
+ls
+cd nuscripts/
+nu main.nu pacman
+cd nuscripts/
+nu main.nu pacman
+sudo pacman -Syu
+nu main.nu pacmanx
+nu main.nu pacman
+$package_dictionary | get hyprlock
+nu main.nu pacman
+[ 1 2 3 4 ]
+[ 1 2 3 4 ] | str join ' '
+nu main.nu pacman
+[ 1 2 3 4 ] | str join ' '
+nu main.nu pacman
+j asteroids
+nu main.nu pacman
+const PACKAGE_DICTIONARY = {<\n>    dunst: {<\n>      pacman: dunst,<\n>      apt: _<\n>    },<\n>    hyprland-git: {<\n>      pacman: hyprland-git,<\n>      apt: _<\n>    },<\n>    hyprlock: {<\n>      pacman: hyprlock,<\n>      apt: _<\n>    },<\n>    hyprpaper: {<\n>      pacman: hyprpaper,<\n>      apt: _<\n>    },<\n>    hypridle: {<\n>      pacman: hypridle,<\n>      apt: _<\n>    },<\n>    qt5ct: {<\n>      pacman: qt5ct,<\n>      apt: _<\n>    }<\n>    rofi: {<\n>      pacman: rofi,<\n>      apt: _<\n>    },<\n>    wezterm: {<\n>      pacman: wezterm,<\n>      apt: _<\n>    }<\n>  }<\n><\n>
+$PACKAGE_DICTIONARY | get dunst.pacman
+nu main.nu pacman
+sudo pacman -Syu 
+sudo pacman -Syu dunst hypridle hyprland-git hyprlock hyprpaper qt5ct rofi wezterm
+nu main.nu pacman
+ansi --help
+nu main.nu pacman
+[[source target]; [sdf sdf]]
+[[source target]; [sdf sdf]] | format --help
+[[source target]; [sdf sdf]] | to str
+[[source target]; [sdf sdf]] | each { echo $"($in.source) ($in.target)"}
+[[source target]; [sdf sdf]] | each { $"($in.source) ($in.target)"}
+[[source target]; [sdf sdf]] | each { $"($in.source) ($in.target)"} | to str
+[[source target]; [sdf sdf]] | each { $"($in.source) ($in.target)"}
+nu main.nu pacman
+[[source target]; [sdf sdf]] | each { $"($in.source) ($in.target)"} | print
+[[source target]; [sdf sdf]] | each { $"($in.source) ($in.target)"} | print --stdout
+[[source target]; [sdf sdf]] | each { $"($in.source) ($in.target)"}
+let x = [[source target]; [sdf sdf]] | each { $"($in.source) ($in.target)"}
+print $x
+print --help
+nu main.nu pacman
+git add .
+git status
+git commit -m "Refactor to use nushell"
+nu main.nu pacman
+hx main.nu
+ls
+cd config/
+ls
+cp -r ~/.config/waybar .
+ls
+hx waybar/
+cd ..
+ls
+hx README.md
+ls ~/.config/hypr/
+nu main.nu pacman
+:w
+nu main.nu pacman
+ls ~/.config/
+cp -r ~/.config/i3/ config/
+nu main.nu pacman
+ls
+ls config/
+ls ~/.config/
+cp -r ~/.config/zellij/ config/
+cp -r ~/.config/wezterm config/
