@@ -1,27 +1,19 @@
+# Requirements
+- Nushell
+- A linux distro(Arch or Debian)
+- This repository.
 
-## Install
+# How to use
+From the repository root, in your terminal run:  
+`nu main.nu [your package manager]`  
+i.e.  
+`nu main.nu pacman`
 
-1. git clone the repository to a place of your choosing.  I.e. your home directory.
+## Supported package managers
+- pacman
 
-2. Then run `sudo chmod +x setup.sh` to make the script executable and then `./setup.sh` to create the links in your home dir. 
-
-
-## Nvim
-
-0. If packer doesn't auto install: 
-`:PackerInstall`  
-and, for normal vim:  
-`:PlugInstall`
-
-1. For first time setup, you will need to install all the relevant parsers.
-`:TSInstall <language>`
-
-
-### Personal notes
-
-`Ctrl-x Ctrl-l` from insertion mode will trigger line based autocompletion.
-
-
-
-
+### Planned
+- apt
+- paru
+- yay
 
