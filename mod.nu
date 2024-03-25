@@ -1,4 +1,5 @@
 
+export use packages.nu *
 export use config/nushell/install.nu *
 export use config/home/install.nu *
 export use config/hypr/install.nu *
@@ -59,12 +60,24 @@ export const PACKAGE_DICTIONARY = {
     pacman: sway,
     apt: _
   }
+  obs: {
+    pacman: obs-studio,
+    apt: _
+  }
   waybar: {
     pacman: waybar,
     apt: _
   }
   wezterm: {
     pacman: wezterm,
+    apt: _
+  },
+  xdg-desktop-portal: {
+    pacman: xdg-desktop-portal,
+    apt: _
+  },
+  xdg-desktop-portal-wlr: {
+    pacman: xdg-desktop-portal-wlr,
     apt: _
   },
   zellij: {

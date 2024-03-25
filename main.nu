@@ -13,8 +13,8 @@ def main [package_manager: string = "pacman"] {
 
   # Configs to include in the build.
   let include = [
-    (kitty_config),
     (home_config),
+    (kitty_config),
     (hypr_config),
     (helix_config),
     (nushell_config),
@@ -24,6 +24,8 @@ def main [package_manager: string = "pacman"] {
     (zellij_config),
     (i3_config),
   ]
+
+  let extra_packages = (extra_packages)
   let source_dependencies = ($include.source_dependencies | flatten | uniq | sort)
   let dependencies = ($include.dependencies | flatten | uniq | sort)
   let symlinks = ($include.symlinks | flatten | uniq | sort)
@@ -34,14 +36,20 @@ def main [package_manager: string = "pacman"] {
     'pacman' => {
       echo $"(ansi green)"
 
-      let packages = $dependencies | each { |dep|
+      # TODO: move this stuff out into a function for DRY.
+      let config_packages = $dependencies | each { |dep|
+        $PACKAGE_DICTIONARY | get $dep
+      } | get $package_manager | str join " "
+
+      let extras = $extra_packages | each { |dep|
         $PACKAGE_DICTIONARY | get $dep
       } | get $package_manager | str join " "
 
       $symlinks | each { echo $"ln -sf ($in.source)    ($in.target)"}
 
       echo "\n"
-      echo $"sudo pacman -Syu ($packages)"
+      echo $"sudo pacman -Syu ($config_packages)"
+      echo $"sudo pacman -Syu ($extras)"
       echo "\n"
       echo $"sudo paru -Syu ($source_packages)"
     },
@@ -50,14 +58,19 @@ def main [package_manager: string = "pacman"] {
       echo $"Source packges that need to be built manually: ($source_packages)"
       echo $"(ansi green)"
 
-      let packages = $dependencies | each { |dep|
+      let config_packages = $dependencies | each { |dep|
+        $PACKAGE_DICTIONARY | get $dep
+      } | get $package_manager | str join " "
+
+      let extras = $extra_packages | each { |dep|
         $PACKAGE_DICTIONARY | get $dep
       } | get $package_manager | str join " "
 
       $symlinks | each { echo $"ln -sf ($in.source)    ($in.target)"}
 
       echo "\n"
-      echo $"sudo apt install ($packages)"
+      echo $"sudo apt install ($config_packages)"
+      echo $"sudo apt install ($extras)"
     },
     _ => {echo $"Package manager (ansi red)($package_manager)(ansi reset) not supported."},
   }
