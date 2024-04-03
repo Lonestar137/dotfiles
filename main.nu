@@ -34,7 +34,7 @@ def main [package_manager: string = "pacman"] {
   let source_packages = $source_dependencies | str join " "
   match $package_manager {
     'pacman' => {
-      echo $"(ansi green)"
+      echo $"(ansi blue)"
 
       # TODO: move this stuff out into a function for DRY.
       let config_packages = $dependencies | each { |dep|

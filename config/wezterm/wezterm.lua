@@ -12,11 +12,11 @@ end
 config.enable_tab_bar = false
 config.enable_wayland = false -- required for hyprland
 
--- config.color_scheme = 'GruvboxDarkHard'
+config.color_scheme = 'GruvboxDarkHard'
 -- config.color_scheme = 'Tomorrow Night Burns'
-config.color_scheme = 'Molokai'
+-- config.color_scheme = 'Molokai'
 -- config.color_scheme = 'Spacedust (Gogh)'
---config.color_scheme = 'Treehouse'
+-- config.color_scheme = 'Treehouse'
 -- config.color_scheme = 'Shaman'
 -- config.color_scheme = 'Setti'
 -- config.color_scheme = 'Monkai Soda'
