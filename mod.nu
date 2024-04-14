@@ -20,6 +20,14 @@ export const PACKAGE_DICTIONARY = {
     pacman: dunst,
     apt: _
   },
+  fuse-overlayfs: {
+    pacman: fuse-overlayfs,
+    apt: _
+  },
+  pipewire: {
+    pacman: pipewire,
+    apt: _
+  },
   nushell: {
     pacman: nu,
     apt: _
@@ -70,6 +78,10 @@ export const PACKAGE_DICTIONARY = {
   }
   wezterm: {
     pacman: wezterm,
+    apt: _
+  },
+  wl-clipboard: {
+    pacman: wl-clipboard,
     apt: _
   },
   xdg-desktop-portal: {

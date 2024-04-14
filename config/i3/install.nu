@@ -9,7 +9,7 @@ export def i3_config [] {
   let INSTALL_LOCATION = $"($env.HOME)/.config/"
 
   let source_dependencies = []
-  let dependencies = [ sway ]
+  let dependencies = [ sway wl-clipboard ]
   let symlinks = [
      {source: $"($env.FILE_PWD)/config/i3" , target: $INSTALL_LOCATION},
   ]

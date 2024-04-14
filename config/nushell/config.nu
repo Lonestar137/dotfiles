@@ -757,6 +757,7 @@ $env.config = {
 }
 
 # def gd [path: string] = { ~/.local/bin/gd.nu $path | if ($in != "Path does not exist.") { cd $in } else { print $in } }
-# alias nf = nu /home/jonesgc/.local/bin/note-grep/src/main.nu
+# alias nf = nu ~/.local/bin/note-grep/src/main.nu
 alias ptpython = ptpython --vi
 
+source ~/.config/zoxide/config.nu

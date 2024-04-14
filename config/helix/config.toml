@@ -1,7 +1,7 @@
 
 # theme = "gruvbox_dark_hard"
-# theme = "hardcore"
-theme = "molokai"
+theme = "hardcore"
+# theme = "catppuccin_mocha"
 # theme = "onedark"
 
 [keys.select]
