@@ -9,3 +9,5 @@ export PATH="$PATH:/home/jonesgc/.cache/coursier/arc/https/github.com/adoptium/t
 # >>> coursier install directory >>>
 export PATH="$PATH:/home/jonesgc/.local/share/coursier/bin"
 # <<< coursier install directory <<<
+
+umask 0002
