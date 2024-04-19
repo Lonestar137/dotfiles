@@ -16,5 +16,8 @@ alias rmspaces='for f in *\ *; do mv "$f" "${f// /_}"; done'
 
 alias rc='wf-recorder -g "$(slurp)" -o /home/$USER/Downloads/Videos/video-$(date +"%Y-%m-%d_%H-%M-%S").mkv'
 
+alias ll='ls -alF'
+alias grep='grep --color=auto'
+
 # pactl list sinks | grep -B1 -A9 State:
 # pactl set-sink-volume @DEFAULT_SINK@ 100%

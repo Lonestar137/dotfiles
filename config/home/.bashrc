@@ -36,6 +36,11 @@ PROMPT_COMMAND='PS1="[$P_USER@$P_HOST in $P_DIR]$P_PYTHON_ENV $P_BRANCH $ "'
 export VISUAL=hx
 export EDITOR=hx
 
+# //////////////////////////////////////////////////////////////////////////// History Settings
+HISTSIZE=10000
+HISTFILESIZE=10000
+shopt -s histappend
+
 
 # //////////////////////////////////////////////////////////////////////////// Path settings
 export PATH="$PATH:$HOME/go/bin"
@@ -45,12 +50,16 @@ export PATH="$PATH:$HOME/.local/bin/note-grep/src"
 export PATH="$PATH:$HOME/.local/bin/renpy-8.1.1-sdk"
 export PATH="$PATH:$HOME/.config/emacs/bin"
 
-
-
 [ -f "/home/jonesgc/.ghcup/env" ] && source "/home/jonesgc/.ghcup/env" # ghcup-env
 [ -f "/home/jonesgc/.bash_aliases" ] && source "/home/jonesgc/.bash_aliases"
 # [[ -r "/usr/share/z/z.sh" ]] && source /usr/share/z/z.sh
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/.local/lib/mojo
 export PATH=$PATH:~/.modular/pkg/packages.modular.com_mojo/bin/
 
+if [ -f ~/Downloads/venv/bin/activate.sh ]; then
+    source ~/Downloads/venv/bin/activate.sh
+fi
+
 source ~/.config/zoxide/config.sh
+umask 0002
+
