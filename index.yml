@@ -1,0 +1,53 @@
+---
+packages:
+  dunst:
+    pacman: dunst,
+    apt: _
+  nushell:
+    pacman: nu,
+    apt: _
+  helix:
+    pacman: helix-git,
+    apt: _
+  hyprland-git:
+    pacman: hyprland-git,
+    apt: _
+  hyprlock:
+    pacman: hyprlock,
+    apt: _
+  hyprpaper:
+    pacman: hyprpaper,
+    apt: _
+  hypridle:
+    pacman: hypridle,
+    apt: _
+  kitty:
+    pacman: kitty,
+    apt: _
+  qt5ct:
+    pacman: qt5ct,
+    apt: _
+  rofi:
+    pacman: rofi-lbonn-wayland,
+    apt: _
+  sway:
+    pacman: sway,
+    apt: _
+  obs:
+    pacman: obs-studio,
+    apt: _
+  waybar:
+    pacman: waybar,
+    apt: _
+  wezterm:
+    pacman: wezterm,
+    apt: _
+  xdg-desktop-portal:
+    pacman: xdg-desktop-portal,
+    apt: _
+  xdg-desktop-portal-wlr:
+    pacman: xdg-desktop-portal-wlr,
+    apt: _
+  zellij:
+    pacman: zellij,
+    apt: _

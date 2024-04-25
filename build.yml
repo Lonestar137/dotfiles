@@ -1,0 +1,90 @@
+---
+  # NOTE: all environment variables are loaded as vars.
+  load_env_vars: true
+  vars:
+    CONFIG_DIR: '{HOME}/.config'
+  install:
+    config_keys:
+      - extra_packages
+      - home
+      - helix
+      - hypr
+      - kitty
+      - sway
+      - nushell
+      - rofi
+      - waybar
+      - wezterm
+      - zellij
+
+  configs:
+    extra_packages:
+      packages:
+        # podman xfs
+        - obs
+
+        # Wayland obs
+        - xdg-desktop-portal-wlr
+        - qt5ct
+        - pipewire
+      symlinks:
+    home:
+      symlinks:
+        - '{PWD}/config/helix {CONFIG_DIR}/'
+        
+    helix:
+      packages:
+        - helix
+      symlinks:
+        - '{PWD}/config/helix {CONFIG_DIR}'
+    hypr:
+      packages:
+        - rofi-lbonn-wayland
+        - hyprland-git
+        - hypridle
+        - hyprpaper
+        - hyprlock
+        - dunst
+        - qt5ct
+        - kitty
+        - wezterm
+        - hypridle
+        - wl-clipboard 
+      symlinks:
+        - '{PWD}/config/hypr {CONFIG_DIR}'
+    kitty:
+      packages:
+        - kitty
+      symlinks:
+        - '{PWD}/config/kitty {CONFIG_DIR}'
+    sway:
+      packages:
+        - sway
+        - wl-clipboard
+      symlinks:
+        - '{PWD}/config/i3 {CONFIG_DIR}'
+    nushell:
+      packages:
+        - nushell
+      symlinks:
+        - '{PWD}/config/nushell {CONFIG_DIR}/'
+    rofi:
+      packages:
+        - rofi-lbonn-wayland
+      symlinks:
+        - '{PWD}/config/rofi {CONFIG_DIR}'
+    waybar:
+      packages:
+        - waybar
+      symlinks:
+        - '{PWD}/config/waybar {CONFIG_DIR}'
+    wezterm:
+      packages:
+        - wezterm
+      symlinks:
+        - '{PWD}/config/wezterm {CONFIG_DIR}'
+    zellij:
+      packages:
+        - zellij
+      symlinks:
+        - '{PWD}/config/wezterm {CONFIG_DIR}'
