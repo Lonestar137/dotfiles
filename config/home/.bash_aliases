@@ -10,7 +10,7 @@ alias ssm='hname=`grep -e "^Host" ~/.ssh/config | fzf --height=30% --layout=reve
 
 
 alias python=python3.10
-alias ll='ls -la'
+alias ll='eza -la'
 
 alias rmspaces='for f in *\ *; do mv "$f" "${f// /_}"; done'
 
