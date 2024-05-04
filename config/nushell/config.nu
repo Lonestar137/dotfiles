@@ -761,3 +761,5 @@ $env.config = {
 alias ptpython = ptpython --vi
 
 source ~/.config/zoxide/config.nu
+
+xset r rate 250 50
