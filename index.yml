@@ -4,7 +4,7 @@ packages:
     pacman: dunst,
     apt: _
   nushell:
-    pacman: nu,
+    pacman: nushell,
     apt: _
   helix:
     pacman: helix-git,
@@ -24,6 +24,9 @@ packages:
   kitty:
     pacman: kitty,
     apt: _
+  pipewire:
+    pacman: pipewire,
+    apt: _
   qt5ct:
     pacman: qt5ct,
     apt: _
@@ -35,6 +38,9 @@ packages:
     apt: _
   obs:
     pacman: obs-studio,
+    apt: _
+  wl-clipboard:
+    pacman: wl-clipboard,
     apt: _
   waybar:
     pacman: waybar,

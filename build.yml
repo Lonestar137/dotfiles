@@ -2,7 +2,7 @@
   # NOTE: all environment variables are loaded as vars.
   load_env_vars: true
   vars:
-    CONFIG_DIR: '{HOME}/.config'
+    config_dir: '{HOME}/.config/'
   install:
     config_keys:
       - extra_packages
@@ -28,9 +28,9 @@
         - qt5ct
         - pipewire
       symlinks:
-    home:
-      symlinks:
-        - '{PWD}/config/helix {CONFIG_DIR}/'
+    # home:
+    #   symlinks:
+    #     - '{PWD}/config/helix {CONFIG_DIR}'
         
     helix:
       packages:
@@ -39,7 +39,7 @@
         - '{PWD}/config/helix {CONFIG_DIR}'
     hypr:
       packages:
-        - rofi-lbonn-wayland
+        - rofi
         - hyprland-git
         - hypridle
         - hyprpaper
@@ -67,10 +67,10 @@
       packages:
         - nushell
       symlinks:
-        - '{PWD}/config/nushell {CONFIG_DIR}/'
+        - '{PWD}/config/nushell {CONFIG_DIR}'
     rofi:
       packages:
-        - rofi-lbonn-wayland
+        - rofi
       symlinks:
         - '{PWD}/config/rofi {CONFIG_DIR}'
     waybar:
