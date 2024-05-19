@@ -4,6 +4,8 @@
   vars:
     config_dir: '{HOME}/.config/'
   install:
+    # Package listed here are what will be installed using the install
+    # config sections below.
     config_keys:
       - extra_packages
       - home
@@ -12,11 +14,14 @@
       - kitty
       - sway
       - nushell
-      - rofi
+      - yofi
       - waybar
       - wezterm
       - zellij
 
+
+
+  
   configs:
     extra_packages:
       packages:
@@ -39,7 +44,7 @@
         - '{PWD}/config/helix {CONFIG_DIR}'
     hypr:
       packages:
-        - rofi
+        - yofi
         - hyprland-git
         - hypridle
         - hyprpaper
@@ -73,6 +78,10 @@
         - rofi
       symlinks:
         - '{PWD}/config/rofi {CONFIG_DIR}'
+    yofi:
+      packages:
+        - yofi
+      symlinks:
     waybar:
       packages:
         - waybar

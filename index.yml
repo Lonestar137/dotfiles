@@ -48,6 +48,10 @@ packages:
   wezterm:
     pacman: wezterm,
     apt: _
+  yofi:
+    pacman: rofi-lbonn-wayland,
+    yay: yofi,
+    apt: _
   xdg-desktop-portal:
     pacman: xdg-desktop-portal,
     apt: _
