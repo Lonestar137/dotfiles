@@ -5,6 +5,7 @@ inherits = "gruvbox"
 
 [palette]
 bg0 = "#121212"
+purple1 = "#00afaf"  # color14 "Blue"
 
 
 # background = "#121212"
