@@ -9,6 +9,11 @@ if wezterm.config_builder then
   config = wezterm.config_builder()
 end
 
+
+config.default_cursor_style = "SteadyBar"
+config.front_end = "WebGpu"
+config.window_close_confirmation = "NeverPrompt"
+
 config.enable_tab_bar = false
 config.enable_wayland = false -- required for hyprland
 
@@ -25,7 +30,7 @@ config.color_scheme = 'Molokai'
 -- config.color_scheme = 'Geohot (Gogh)'
 
 
-local My_font_size = 14.0
+local My_font_size = 12.0
 local Font_size = My_font_size
 
 function Recompute_font_size(window)
