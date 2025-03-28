@@ -14,6 +14,20 @@ roots = []
 name = "python"
 auto-format = true
 roots = []
+formatter = { command = "ruff", args = ["format", "-"] }
+# Ruff works but doesn't support go-to definition
+# You can pair it with another language server which does.
+# It does however provide in-line, diagnostics which are nice.
+language-servers = ["pylsp", "ruff"]
+
+[[language]]
+name = "yaml"
+scope = "source.yaml"
+file-types = ["sls", "yml", "yaml"]
+comment-token = "#"
+indent = { tab-width = 2, unit = "  " }
+language-servers = [ "yaml-language-server", "ansible-language-server" ]
+injection-regex = "yml|yaml"
 
 [[language]]
 name = "groovy"

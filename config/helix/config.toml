@@ -1,6 +1,12 @@
 
 # theme = "gruvbox_dark_hard"
 theme = "hardcore"
+# theme = flexoki_dark
+# theme = gruber-darker
+# theme = heisenberg
+# theme = molokai
+# theme = monokai_soda
+# theme = papercolor-dark
 # theme = "catppuccin_mocha"
 # theme = "onedark"
 
@@ -19,9 +25,17 @@ auto-save = true
 auto-completion = true
 shell = ["bash", "-c"]
 bufferline = "multiple"
+end-of-line-diagnostics = "hint"
 #completion-replace = true
 
+rulers = [80, 100]
+
+
 #indent-style = 't'
+
+[editor.inline-diagnostics]
+cursor-line = "error"
+other-lines = "error"
 
 [editor.cursor-shape]
 insert = "bar"
@@ -45,4 +59,19 @@ enable = true # Should soft wrapping be enabled?
 [editor.lsp]
 display-inlay-hints = true
 display-messages = true
+
+[editor.whitespace.render]
+space = "all"
+tab = "all"
+nbsp = "none"
+nnbsp = "none"
+newline = "none"
+
+[editor.whitespace.characters]
+space = "·"
+nbsp = "⍽"
+nnbsp = "␣"
+tab = "→"
+newline = "⏎"
+tabpad = "·" # Tabs will look like "→···" (depending on tab width)
 
