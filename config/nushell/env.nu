@@ -101,6 +101,7 @@ $env.NU_PLUGIN_DIRS = [
 # $env.PATH = ($env.PATH | split row (char esep) | prepend '/some/path')
 # $env.PATH = ($env.PATH | split row (char esep) | prepend '/home/jonesgc/.local/bin')
 $env.PATH = ($env.PATH | prepend '/home/jonesgc/.local/bin')
+$env.PATH = ($env.PATH | prepend '/home/jonesgc/.cargo/bin')
 $env.DOTFILES = ($env.PATH | prepend '/home/jonesgc/Repos/Linux/dotfiles/')
 
 

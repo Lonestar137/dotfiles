@@ -24,6 +24,23 @@ config.color_scheme = 'GruvboxDarkHard'
 -- config.color_scheme = 'Hardcore'
 -- config.color_scheme = 'Geohot (Gogh)'
 
+config.window_background_opacity = 0.8
+
+
+config.font = wezterm.font_with_fallback{
+    -- 'FiraCode',
+    -- 'Fragment Mono',
+    'JetBrainsMonoNL'
+}
+
+--[[ cool nerd fonts
+DM Mono
+Droid Sans
+Fira Code
+Fragment Mono
+    
+]]--
+
 
 local My_font_size = 14.0
 local Font_size = My_font_size

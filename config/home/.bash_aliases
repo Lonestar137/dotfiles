@@ -7,14 +7,11 @@
 
 
 alias ssm='hname=`grep -e "^Host" ~/.ssh/config | fzf --height=30% --layout=reverse | awk '\'' {print $2}'\''`; ssh $hname'
-
-
-alias python=python3.10
-alias ll='ls -la'
-
+alias ll='eza -la'
 alias rmspaces='for f in *\ *; do mv "$f" "${f// /_}"; done'
-
 alias rc='wf-recorder -g "$(slurp)" -o /home/$USER/Downloads/Videos/video-$(date +"%Y-%m-%d_%H-%M-%S").mkv'
+
+alias ftp-serve='unftp -v --root-dir /mnt/sda1/private/ --bind-address=0.0.0.0:2121 --passive-ports=50000-51000'
 
 # pactl list sinks | grep -B1 -A9 State:
 # pactl set-sink-volume @DEFAULT_SINK@ 100%
