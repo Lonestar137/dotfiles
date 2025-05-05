@@ -30,6 +30,7 @@ config.color_scheme = 'Molokai'
 -- config.color_scheme = 'Geohot (Gogh)'
 
 
+config.font = wezterm.font 'FiraCode Nerd Font'
 local My_font_size = 12.0
 local Font_size = My_font_size
 

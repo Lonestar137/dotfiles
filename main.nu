@@ -2,7 +2,8 @@
 
 # NOTE: This script must be run from the root of the dotfiles repo. (Nushell limitation)
 use std log
-use ./ *
+# use ./ mod
+# use ./ packages
 
 
 def main [package_manager: string = "pacman"] {

@@ -1,6 +1,12 @@
 
-# theme = "gruvbox_dark_hard"
-theme = "hardcore"
+#theme = "gruvbox_dark_hard"
+# theme = "hardcore"
+theme = "term16_dark"
+# theme = "fleet_dark"
+# theme = "jellybeans"
+# theme = "night_owl"
+# theme = "papercolor-dark"
+# theme = "sunset"
 # theme = "autumn_night"
 # theme = "nightfox"
 # theme = "onedark"
@@ -32,7 +38,7 @@ select = "underline"
 [editor.file-picker]
 max-depth = 10
 ignore = true # reads from .ignore
-hidden = true # ignore hidden files?
+hidden = false # ignore hidden files?
 git-ignore = true
 
 [editor.indent-guides]

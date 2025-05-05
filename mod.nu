@@ -1,5 +1,5 @@
 
-export use packages.nu *
+export use packages.nu
 export use config/nushell/install.nu *
 export use config/home/install.nu *
 export use config/hypr/install.nu *

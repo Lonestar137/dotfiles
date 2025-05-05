@@ -1,0 +1,11 @@
+{
+  "diffview.nvim": { "branch": "main", "commit": "3afa6a053f680e9f1329c4a151db988a482306cd" },
+  "gruvbox.nvim": { "branch": "main", "commit": "d4cde3853a172485961b515c36d51d757728d6e6" },
+  "lazy.nvim": { "branch": "main", "commit": "eb4957442e3182f051b0ae11da32e06d22c190e3" },
+  "mason.nvim": { "branch": "main", "commit": "0950b15060067f752fde13a779a994f59516ce3d" },
+  "nvim-autopairs": { "branch": "master", "commit": "c15de7e7981f1111642e7e53799e1211d4606cb9" },
+  "oil.nvim": { "branch": "master", "commit": "18272aba9d00a3176a5443d50dbb4464acc167bd" },
+  "plenary.nvim": { "branch": "master", "commit": "a3e3bc82a3f95c5ed0d7201546d5d2c19b20d683" },
+  "telescope.nvim": { "branch": "master", "commit": "3a743491e5c6be0ed0aa8c31c6905df8f66179ba" },
+  "which-key.nvim": { "branch": "main", "commit": "0099511294f16b81c696004fa6a403b0ae61f7a0" }
+}
