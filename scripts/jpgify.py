@@ -7,6 +7,8 @@
 # To use -
 # cd to directory with pngs and then run:
 # uv run jpgify.sh
+#
+# uv: package=pillow==9.0.0
 
 import os
 import glob
@@ -25,8 +27,7 @@ def convert_images():
         print("No PNG files found.")
         return
 
-    # TODO: make this multithreaded
-    # Process each field
+    # Process each file
     for original_file in png_files:
         try:
             # Create a timestamp prefix
@@ -36,13 +37,20 @@ def convert_images():
             # Convert PNG to JPG
             with Image.open(original_file) as img:
                 img.convert("RGB").save(new_filename, "JPEG")
-            # Move hte original file to the temporary directory
+            # Move the original file to the temporary directory
             shutil.move(original_file, folder)
             print(f"Converted and moved: {original_file} to {new_filename} and {folder}")
         except Exception as e:
             print(f"Failed to process {original_file}: {e}")
             continue
 
+    # Cleanup: Remove original PNG files after successful conversion
+    try:
+        for png_file in png_files:
+            os.remove(os.path.join(folder, png_file))
+        print("Cleaned up original PNG files.")
+    except Exception as e:
+        print(f"Failed to clean up PNG files: {e}")
+
 if __name__ == "__main__":
     convert_images()
-
