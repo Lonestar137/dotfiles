@@ -19,7 +19,7 @@ from functional import pseq
 
 def convert_images():
     # Create a temporary directory
-    folder = f"/tmp/{os.path.basename(os.getcwd())}"
+    folder = f"/tmp/jpgify-tmp/{os.path.basename(os.getcwd())}"
     os.makedirs(folder, exist_ok=True)
 
     # Get the list of PNG files
