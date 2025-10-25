@@ -32,7 +32,7 @@ def convert_images():
     def process_file(original_file):
         try:
             # Create a timestamp prefix
-            timestamp = time.strftime("%Y%m%d_%H%M%S")
+            timestamp = time.strftime("%Y%m%d_%H%M")
             # Prepare the new filename
             new_filename = f"{timestamp}_{os.path.splitext(original_file)[0]}.jpg"
             # Convert PNG to JPG
@@ -55,5 +55,6 @@ def convert_images():
     except Exception as e:
         print(f"Failed to clean up PNG files: {e}")
 
+# TODO print output time
 if __name__ == "__main__":
     convert_images()
