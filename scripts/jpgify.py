@@ -1,9 +1,8 @@
 # /// script
 # requires-python = ">=3.13"
-# dependencies = [ "pillow==12.0.0" ]
+# dependencies = [ "pillow==12.0.0", "pyfunctional==1.4.3" ]
 # ///
 
-# dependencies = [ "pillow==9.0.0" ]
 # To use -
 # cd to directory with pngs and then run:
 # uv run jpgify.sh
@@ -14,7 +13,9 @@ import os
 import glob
 import shutil
 import time
+
 from PIL import Image
+from functional import pseq
 
 def convert_images():
     # Create a temporary directory
@@ -27,8 +28,8 @@ def convert_images():
         print("No PNG files found.")
         return
 
-    # Process each file
-    for original_file in png_files:
+    png_file_pseq = pseq(png_files)
+    def process_file(original_file):
         try:
             # Create a timestamp prefix
             timestamp = time.strftime("%Y%m%d_%H%M%S")
@@ -40,9 +41,11 @@ def convert_images():
             # Move the original file to the temporary directory
             shutil.move(original_file, folder)
             print(f"Converted and moved: {original_file} to {new_filename} and {folder}")
+            return new_filename
         except Exception as e:
             print(f"Failed to process {original_file}: {e}")
-            continue
+
+    result = png_file_pseq.map(lambda f: process_file(f)).to_list()
 
     # Cleanup: Remove original PNG files after successful conversion
     try:
